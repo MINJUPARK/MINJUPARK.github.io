@@ -1,0 +1,54 @@
+// 중단점
+@mixin responsive($break) {
+    @if $break == mobile-screens {
+        @media screen and (min-width:$break-mobile) {
+            @content;
+        }
+    }
+
+    @else if $break == tablet-screens {
+        @media screen and(min-width:$break-tablet) {
+            @content;
+        }
+    }
+
+    @else if $break == pc-screens {
+        @media screen and(min-width:$break-pc) {
+            @content;
+        }
+    }
+}
+
+
+// 폰트 설정
+@mixin dynaPuff_font($weight) {
+    font-family: 'DynaPuff-'+$weight;
+}
+
+@mixin PretendardJP_font($weight) {
+    font-family: 'PretendardJP-'+$weight;
+}
+
+
+// 요소 정렬
+@mixin element_center() {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex_between() {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex_between_center() {
+    @include flex_between();
+    align-items: center;
+}
+
+@mixin flex_center_center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

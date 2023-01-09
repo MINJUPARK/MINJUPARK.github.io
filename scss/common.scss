@@ -1,0 +1,112 @@
+@charset 'utf-8';
+@import './style.scss';
+@import './mixin.scss';
+
+@font-face {
+    font-family: "DynaPuff-Regular";
+    src: url("/font/DynaPuff-Regular.woff2") format("woff2"),
+         url("/font/DynaPuff-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "DynaPuff-Medium";
+    src: url("/font/DynaPuff-Medium.woff2") format("woff2"),
+         url("/font/DynaPuff-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "DynaPuff-Semibold";
+    src: url("/font/DynaPuff-Semibold.woff2") format("woff2"),
+         url("/font/DynaPuff-Semibold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "DynaPuff-Bold";
+    src: url("/font/DynaPuff-Bold.woff2") format("woff2"),
+         url("/font/DynaPuff-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-Thin";
+    src: url("/font/PretendardJP-Thin.woff2") format("woff2"),
+         url("/font/PretendardJP-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-ExtraLight";
+    src: url("/font/PretendardJP-ExtraLight.woff2") format("woff2"),
+         url("/font/PretendardJP-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-Light";
+    src: url("/font/PretendardJP-Light.woff2") format("woff2"),
+         url("/font/PretendardJP-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-Regular";
+    src: url("/font/PretendardJP-Regular.woff2") format("woff2"),
+         url("/font/PretendardJP-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-Medium";
+    src: url("/font/PretendardJP-Medium.woff2") format("woff2"),
+         url("/font/PretendardJP-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-SemiBold";
+    src: url("/font/PretendardJP-SemiBold.woff2") format("woff2"),
+         url("/font/PretendardJP-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-Bold";
+    src: url("/font/PretendardJP-Bold.woff2") format("woff2"),
+         url("/font/PretendardJP-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-ExtraBold";
+    src: url("/font/PretendardJP-ExtraBold.woff2") format("woff2"),
+         url("/font/PretendardJP-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "PretendardJP-Black";
+    src: url("/font/PretendardJP-Black.woff2") format("woff2"),
+         url("/font/PretendardJP-Black.woff") format("woff");
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    font: {
+        size: 16px;
+        family: "Pretendard JP Variable", "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    }
+    letter-spacing: -0.04em;
+}
+
+section > h2 {
+    font-size: 0;
+}
+
+a {
+    text-decoration: none;
+}

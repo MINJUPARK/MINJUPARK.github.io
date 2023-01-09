@@ -1,0 +1,12 @@
+@charset 'utf-8';
+@import './style.scss';
+@import './common.scss';
+@import './mixin.scss';
+
+h1 {
+    @include dynaPuff_font(Bold);
+}
+
+h2 {
+    @include PretendardJP_font(Black);
+}
