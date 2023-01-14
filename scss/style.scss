@@ -1,0 +1,58 @@
+$break-mobile: 320px;
+$break-tablet: 768px;
+$break-tp: 1104px;
+$break-pc: 1440px;
+
+// $bh1:
+$h1: 2.25em; //36px
+$h2: 2em; //32px
+$h3: 1.75em; //28px
+$h4: 1.5em; //24px
+$h5: 1.25em; //20px
+$h6: 1.13em; //18px
+
+// $h1: 46px;
+// $h2: 36px;
+// $h3: 30px;
+// $h4: 26px;
+// $h5: 22px;
+// $h6: 18px;
+
+$pattern: rgba(0, 0, 0, 0.2);
+
+$bk1: rgb(64,64,64);
+$bk2: rgb(128,128,128);
+$bk3: rgb(192,192,192);
+
+$pink: #fa9aba;
+$pink_text_bg: rgba(250, 154, 186, 0.4);
+$pink_rgba: rgba(250, 154, 186, 0.5);
+$pink_filter: invert(91%) sepia(13%) saturate(4697%) hue-rotate(289deg) brightness(102%) contrast(96%);
+
+$deepPink: #ed6794;
+$deepPink_text_bg: rgba(237, 103, 148, 0.4);
+$deepPink_rgba: rgba(237, 103, 148, 0.5);
+$deepPink_filter: invert(55%) sepia(66%) saturate(1340%) hue-rotate(303deg) brightness(97%) contrast(91%);
+$deepPink_shadow: #a41645;
+
+$blue: #9abefa;
+$blue_text_bg: rgba(154, 190, 250, 0.4);
+$blue_rgba: rgba(154, 190, 250, 0.5);
+$blue_filter: invert(71%) sepia(63%) saturate(904%) hue-rotate(186deg) brightness(103%) contrast(96%);
+
+$deepBlue: #5390f6;
+$deepBlue_text_bg: rgba(83, 144, 246, 0.4);
+$deepBlue_rgba: rgba(83, 144, 246, 0.5);
+$deepBlue_filter: invert(48%) sepia(81%) saturate(1806%) hue-rotate(199deg) brightness(101%) contrast(93%);
+$deepBlue_shadow: #1352be;
+
+$purple: #c59afa;
+$purple_text_bg: rgba(83, 144, 246, 0.4);
+$purple_rgba: rgba(197, 154, 250, 0.5);
+$purple_filter: invert(75%) sepia(10%) saturate(6863%) hue-rotate(208deg) brightness(99%) contrast(98%);
+
+$deepPurple: #a867f7;
+$deepPurple_text_bg: rgba(168, 103, 247, 0.4);
+$deepPurple_rgba: rgba(168, 103, 247, 0.5);
+$deepPurple_filter: invert(42%) sepia(86%) saturate(445%) hue-rotate(224deg) brightness(104%) contrast(94%);
+$deepPurple_shadow: #602aa1;

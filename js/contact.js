@@ -1,3 +1,4 @@
+// 채널톡
 (function() {
     var w = window;
     if (w.ChannelIO) {

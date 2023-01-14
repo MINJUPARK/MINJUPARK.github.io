@@ -12,6 +12,12 @@
         }
     }
 
+    @else if $break == tp-screens {
+        @media screen and(min-width:$break-tp) {
+            @content;
+        }
+    }
+
     @else if $break == pc-screens {
         @media screen and(min-width:$break-pc) {
             @content;
@@ -21,11 +27,12 @@
 
 
 // 폰트 설정
-@mixin dynaPuff_font($weight) {
+@mixin dynaPuff_font($weight:regular) {
     font-family: 'DynaPuff-'+$weight;
+    // letter-spacing: 0;
 }
 
-@mixin PretendardJP_font($weight) {
+@mixin PretendardJP_font($weight:regular) {
     font-family: 'PretendardJP-'+$weight;
 }
 
@@ -51,4 +58,130 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin flex_center() { // column
+    display: flex;
+    justify-content: center;
+}
+
+// 공통 헤더
+// @mixin header() {
+//     #header {
+//         position:fixed;
+//         height: 50px;
+//         display:block;
+//         width: 100%;
+//         background: #333 !important;
+//         opacity: 1 !important;
+//         z-index: 999999999 !important;
+//         text-align:center;
+//         color: #f2f2f2;
+//         padding: 20px 0 0 0;
+//         top:0px;
+//     }
+// }
+
+@mixin textSet($size:1em, $vw:0.1vw, $align:left, $color:black) {
+    font-size: calc($size + $vw);
+    line-height: $size * 1.75;
+    text-align: $align;
+    color: $color;
+}
+
+@mixin imageCover() {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin textShadow($value, $color) {
+    text-shadow: $value $value 0px ($color);
+}
+
+@mixin boxShadow($value, $color) {
+    box-shadow: 0px 0px $value $color;
+}
+
+@mixin boxShadowInset($value, $color) {
+    box-shadow: inset 0px 0px $value $color;
+}
+
+@mixin boxShadowAll($value1, $color1, $value2, $color2) { // color2 : deep~
+    box-shadow: 0px 0px $value1 $color1, inset 0px 0px $value2 $color2;
+}
+
+@mixin dropShadow($value, $color) {
+    filter: drop-shadow(0px $value $value $color);
+}
+
+@mixin background($color) {
+    background: $color;
+}
+
+// portfolio 페이지 중 첫번째 썸네일 요소에 해당
+@mixin thumbnailColor($color, $color_text_bg, $color_rgba, $deepColor_shadow) {
+    .title {
+
+        span {
+            @include textShadow(2px, $color);
+        }
+        
+        .title__num {
+            background: $color_text_bg;
+        }
+
+        .title__subject { @include textShadow(4px, $color_rgba); }
+
+        .title__text span {
+            text-shadow: 0 0 9px ($deepColor_shadow);
+
+        }
+    }
+    
+    .category {
+        img { @include dropShadow(4px, $color); }
+    
+        h3 {
+            @include textShadow(2px, $color);
+            @include boxShadow(20px, $color_rgba);
+            @include background($color_text_bg);
+        }
+
+        @include responsive(tablet-screens) {
+            .category__bg {
+                @include background($color_rgba);
+    
+                h3 { @include textShadow(4px, $color_rgba); }
+            }
+        }
+    }
+}
+
+// portfolio 페이지 중 작업물 슬라이드에 해당
+@mixin workListColor($color, $deepColor, $deepFilter, $color_rgba) {
+    .desk { 
+        @include boxShadowAll(15px, $deepColor, 40px, $color);
+
+        .desk__info .desk__info__link {
+            a {
+                box-shadow: inset 0px -5px 15px $color_rgba;
+                
+                &:hover {
+                    box-shadow: inset 0px 5px 10px $color;
+                }
+    
+                img { filter: $deepFilter; }
+                span { color: $deepColor; }
+            }
+        }
+    
+        .desk__table {
+            box-shadow: inset 0px 10px 20px $color_rgba;
+    
+            .head {
+                color: $deepColor;
+            }
+        }
+    }
 }
