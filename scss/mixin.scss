@@ -122,21 +122,10 @@
 // portfolio 페이지 중 첫번째 썸네일 요소에 해당
 @mixin thumbnailColor($color, $color_text_bg, $color_rgba, $deepColor_shadow) {
     .title {
-
-        span {
-            @include textShadow(2px, $color);
-        }
-        
-        .title__num {
-            background: $color_text_bg;
-        }
-
+        span { @include textShadow(2px, $color); }
+        .title__num { background: $color_text_bg; }
         .title__subject { @include textShadow(4px, $color_rgba); }
-
-        .title__text span {
-            text-shadow: 0 0 9px ($deepColor_shadow);
-
-        }
+        .title__text span { text-shadow: 0 0 9px ($deepColor_shadow); }
     }
     
     .category {
@@ -167,9 +156,7 @@
             a {
                 box-shadow: inset 0px -5px 15px $color_rgba;
                 
-                &:hover {
-                    box-shadow: inset 0px 5px 10px $color;
-                }
+                &:hover { box-shadow: inset 0px 5px 10px $color; }
     
                 img { filter: $deepFilter; }
                 span { color: $deepColor; }
@@ -179,9 +166,7 @@
         .desk__table {
             box-shadow: inset 0px 10px 20px $color_rgba;
     
-            .head {
-                color: $deepColor;
-            }
+            .head { color: $deepColor; }
         }
     }
 }
