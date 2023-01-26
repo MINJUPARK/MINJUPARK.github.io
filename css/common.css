@@ -1,17 +1,21 @@
 @font-face {
   font-family: "DynaPuff-Regular";
+  font-weight: 400;
   src: local("DynaPuff-Regular"), url("/font/DynaPuff-Regular.woff2") format("woff2"), url("/font/DynaPuff-Regular.woff") format("woff"), url("/font/DynaPuff-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "DynaPuff-Medium";
+  font-weight: 500;
   src: local("DynaPuff-Medium"), url("/font/DynaPuff-Medium.woff2") format("woff2"), url("/font/DynaPuff-Medium.woff") format("woff"), url("/font/DynaPuff-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "DynaPuff-Semibold";
+  font-weight: 600;
   src: local("DynaPuff-Semibold"), url("/font/DynaPuff-Semibold.woff2") format("woff2"), url("/font/DynaPuff-Semibold.woff") format("woff"), url("/font/DynaPuff-Semibold.ttf") format("truetype");
 }
 @font-face {
   font-family: "DynaPuff-Bold";
+  font-weight: 700;
   src: local("DynaPuff-Bold"), url("/font/DynaPuff-Bold.woff2") format("woff2"), url("/font/DynaPuff-Bold.woff") format("woff"), url("/font/DynaPuff-Bold.ttf") format("truetype");
 }
 @font-face {
@@ -64,27 +68,57 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  background: #fa9aba;
-  background-blend-mode: overlay;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
   background-size: 30px 30px;
+  background-blend-mode: overlay;
+  background-color: #fa9aba;
+  transition: background-color 1s ease;
   font-size: 16px;
   font-family: "Pretendard JP Variable", "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   letter-spacing: -0.02em;
 }
 
 body > div > a {
-  pointer-events: none;
   cursor: default;
+  pointer-events: none;
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+}
+
+header {
+  position: relative;
+}
+
+section > h2,
+section > .fp-tableCell > h2 {
+  font-size: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:not(body > div > a) {
+  cursor: pointer;
+}
+
+a, span {
+  display: inline-block;
 }
 
 h1 {
-  font-size: 46px;
+  font-size: 40px;
 }
 
 h2 {
@@ -105,21 +139,4 @@ h5 {
 
 h6 {
   font-size: 18px;
-}
-
-section > h2,
-section > .fp-tableCell > h2 {
-  font-size: 0;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-}
-a:not(body > div > a) {
-  cursor: pointer;
-}
-
-a, span {
-  display: inline-block;
-}
+}/*# sourceMappingURL=common.css.map */

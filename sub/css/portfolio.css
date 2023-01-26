@@ -1,17 +1,21 @@
 @font-face {
   font-family: "DynaPuff-Regular";
+  font-weight: 400;
   src: local("DynaPuff-Regular"), url("/font/DynaPuff-Regular.woff2") format("woff2"), url("/font/DynaPuff-Regular.woff") format("woff"), url("/font/DynaPuff-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "DynaPuff-Medium";
+  font-weight: 500;
   src: local("DynaPuff-Medium"), url("/font/DynaPuff-Medium.woff2") format("woff2"), url("/font/DynaPuff-Medium.woff") format("woff"), url("/font/DynaPuff-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "DynaPuff-Semibold";
+  font-weight: 600;
   src: local("DynaPuff-Semibold"), url("/font/DynaPuff-Semibold.woff2") format("woff2"), url("/font/DynaPuff-Semibold.woff") format("woff"), url("/font/DynaPuff-Semibold.ttf") format("truetype");
 }
 @font-face {
   font-family: "DynaPuff-Bold";
+  font-weight: 700;
   src: local("DynaPuff-Bold"), url("/font/DynaPuff-Bold.woff2") format("woff2"), url("/font/DynaPuff-Bold.woff") format("woff"), url("/font/DynaPuff-Bold.ttf") format("truetype");
 }
 @font-face {
@@ -64,23 +68,57 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-blend-mode: overlay;
+  background-color: #fa9aba;
+  transition: background-color 1s ease;
   font-size: 16px;
   font-family: "Pretendard JP Variable", "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   letter-spacing: -0.02em;
 }
 
 body > div > a {
-  pointer-events: none;
   cursor: default;
+  pointer-events: none;
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+}
+
+header {
+  position: relative;
+}
+
+section > h2,
+section > .fp-tableCell > h2 {
+  font-size: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:not(body > div > a) {
+  cursor: pointer;
+}
+
+a, span {
+  display: inline-block;
 }
 
 h1 {
-  font-size: 46px;
+  font-size: 40px;
 }
 
 h2 {
@@ -103,24 +141,7 @@ h6 {
   font-size: 18px;
 }
 
-section > h2,
-section > .fp-tableCell > h2 {
-  font-size: 0;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-}
-a:not(body > div > a) {
-  cursor: pointer;
-}
-
-a, span {
-  display: inline-block;
-}
-
-@-webkit-keyframes drop {
+@-webkit-keyframes textDrop {
   0% {
     transform: translateY(-200px) scaleY(0.9);
     opacity: 0;
@@ -146,7 +167,7 @@ a, span {
   }
 }
 
-@keyframes drop {
+@keyframes textDrop {
   0% {
     transform: translateY(-200px) scaleY(0.9);
     opacity: 0;
@@ -191,20 +212,274 @@ a, span {
 }
 header {
   position: fixed;
+  width: 100%;
+  height: 90px;
+  left: 0;
+  top: 0;
   right: 0;
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 99;
+}
+@media screen and (min-width: 1440px) {
+  header {
+    height: 100px;
+  }
+}
+header #pcNav {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  header #pcNav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  header #pcNav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  header #pcNav ul li {
+    width: 25%;
+  }
+  header #pcNav ul a {
+    width: 100%;
+    font-family: "DynaPuff-medium";
+    font-size: calc(1.5em + 0.1vw);
+    line-height: 3em;
+    text-align: center;
+    color: #fff;
+    text-shadow: 3px 3px 0px #ed6794;
+    transform: scale(1);
+    transition: all 0.3s;
+  }
+  header #pcNav ul a:hover, header #pcNav ul a:focus, header #pcNav ul a:active {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  header #pcNav ul .bubble {
+    position: relative;
+    padding: 2px 15px;
+    font-size: calc(0.8em + 0.1vw);
+    line-height: 1.6em;
+    text-align: center;
+    color: #ed6794;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0px 3px 0px 2px #ed6794;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  header #pcNav ul .bubble:before {
+    content: "";
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    margin-left: -6px;
+    border-top: 6px solid #fff;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    transform: rotate(180deg);
+  }
+}
+header .menu-container {
+  position: fixed;
+  width: 190px;
+  height: 190px;
+  top: -100px;
+  right: -100px;
+  border-radius: 100%;
+  background: rgba(237, 103, 148, 0.5);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+@media screen and (min-width: 1440px) {
+  header .menu-container {
+    display: none;
+  }
+}
+header .menu-container.full-menu {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  transition: all 0.3s;
   z-index: 1;
+}
+header .menu-container .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  transition: all 0.3s;
+  z-index: 99;
+}
+header .menu-container .menu .menu__icon {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: inherit;
+  height: inherit;
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.3s;
+  opacity: 0.7;
+  cursor: pointer;
+}
+header .menu-container .menu .menu__icon:hover {
+  opacity: 1;
+}
+header .menu-container #overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+}
+header .menu-container #overlay.open {
+  height: 100%;
+  visibility: visible;
+  opacity: 0.9;
+  z-index: 98;
+}
+header .menu-container #overlay .overlay__menu {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+header .menu-container #overlay .overlay__menu ul {
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+header .menu-container #overlay .overlay__menu ul li {
+  display: block;
+  position: relative;
+  margin-bottom: 30px;
+  opacity: 0;
+}
+header .menu-container #overlay .overlay__menu ul li:last-child {
+  margin-bottom: 0;
+}
+header .menu-container #overlay .overlay__menu ul li.fadeInRight {
+  -webkit-animation: fadeInRight 0.5s ease forwards;
+          animation: fadeInRight 0.5s ease forwards;
+}
+header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(1) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(2) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(3) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(4) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+header .menu-container #overlay .overlay__menu ul li a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 15px;
+  font-family: "DynaPuff-medium";
+  text-shadow: 4px 4px 0px #ed6794;
+  font-size: calc(2.25em + 0.1vw);
+  line-height: 4.5em;
+  text-align: center;
+  color: #fff;
+  line-height: normal;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+header .menu-container #overlay .overlay__menu ul li a:hover, header .menu-container #overlay .overlay__menu ul li a:focus, header .menu-container #overlay .overlay__menu ul li a:active {
+  opacity: 1;
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
+header .menu-container #overlay .overlay__menu ul li .bubble {
+  position: relative;
+  padding: 2px 15px;
+  font-size: calc(0.9em + 0.1vw);
+  line-height: 1.8em;
+  text-align: center;
+  color: #ed6794;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0px 3px 0px 4px #ed6794;
+  transition: all 0.3s;
+  opacity: 0;
+}
+header .menu-container #overlay .overlay__menu ul li .bubble:before {
+  content: "";
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  margin-left: -10px;
+  border-top: 10px solid #fff;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  transform: rotate(180deg);
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+header #pcNav {
+  justify-content: space-between;
+}
+header .help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+header .help img {
+  width: 16px;
+}
+header .help .help__comment {
+  font-size: 0.9em;
 }
 
 main section {
-  /*** design ***/
-}
-main section.section {
-  background-blend-mode: overlay;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
   background-size: 30px 30px;
+  background-blend-mode: overlay;
+  /*** design ***/
 }
 main section.web .title span {
   text-shadow: 2px 2px 0px #ed6794;
@@ -346,7 +621,7 @@ main section .title .title__num span {
   transform: translate(-50%, -50%);
   font-family: "DynaPuff-SemiBold";
   font-size: calc(1.25em + 0.5vw);
-  line-height: 2.1875em;
+  line-height: 2.5em;
   text-align: center;
   color: white;
 }
@@ -360,43 +635,43 @@ main section .title .title__subject {
 }
 main section .title .title__subject .web, main section .title .title__subject .s1 {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.1s;
-          animation: drop 0.4s linear forwards 0.1s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.1s;
+          animation: textDrop 0.4s linear forwards 0.1s;
 }
 main section .title .title__subject .n, main section .title .title__subject .s3 {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.3s;
-          animation: drop 0.4s linear forwards 0.3s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.3s;
+          animation: textDrop 0.4s linear forwards 0.3s;
 }
 main section .title .title__subject .mobile {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.5s;
-          animation: drop 0.4s linear forwards 0.5s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.5s;
+          animation: textDrop 0.4s linear forwards 0.5s;
 }
 main section .title .title__subject .s2 {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.2s;
-          animation: drop 0.4s linear forwards 0.2s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.2s;
+          animation: textDrop 0.4s linear forwards 0.2s;
 }
 main section .title .title__subject .s4 {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.4s;
-          animation: drop 0.4s linear forwards 0.4s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.4s;
+          animation: textDrop 0.4s linear forwards 0.4s;
 }
 main section .title .title__subject .s5 {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.5s;
-          animation: drop 0.4s linear forwards 0.5s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.5s;
+          animation: textDrop 0.4s linear forwards 0.5s;
 }
 main section .title .title__subject .s6 {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.6s;
-          animation: drop 0.4s linear forwards 0.6s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.6s;
+          animation: textDrop 0.4s linear forwards 0.6s;
 }
 main section .title .title__subject .s7 {
   opacity: 0;
-  -webkit-animation: drop 0.4s linear forwards 0.7s;
-          animation: drop 0.4s linear forwards 0.7s;
+  -webkit-animation: textDrop 0.4s linear forwards 0.7s;
+          animation: textDrop 0.4s linear forwards 0.7s;
 }
 @media screen and (min-width: 768px) {
   main section .title .title__subject {
@@ -407,7 +682,7 @@ main section .title .title__text {
   margin-top: 30px;
   font-family: "PretendardJP-medium";
   font-size: calc(0.9em + 0.1vw);
-  line-height: 1.575em;
+  line-height: 1.8em;
   text-align: center;
   color: white;
 }
@@ -442,6 +717,18 @@ main section .category .category__item {
   position: relative;
   width: 50%;
   text-align: center;
+  transition: all 0.3s;
+}
+main section .category .category__item.des {
+  width: 33.3333333333%;
+}
+@media screen and (min-width: 768px) {
+  main section .category .category__item.des {
+    width: 22%;
+  }
+}
+main section .category .category__item:hover {
+  transform: scale(1.2);
 }
 @media screen and (min-width: 768px) {
   main section .category .category__item {
@@ -506,7 +793,7 @@ main section .category .category__item .category__bg div {
 main section .category .category__item .category__bg div h3 {
   font-family: "DynaPuff-regular";
   font-size: calc(1.13em + 0.1vw);
-  line-height: 1.9775em;
+  line-height: 2.26em;
   text-align: inherit;
   color: inherit;
   line-height: inherit;
@@ -543,7 +830,7 @@ main section .device .monitor {
 main section .device .monitor .monitor__bezel {
   max-width: 768px;
   max-height: 432px;
-  width: 100%;
+  width: 90%;
   padding: 2.5%;
   margin: 0 auto;
   aspect-ratio: 16/9;
@@ -722,10 +1009,13 @@ main section .desk .desk__info .desk__info__title h3 {
     font-size: 1.75em;
   }
 }
+main section .desk .desk__info .desk__info__title h3 small {
+  margin-left: 5px;
+}
 main section .desk .desk__info .desk__info__title p {
   padding-top: 15px;
   font-size: calc(0.9em + 0.1vw);
-  line-height: 1.575em;
+  line-height: 1.8em;
   text-align: center;
   color: rgb(64, 64, 64);
 }
@@ -806,7 +1096,7 @@ main section .desk .desk__table .cell {
   display: table-cell;
   padding-bottom: 10px;
   font-size: calc(0.85em + 0.1vw);
-  line-height: 1.4875em;
+  line-height: 1.7em;
   text-align: center;
   color: rgb(64, 64, 64);
 }
@@ -841,7 +1131,7 @@ main section .mini-category .mini-category__bg {
 main section .mini-category .mini-category__bg h4 {
   font-family: "DynaPuff-regular";
   font-size: calc(1em + 0.5vw);
-  line-height: 1.75em;
+  line-height: 2em;
   text-align: left;
   color: inherit;
   text-shadow: 4px 4px 0px rgba(168, 103, 247, 0.5);
@@ -941,8 +1231,8 @@ main section .artwork .artwork__item .artwork__item__text h5 {
   padding: 5px 15px;
   margin-bottom: 10px;
   border-radius: 30px;
-  font-size: 16px;
   text-shadow: 2px 2px 0px #a867f7;
+  font-size: 16px;
   background: rgba(168, 103, 247, 0.4);
 }
 @media screen and (min-width: 1104px) {
@@ -958,7 +1248,7 @@ main section .artwork .artwork__item .artwork__item__text p {
     display: block;
     font-family: "PretendardJP-medium";
     font-size: calc(0.9em + 0.1vw);
-    line-height: 1.575em;
+    line-height: 1.8em;
     text-align: center;
     color: inherit;
     text-shadow: 0px 0px 9px #602aa1;
@@ -978,4 +1268,4 @@ main section .artwork .artwork__item .artwork__item__text p {
   main section .logo3d .logo3d__item:last-child {
     width: 40%;
   }
-}
+}/*# sourceMappingURL=portfolio.css.map */

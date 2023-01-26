@@ -4,6 +4,7 @@
 
 @font-face {
     font-family: "DynaPuff-Regular";
+    font-weight: 400;
     src: local("DynaPuff-Regular"),
          url("/font/DynaPuff-Regular.woff2") format("woff2"),
          url("/font/DynaPuff-Regular.woff") format("woff"),
@@ -12,6 +13,7 @@
 
 @font-face {
     font-family: "DynaPuff-Medium";
+    font-weight: 500;
     src: local("DynaPuff-Medium"),
          url("/font/DynaPuff-Medium.woff2") format("woff2"),
          url("/font/DynaPuff-Medium.woff") format("woff"),
@@ -20,6 +22,7 @@
 
 @font-face {
     font-family: "DynaPuff-Semibold";
+    font-weight: 600;
     src: local("DynaPuff-Semibold"),
          url("/font/DynaPuff-Semibold.woff2") format("woff2"),
          url("/font/DynaPuff-Semibold.woff") format("woff"),
@@ -28,6 +31,7 @@
 
 @font-face {
     font-family: "DynaPuff-Bold";
+    font-weight: 700;
     src: local("DynaPuff-Bold"),
          url("/font/DynaPuff-Bold.woff2") format("woff2"),
          url("/font/DynaPuff-Bold.woff") format("woff"),
@@ -118,11 +122,14 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    background: #fa9aba;
-    background-blend-mode: overlay;
-    background-image: linear-gradient($pattern 1px, transparent 1px),linear-gradient(to right, $pattern 1px, transparent 1px);
-    background-size: 30px 30px;
+    @include gridBackground();
+    background-color: $pink;
+    transition: background-color 1s ease;
 
     font: {
         size: 16px;
@@ -132,28 +139,29 @@ body {
 }
 
 body > div > a {
-    pointer-events: none;
     cursor: default;
+    pointer-events: none;
+    user-select:none;
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
-    user-select:none;
 }
 
-h1 { font-size: 46px; }
-h2 { font-size: 36px; }
-h3 { font-size: 30px; }
-h4 { font-size: 26px; }
-h5 { font-size: 22px; }
-h6 { font-size: 18px; }
+header {
+    position: relative;
+}
 
 section > h2,
 section > .fp-tableCell > h2 {
     font-size: 0;
 }
 
+ul, ol {
+    list-style-type: none;
+}
+
 a {
-    color: black;
+    color: #000;
     text-decoration: none;
 
     &:not(body > div > a) {
@@ -164,3 +172,10 @@ a {
 a, span {
     display: inline-block;
 }
+
+h1 { font-size: 40px; }
+h2 { font-size: 36px; }
+h3 { font-size: 30px; }
+h4 { font-size: 26px; }
+h5 { font-size: 22px; }
+h6 { font-size: 18px; }

@@ -6,6 +6,12 @@
         }
     }
 
+    @else if $break == mt-screens {
+        @media screen and(min-width:$break-mt) {
+            @content;
+        }
+    }
+
     @else if $break == tablet-screens {
         @media screen and(min-width:$break-tablet) {
             @content;
@@ -29,19 +35,31 @@
 // 폰트 설정
 @mixin dynaPuff_font($weight:regular) {
     font-family: 'DynaPuff-'+$weight;
-    // letter-spacing: 0;
 }
 
 @mixin PretendardJP_font($weight:regular) {
     font-family: 'PretendardJP-'+$weight;
 }
 
-
 // 요소 정렬
-@mixin element_center() {
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
+@mixin flex_start_X() {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@mixin flex_end_X() {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@mixin flex_start_Y() {
+    display: flex;
+    align-items: flex-start;
+}
+
+@mixin flex_end_Y() {
+    display: flex;
+    align-items: flex-end;
 }
 
 @mixin flex_between() {
@@ -54,45 +72,67 @@
     align-items: center;
 }
 
-@mixin flex_center_center() {
+@mixin flex_center_X() {
     display: flex;
     justify-content: center;
+}
+
+@mixin flex_center_Y() {
+    display: flex;
     align-items: center;
 }
 
-@mixin flex_center() { // column
-    display: flex;
-    justify-content: center;
+@mixin flex_center_center() {
+    @include flex_center_X();
+    align-items: center;
 }
 
-// 공통 헤더
-// @mixin header() {
-//     #header {
-//         position:fixed;
-//         height: 50px;
-//         display:block;
-//         width: 100%;
-//         background: #333 !important;
-//         opacity: 1 !important;
-//         z-index: 999999999 !important;
-//         text-align:center;
-//         color: #f2f2f2;
-//         padding: 20px 0 0 0;
-//         top:0px;
-//     }
-// }
+@mixin element_center() {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
 
-@mixin textSet($size:1em, $vw:0.1vw, $align:left, $color:black) {
-    font-size: calc($size + $vw);
-    line-height: $size * 1.75;
-    text-align: $align;
-    color: $color;
+@mixin element_center_X() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin element_center_Y() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// 탈그리드 설정 (main 안에 overflow-x: hidden; 필수)
+@mixin out_container() {
+    position: relative;
+    left: 50%; right: 50%;
+    width: 100vw;
+    margin-left: -50vw; 
+    margin-right: -50vw;
+}
+
+// 탈그리드 해제
+@mixin in_container() {
+    position: static;
+    left: 0; right: 0;
+    width: auto;
+    margin: 0;
 }
 
 @mixin imageCover() {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@mixin textSet($size:1em, $vw:0.1vw, $align:left, $color:black) {
+    font-size: calc($size + $vw);
+    line-height: $size * 2;
+    text-align: $align;
+    color: $color;
 }
 
 @mixin textShadow($value, $color) {
@@ -115,11 +155,315 @@
     filter: drop-shadow(0px $value $value $color);
 }
 
-@mixin background($color) {
-    background: $color;
+
+
+// [공통] 배경 패턴
+@mixin gridBackground() {
+    background-image: linear-gradient($pattern 1px, transparent 1px),linear-gradient(to right, $pattern 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-blend-mode: overlay;
 }
 
-// portfolio 페이지 중 첫번째 썸네일 요소에 해당
+// [공통] 메뉴
+@mixin navigationMenu() {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    
+    @include responsive(pc-screens) {
+        height: 100px;
+    }
+
+    #pcNav {
+        display: none;
+
+        @include responsive(pc-screens) {
+            @include flex_end_X();
+
+            ul {
+                @include flex_between_center();
+                width: 600px;
+                margin-top: 20px;
+                text-align: center;
+
+                li {
+                    width: calc(100% / 4);
+                }
+
+                a {
+                    width: 100%;
+                    @include dynaPuff_font(medium);
+                    @include textSet($h4, 0.1vw, center, #fff);
+                    @include textShadow(3px, $deepPink);
+                    transform: scale(1);
+                    transition: all .3s;
+                    
+                    &:hover, &:focus, &:active {
+                        opacity: 1;
+                        transform: scale(1.2);
+                    }
+                }
+
+                .bubble {
+                    position: relative;
+                    padding: 2px 15px;
+                    @include textSet(0.8em, 0.1vw, center, $deepPink);
+                    border-radius: 30px;
+                    background-color: #fff;
+                    box-shadow: 0px 3px 0px 2px $deepPink;
+                    opacity: 0;
+                    transition: all .3s;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: 24px;
+                        left: 50%;
+                        margin-left: -6px;
+                        border-top: 6px solid #fff;
+                        border-right: 6px solid transparent;
+                        border-left: 6px solid transparent;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-container {
+        position: fixed;
+        width: 190px;
+        height: 190px;
+        top: -100px;
+        right: -100px;
+        border-radius: 100%;
+        background: $deepPink_rgba;
+        transition: all 0.3s;
+        cursor: pointer;
+        
+        @include responsive(pc-screens) {
+            display: none;
+        }
+
+        &.full-menu {
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            border-radius: 0;
+            transition: all 0.3s;
+            z-index: 1;
+        }
+    
+        .menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70px;
+            height: 70px;
+            transition: all 0.3s;
+            z-index: 99;
+
+            .menu__icon {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: inherit; 
+                height: inherit;
+                fill: none;
+                stroke: #FFFFFF;
+                stroke-width: 6;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                transition: all 0.3s;
+                opacity: 0.7;
+                cursor: pointer;
+            
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        #overlay {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 0;
+            visibility: hidden;
+            overflow: hidden;
+            opacity: 0;
+        
+            &.open {
+                height: 100%;
+                visibility: visible;
+                opacity: 0.9;
+                z-index: 98;
+            }
+        
+            .overlay__menu {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+        
+                ul {
+                    position: relative;
+                    margin: 0 auto;
+                    height: 100%;
+                    
+                    li {
+                        display: block;
+                        position: relative;
+                        margin-bottom: 30px;
+                        opacity: 0;
+                        
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        
+                        &.fadeInRight {
+                            animation: fadeInRight 0.5s ease forwards;
+                            &:nth-of-type(1) { animation-delay: 0.2s; }
+                            &:nth-of-type(2) { animation-delay: 0.3s; }
+                            &:nth-of-type(3) { animation-delay: 0.4s; }
+                            &:nth-of-type(4) { animation-delay: 0.5s; }
+                        }
+
+                        a {
+                            position: relative;
+                            width: 100%; height: 100%;
+                            padding-bottom: 15px;
+                            @include dynaPuff_font(medium);
+                            @include textShadow(4px, $deepPink);
+                            @include textSet($h1, 0.1vw, center, #fff);
+                            line-height: normal;
+                            opacity: 1;
+                            transform: scale(1);
+                            transition: all 0.3s;
+                            overflow: hidden;
+                            
+                            &:hover, &:focus, &:active {
+                                opacity: 1;
+                                transform: scale(1.2);
+                                transition: all 0.3s;
+                            }
+                        }
+
+                        .bubble {
+                            position: relative;
+                            padding: 2px 15px;
+                            @include textSet(0.9em, 0.1vw, center, $deepPink);
+                            border-radius: 30px;
+                            background: #fff;
+                            box-shadow: 0px 3px 0px 4px $deepPink;
+                            transition: all .3s;
+                            opacity: 0;
+                        
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                bottom: 26px;
+                                left: 50%;
+                                margin-left: -10px;
+                                border-top: 10px solid #fff;
+                                border-right: 10px solid transparent;
+                                border-left: 10px solid transparent;
+                                transform: rotate(180deg);
+                            }
+                        }
+        
+                    }
+                }
+            }
+        }
+    }
+    
+    @keyframes fadeInRight {
+        0% {
+            opacity: 0;
+            left: 20%;
+        }
+        100% {
+            opacity: 1;
+            left: 0;
+        }
+    }
+}
+
+// [index] 스티치 효과 제목
+@mixin stitchTitle() {
+    text-align: center;
+    outline: 1px dashed rgba(255, 255, 255, 0.5);
+    background: linear-gradient(0deg, rgba(237,103,148,1) 30%, rgba(248,124,165,1) 100%);
+}
+
+// [index] 섹션 제목
+@mixin indexSectionTitle() {
+    max-width: 240px;
+    width: 55%;
+    @include PretendardJP_font(semibold);
+    @include textSet(1em, 0.3vw, center, #000);
+    border: 1px solid #000;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 3px 4px 0px #000;
+
+    @media (min-width: 375px) {
+       width: 45%;
+    }
+}
+
+// [index] 섹션 부가설명
+@mixin indexSectionComment() {
+    margin: 30px 0 60px;
+
+    h4 {
+        @include textSet($h5, 0.3vw, center, #000);
+        line-height: 1.5em;
+        margin-bottom: 10px;
+
+        @include responsive(tp-screens) {
+            text-align: unset;
+        }
+    }
+
+    p {
+        @include textSet(0.95em, 0.1vw, justify, $bk1);
+        
+        @include responsive(tp-screens) {
+            text-align: center;
+        }
+
+        br {
+            display: none;
+
+            @include responsive(tp-screens) {
+                display: block;
+            }
+        }
+    }
+}
+
+@mixin indexSectionCommentBR() {
+    @include indexSectionComment();
+    
+    p {
+        text-align: center;
+
+        br {
+            display: block;
+        }
+    }
+}
+
+// [portfolio] 썸네일
 @mixin thumbnailColor($color, $color_text_bg, $color_rgba, $deepColor_shadow) {
     .title {
         span { @include textShadow(2px, $color); }
@@ -134,12 +478,12 @@
         h3 {
             @include textShadow(2px, $color);
             @include boxShadow(20px, $color_rgba);
-            @include background($color_text_bg);
+            background: $color_text_bg;
         }
 
         @include responsive(tablet-screens) {
             .category__bg {
-                @include background($color_rgba);
+                background: $color_rgba;
     
                 h3 { @include textShadow(4px, $color_rgba); }
             }
@@ -147,7 +491,7 @@
     }
 }
 
-// portfolio 페이지 중 작업물 슬라이드에 해당
+// [portfolio] 작업물 슬라이드
 @mixin workListColor($color, $deepColor, $deepFilter, $color_rgba) {
     .desk { 
         @include boxShadowAll(15px, $deepColor, 40px, $color);

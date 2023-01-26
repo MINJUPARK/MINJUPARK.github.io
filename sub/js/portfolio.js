@@ -1,4 +1,10 @@
 $(function() {
+
+    const menuContainer = ["rgba(237, 103, 148, 0.5)", "rgba(83, 144, 246, 0.5)", "rgba(168, 103, 247, 0.5)"];
+    const overlayMenuA = ["4px 4px 0px #ed6794", "4px 4px 0px #5390f6", "4px 4px 0px #a867f7"];
+    const bubble_color = ["#ed6794", "#5390f6", "#a867f7"];
+    const bubble_shadow = ["0px 3px 0px 4px #ed6794", "0px 3px 0px 4px #5390f6", "0px 3px 0px 4px #a867f7"];
+
     $('#fullpage').fullpage({
         dragAndMove: true,
         navigation: true,
@@ -9,8 +15,33 @@ $(function() {
         controlArrows: false,
         loopTop: true,
         loopBottom: true,
-        scrollingSpeed: 1000
-        //fa9aba
+        scrollingSpeed: 1000,
+
+        onLeave: function(anchorLink, index) {
+            $(".menu-container").css("background-color", menuContainer[index-1]);
+            $(".overlay__menu a").css("text-shadow", overlayMenuA[index-1]);
+            $(".bubble").css({"color" : bubble_color[index-1], "box-shadow" : bubble_shadow[index-1]});
+        },
+
+        afterSlideLoad: function(section, origin, destination, direction, trigger) {
+            console.log(section,origin,destination,direction,trigger );
+            $(`.monitor__screen img, .phone__screen img`).removeClass('scroll');
+
+            if(!destination || destination == 0) {
+                $(".help__comment").fadeOut(function() {
+                    $(this).text("카테고리 이동은 상/하 휠 또는 드래그, 작업물 상세는 좌/우 드래그로 확인할 수 있습니다.").fadeIn(300);
+                });
+
+            } else {
+                if(section == 'web') {
+                    $(`.slide.fp-slide.fp-table.active .monitor__screen img, .slide.fp-slide.fp-table.active .phone__screen img`).addClass('scroll');
+                } else if (section == 'design') {
+                    $(".help__comment").text("이미지 클릭 시 상세보기로 이동합니다.").fadeIn(300);
+                } else {
+                    $(".help__comment").text("모니터나 스마트폰 화면 클릭 시 상세보기로 이동합니다.").fadeIn(300);
+                }
+            }
+        }
     });
 });
 
