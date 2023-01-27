@@ -821,7 +821,13 @@ main section .category .category__item .category__bg div span {
 }
 main section .device {
   position: relative;
+  text-align: center;
   z-index: 1;
+}
+main section .device .temp {
+  max-width: 932px;
+  width: 100%;
+  margin-bottom: -20px;
 }
 main section .device .monitor {
   text-align: center;
@@ -858,15 +864,16 @@ main section .device .monitor .monitor__bezel .monitor__screen a {
   width: 100%;
   height: 100%;
 }
-main section .device .monitor .monitor__bezel .monitor__screen a img {
+main section .device .monitor .monitor__bezel .monitor__screen img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+  cursor: pointer;
 }
-main section .device .monitor .monitor__bezel .monitor__screen a img.scroll {
+main section .device .monitor .monitor__bezel .monitor__screen img.scroll {
   -webkit-animation: autoScroll 15s ease-out 2s;
           animation: autoScroll 15s ease-out 2s;
 }
