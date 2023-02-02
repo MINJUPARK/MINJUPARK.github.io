@@ -13,6 +13,7 @@ $(function() {
         sectionsColor: ['#fa9aba', '#9abefa', '#c59afa'],
         slidesNavigation: true,
         controlArrows: false,
+        scrollOverflow:true,
         loopTop: true,
         loopBottom: true,
         scrollingSpeed: 1000,
