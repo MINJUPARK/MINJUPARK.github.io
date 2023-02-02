@@ -265,8 +265,8 @@ main {
                     @include responsive(pc-screens)     { max-width: 768px; padding: 1%; }
     
                     .monitor__screen {
-                        width:100%;
-                        height:100%;
+                        width: 100%;
+                        height: 100%;
                         overflow: hidden;
                         background: white;
 
@@ -296,95 +296,145 @@ main {
                 }
             }
 
-            .phone {
-                display: inline-block;
-                position: absolute;
-                right: 10%;
-                bottom: 0;
-                // width: 20%;
-                height: 60%;
-                // background: url('../image/phone_body.svg') no-repeat;
-                // background-size: contain;
-                    // background-position: center;
+            // .phone {
+            //     display: inline-block;
+            //     position: absolute;
+            //     right: 10%;
+            //     bottom: 0;
+            //     // width: 20%;
+            //     height: 60%;
+            //     // background: url('../image/phone_body.svg') no-repeat;
+            //     // background-size: contain;
+            //         // background-position: center;
                 
-                @include responsive(tablet-screens) {
-                    right: 15%;
-                    height: 65%;
-                }
+            //     @include responsive(tablet-screens) {
+            //         right: 15%;
+            //         height: 65%;
+            //     }
 
-                @include responsive(pc-screens) {
-                    right: 17.5%;
-                }
+            //     @include responsive(pc-screens) {
+            //         right: 17.5%;
+            //     }
                 
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
+            //     img {
+            //         width: 100%;
+            //         height: 100%;
+            //     }
                 
-                .phone__body {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    // width: 155px;
-                    // height: 335px;
-                    // height: 100%;
+            //     .phone__body {
+            //         position: relative;
+            //         width: 100%;
+            //         height: 100%;
+            //         // width: 155px;
+            //         // height: 335px;
+            //         // height: 100%;
                     
-                }
+            //     }
 
-                .phone__screen {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    width: 88%;
-                    height: 94%;
-                    /* padding: 4%; */
-                    // border-radius: 10px;
-                    // overflow: hidden;
-                    transform: translate(-50%, -50%);
+            //     .phone__screen {
+            //         position: absolute;
+            //         left: 50%;
+            //         top: 50%;
+            //         width: 88%;
+            //         height: 94%;
+            //         /* padding: 4%; */
+            //         // border-radius: 10px;
+            //         // overflow: hidden;
+            //         transform: translate(-50%, -50%);
                     
-                    // div {
-                        //     width: 100%;
-                        //     height: 100%;
-                        //     border-radius: 10px;
-                        //     overflow: hidden;
+            //         // div {
+            //             //     width: 100%;
+            //             //     height: 100%;
+            //             //     border-radius: 10px;
+            //             //     overflow: hidden;
                         
-                        //     @include responsive(tablet-screens) {
-                            //         border-radius: 20px;
-                            //     }
+            //             //     @include responsive(tablet-screens) {
+            //                 //         border-radius: 20px;
+            //                 //     }
                             
                             
-                            // }
-                            img {
-                                @include imageCover();
-                                width:100%;
-                                border-radius: 2vmin;
-                                object-position: top;
-                                overflow: hidden;
-                                cursor: pointer;
+            //                 // }
+            //                 img {
+            //                     @include imageCover();
+            //                     width:100%;
+            //                     border-radius: 2vmin;
+            //                     object-position: top;
+            //                     overflow: hidden;
+            //                     cursor: pointer;
                                 
-                        &.scroll {
-                            animation: autoScroll 15s ease-out 2s;
-                            animation-delay: 17s;
-                        }
-                    }
-                }
-                // .phone__screen--wrap {
-                //     position: absolute;
-                //     width: 100%;
-                //     height: 100%;
-                //     top: 0;
-                //     // left: 50%;
-                //     // transform: translateX(-50%);
+            //             &.scroll {
+            //                 animation: autoScroll 15s ease-out 2s;
+            //                 animation-delay: 17s;
+            //             }
+            //         }
+            //     }
+            //     // .phone__screen--wrap {
+            //     //     position: absolute;
+            //     //     width: 100%;
+            //     //     height: 100%;
+            //     //     top: 0;
+            //     //     // left: 50%;
+            //     //     // transform: translateX(-50%);
                     
                    
-                // }
+            //     // }
 
-                .phone__notch {
-                    position: absolute;
-                    left: 0;
-                    top: 2%;
-                    height: 4%;
-                }
+            //     .phone__notch {
+            //         position: absolute;
+            //         left: 0;
+            //         top: 2%;
+            //         height: 4%;
+            //     }
+            // }
+            
+            .phone {
+                position: absolute;
+                bottom: 0;
+                right: clamp(15%, 30vw, 20%);
+            }
+            .phone__wrap {
+                display: inline-block;
+                position: relative;
+                height: clamp(150px, 30vw, 350px);
+            }
+            
+            .phone__body {
+                width: 100%;
+                height: 100%;
+            }
+    
+            .phone__inner {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 88%;
+                height: 95%;
+                background: white;
+                border-radius: 2vmin;
+            }
+            
+            .inner {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                border-radius: inherit;
+                overflow: hidden;
+            }
+    
+            .inner__notch {
+                position: absolute;
+                left: 0;
+                top: -1px;
+                width: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+    
+            .inner__content {
+                width: 100%;
+                object-position: top;
             }
         }
     

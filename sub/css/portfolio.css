@@ -900,64 +900,49 @@ main section .device .monitor .monitor__stand {
   }
 }
 main section .device .phone {
-  display: inline-block;
   position: absolute;
-  right: 10%;
   bottom: 0;
-  height: 60%;
+  right: clamp(15%, 30vw, 20%);
 }
-@media screen and (min-width: 768px) {
-  main section .device .phone {
-    right: 15%;
-    height: 65%;
-  }
-}
-@media screen and (min-width: 1440px) {
-  main section .device .phone {
-    right: 17.5%;
-  }
-}
-main section .device .phone img {
-  width: 100%;
-  height: 100%;
-}
-main section .device .phone .phone__body {
+main section .device .phone__wrap {
+  display: inline-block;
   position: relative;
+  height: clamp(150px, 30vw, 350px);
+}
+main section .device .phone__body {
   width: 100%;
   height: 100%;
 }
-main section .device .phone .phone__screen {
+main section .device .phone__inner {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 88%;
-  height: 94%;
-  /* padding: 4%; */
   transform: translate(-50%, -50%);
-}
-main section .device .phone .phone__screen img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
+  width: 88%;
+  height: 95%;
+  background: white;
   border-radius: 2vmin;
-  -o-object-position: top;
-     object-position: top;
+}
+main section .device .inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
   overflow: hidden;
-  cursor: pointer;
 }
-main section .device .phone .phone__screen img.scroll {
-  -webkit-animation: autoScroll 15s ease-out 2s;
-          animation: autoScroll 15s ease-out 2s;
-  -webkit-animation-delay: 17s;
-          animation-delay: 17s;
-}
-main section .device .phone .phone__notch {
+main section .device .inner__notch {
   position: absolute;
   left: 0;
-  top: 2%;
-  height: 4%;
+  top: -1px;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+main section .device .inner__content {
+  width: 100%;
+  -o-object-position: top;
+     object-position: top;
 }
 main section .desk {
   position: relative;
