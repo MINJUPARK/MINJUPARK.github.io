@@ -91,7 +91,7 @@ main {
     section.landing {
         position: relative;
         // // height: 100vh;
-        // height: clamp(45vh, 10vh, 75vh);
+        height: clamp(50vh, 50%, 100vh);
 
         // @include responsive(tablet-screens) {
         //     position: static;

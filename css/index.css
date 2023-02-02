@@ -576,6 +576,7 @@ main .help {
 }
 main section.landing {
   position: relative;
+  height: clamp(50vh, 50%, 100vh);
 }
 main section.landing .landing__wrap {
   height: 50vh;
