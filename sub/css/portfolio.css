@@ -847,32 +847,25 @@ main section .device .monitor {
   margin-bottom: -20px;
 }
 main section .device .monitor .monitor__bezel {
-  max-width: 548px;
+  position: relative;
+  max-width: 768px;
   max-height: 432px;
   width: 80%;
-  padding: 2%;
   margin: 0 auto;
   aspect-ratio: 16/9;
   border-radius: 10px;
-  background: #000;
   overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-  main section .device .monitor .monitor__bezel {
-    padding: 0.8%;
-  }
-}
-@media screen and (min-width: 1440px) {
-  main section .device .monitor .monitor__bezel {
-    max-width: 768px;
-    padding: 1%;
-  }
 }
 main section .device .monitor .monitor__bezel .monitor__screen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  padding: 2%;
   overflow: hidden;
-  background: white;
+  background: #000;
 }
 main section .device .monitor .monitor__bezel .monitor__screen a {
   width: 100%;
@@ -892,12 +885,7 @@ main section .device .monitor .monitor__bezel .monitor__screen img.scroll {
           animation: autoScroll 15s ease-out 2s;
 }
 main section .device .monitor .monitor__stand {
-  height: 55px;
-}
-@media screen and (min-width: 768px) {
-  main section .device .monitor .monitor__stand {
-    height: 85px;
-  }
+  height: clamp(35px, 10vw, 65px);
 }
 main section .device .phone {
   position: absolute;
@@ -907,7 +895,7 @@ main section .device .phone {
 main section .device .phone__wrap {
   display: inline-block;
   position: relative;
-  height: clamp(150px, 30vw, 350px);
+  width: clamp(50px, 15vw, 150px);
 }
 main section .device .phone__body {
   width: 100%;
@@ -916,12 +904,12 @@ main section .device .phone__body {
 main section .device .phone__inner {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 49%;
   transform: translate(-50%, -50%);
   width: 88%;
-  height: 95%;
+  height: 92%;
   background: white;
-  border-radius: 2vmin;
+  border-radius: 1.5vmin;
 }
 main section .device .inner {
   position: relative;
@@ -941,12 +929,16 @@ main section .device .inner__notch {
 }
 main section .device .inner__content {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: top;
      object-position: top;
 }
 main section .desk {
   position: relative;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   -moz-column-gap: 40px;
        column-gap: 40px;
