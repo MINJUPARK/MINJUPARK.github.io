@@ -847,10 +847,10 @@ main section .device .monitor {
   margin-bottom: -20px;
 }
 main section .device .monitor .monitor__bezel {
-  max-width: 768px;
+  max-width: 548px;
   max-height: 432px;
-  width: 90%;
-  padding: 2.5%;
+  width: 80%;
+  padding: 2%;
   margin: 0 auto;
   aspect-ratio: 16/9;
   border-radius: 10px;
@@ -859,11 +859,12 @@ main section .device .monitor .monitor__bezel {
 }
 @media screen and (min-width: 768px) {
   main section .device .monitor .monitor__bezel {
-    padding: 1.25%;
+    padding: 0.8%;
   }
 }
 @media screen and (min-width: 1440px) {
   main section .device .monitor .monitor__bezel {
+    max-width: 768px;
     padding: 1%;
   }
 }
@@ -979,16 +980,13 @@ main section .desk {
 }
 @media screen and (min-width: 1104px) {
   main section .desk {
-    padding: 45px 85px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  main section .desk {
     width: 80%;
+    padding: 45px 85px;
   }
 }
 main section .desk .desk__info {
   width: 100%;
+  height: 100%;
   padding: 20px 0 30px;
 }
 @media screen and (min-width: 768px) {

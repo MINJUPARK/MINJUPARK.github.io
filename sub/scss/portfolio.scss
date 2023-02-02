@@ -251,18 +251,18 @@ main {
                 margin-bottom: -20px;
     
                 .monitor__bezel {
-                    max-width: 768px;
+                    max-width: 548px;
                     max-height: 432px;
-                    width: 90%;
-                    padding: 2.5%;
+                    width: 80%;
+                    padding: 2%;
                     margin: 0 auto;
                     aspect-ratio: 16 / 9;
                     border-radius: 10px;
                     background: #000;
                     overflow: hidden;
 
-                    @include responsive(tablet-screens) { padding: 1.25%; }
-                    @include responsive(pc-screens) { padding: 1%; }
+                    @include responsive(tablet-screens) { padding: 0.8%; }
+                    @include responsive(pc-screens)     { max-width: 768px; padding: 1%; }
     
                     .monitor__screen {
                         width:100%;
@@ -407,15 +407,13 @@ main {
             }
             
             @include responsive(tp-screens) {
-                padding: 45px 85px;
-            }
-
-            @include responsive(pc-screens) {
                 width: 80%;
+                padding: 45px 85px;
             }
 
             .desk__info {
                 width: 100%;
+                height: 100%;
                 padding: 20px 0 30px;
                 
                 @include responsive(tablet-screens) {
