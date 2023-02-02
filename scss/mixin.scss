@@ -159,7 +159,7 @@
 
 // [공통] 배경 패턴
 @mixin gridBackground() {
-    background-image: linear-gradient($pattern 1px, transparent 1px),linear-gradient(to right, $pattern 1px, transparent 1px);
+    background-image: linear-gradient($pattern 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, $pattern 1px, rgba(255, 255, 255, 0) 1px);
     background-size: 30px 30px;
     background-blend-mode: overlay;
 }
@@ -400,7 +400,7 @@
 // [index] 스티치 효과 제목
 @mixin stitchTitle() {
     text-align: center;
-    outline: 1px dashed rgba(255, 255, 255, 0.5);
+    // outline: 1px dashed rgba(255, 255, 255, 0.5);
     background: linear-gradient(0deg, rgba(237,103,148,1) 30%, rgba(248,124,165,1) 100%);
 }
 

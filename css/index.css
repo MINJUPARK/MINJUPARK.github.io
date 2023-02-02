@@ -73,7 +73,7 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px);
   background-size: 30px 30px;
   background-blend-mode: overlay;
   background-color: #fa9aba;
@@ -94,6 +94,9 @@ body > div > a {
 
 header {
   position: relative;
+}
+header h1 {
+  display: none;
 }
 
 section > h2,
@@ -574,28 +577,17 @@ main .help {
 main section.landing {
   position: relative;
 }
-@media screen and (min-width: 1104px) {
-  main section.landing {
-    position: static;
-    height: calc(100vh - 100px);
-  }
-}
 main section.landing .landing__wrap {
-  height: 70vh;
+  height: 50vh;
+}
+@media screen and (min-width: 544px) {
+  main section.landing .landing__wrap {
+    height: 70vh;
+  }
 }
 @media screen and (min-width: 768px) {
   main section.landing .landing__wrap {
-    height: 80vh;
-  }
-}
-@media screen and (min-width: 1104px) {
-  main section.landing .landing__wrap {
-    height: 65vh;
-  }
-}
-@media screen and (min-width: 1440px) {
-  main section.landing .landing__wrap {
-    height: 55vh;
+    height: 100vh;
   }
 }
 main section.landing .landing__header {
@@ -649,7 +641,7 @@ main section.landing .landing__header .title {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  top: 35%;
+  top: 40%;
   width: 100%;
   max-width: 760px;
   max-height: 420px;
@@ -660,28 +652,27 @@ main section.landing .landing__header .title {
     width: 80%;
   }
 }
-@media screen and (min-width: 1104px) {
-  main section.landing .landing__header .title {
-    top: 50%;
-  }
-}
 main section.landing .landing__header .title .title__text {
   position: relative;
   font-family: "DynaPuff-bold";
+  text-align: center;
+  background: linear-gradient(0deg, rgb(237, 103, 148) 30%, rgb(248, 124, 165) 100%);
   font-size: clamp(60px, 12vw, 120px);
   border-radius: 50%;
-  text-align: center;
-  outline: 1px dashed rgba(255, 255, 255, 0.5);
-  background: linear-gradient(0deg, rgb(237, 103, 148) 30%, rgb(248, 124, 165) 100%);
-  outline-offset: -15px;
   aspect-ratio: 2/1;
   box-shadow: 0px 0px 20px rgba(237, 103, 148, 0.5);
 }
-@media screen and (min-width: 768px) {
-  main section.landing .landing__header .title .title__text {
-    outline-width: 2px;
-    outline-offset: -20px;
-  }
+main section.landing .landing__header .title .title__text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 94%;
+  height: 90%;
+  border: 0.15vw dashed rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
 }
 main section.landing .landing__header .title .title__text div {
   position: absolute;
@@ -1525,6 +1516,7 @@ main section.license .license__content .license__folder .folder__group .folder .
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   background: #fff;
+  will-change: transform;
   box-shadow: inset 0px 0px 30px #5390f6;
 }
 main section.license .license__content .license__folder .folder__group .folder .folder__file.design, main section.license .license__content .license__folder .folder__group .folder .folder__file.signal {
@@ -1998,6 +1990,7 @@ main section.skill .skill__wrap .skill__main .main__design .design__bubble {
 }
 main section.skill .skill__wrap .skill__main .main__design .design__bubble p {
   display: inline-block;
+  position: relative;
   padding: 15px 30px;
   border-radius: 50px;
   background: #fff;
@@ -2339,7 +2332,6 @@ main section.skill .skill__sub .skill__sub__title {
   border-radius: 50px;
   box-shadow: 0px 7px 15px rgba(237, 103, 148, 0.5);
   text-align: center;
-  outline: 1px dashed rgba(255, 255, 255, 0.5);
   background: linear-gradient(0deg, rgb(237, 103, 148) 30%, rgb(248, 124, 165) 100%);
 }
 main section.skill .skill__sub .skill__sub__box {
@@ -2479,4 +2471,4 @@ footer .footer__wrap .footer__copy {
   footer .footer__wrap .footer__copy {
     text-align: center;
   }
-}/*# sourceMappingURL=index.css.map */
+}

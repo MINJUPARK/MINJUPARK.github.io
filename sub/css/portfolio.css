@@ -73,7 +73,7 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px);
   background-size: 30px 30px;
   background-blend-mode: overlay;
   background-color: #fa9aba;
@@ -94,6 +94,9 @@ body > div > a {
 
 header {
   position: relative;
+}
+header h1 {
+  display: none;
 }
 
 section > h2,
@@ -476,7 +479,7 @@ header .help .help__comment {
 }
 
 main section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px);
   background-size: 30px 30px;
   background-blend-mode: overlay;
   /*** design ***/
@@ -890,7 +893,7 @@ main section .device .phone {
   position: absolute;
   right: 10%;
   bottom: 0;
-  height: 55%;
+  height: 60%;
 }
 @media screen and (min-width: 768px) {
   main section .device .phone {
@@ -909,44 +912,31 @@ main section .device .phone img {
 }
 main section .device .phone .phone__body {
   position: relative;
-}
-main section .device .phone .phone__screen--wrap {
-  position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
+}
+main section .device .phone .phone__screen {
+  position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  width: 88%;
+  height: 94%;
+  /* padding: 4%; */
+  transform: translate(-50%, -50%);
 }
-main section .device .phone .phone__screen--wrap .phone__screen {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  padding: 6%;
-}
-main section .device .phone .phone__screen--wrap .phone__screen div {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-  main section .device .phone .phone__screen--wrap .phone__screen div {
-    border-radius: 20px;
-  }
-}
-main section .device .phone .phone__screen--wrap .phone__screen div img {
+main section .device .phone .phone__screen img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  border-radius: 2vmin;
   -o-object-position: top;
      object-position: top;
+  overflow: hidden;
   cursor: pointer;
 }
-main section .device .phone .phone__screen--wrap .phone__screen div img.scroll {
+main section .device .phone .phone__screen img.scroll {
   -webkit-animation: autoScroll 15s ease-out 2s;
           animation: autoScroll 15s ease-out 2s;
   -webkit-animation-delay: 17s;
@@ -1083,7 +1073,7 @@ main section .desk .desk__table {
   margin-bottom: 65px;
   border-radius: 10px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1104px) {
   main section .desk .desk__table {
     width: 80%;
     padding: 30px;
@@ -1275,4 +1265,4 @@ main section .artwork .artwork__item .artwork__item__text p {
   main section .logo3d .logo3d__item:last-child {
     width: 40%;
   }
-}/*# sourceMappingURL=portfolio.css.map */
+}

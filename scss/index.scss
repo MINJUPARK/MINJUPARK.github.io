@@ -90,32 +90,33 @@ main {
 
     section.landing {
         position: relative;
-        // height: 100vh;
+        // // height: 100vh;
+        // height: clamp(45vh, 10vh, 75vh);
 
         // @include responsive(tablet-screens) {
         //     position: static;
         //     height: calc(100vh - 100px);
         // }
 
-        @include responsive(tp-screens) {
-            position: static;
-            height: calc(100vh - 100px);
-        }
+        // @include responsive(tp-screens) {
+        //     position: static;
+        //     height: calc(100vh - 100px);
+        // }
 
         .landing__wrap {
-            height: 70vh;
+            height: 50vh;
 
-            @include responsive(tablet-screens) {
-                height: 80vh;
+            @include responsive(mt-screens) {
+                height: 70vh;
             }
             
-            @include responsive(tp-screens) {
-                height: 65vh;
+            @include responsive(tablet-screens) {
+                height: 100vh;
             }
 
-            @include responsive(pc-screens) {
-                height: 55vh;
-            }
+            // @include responsive(pc-screens) {
+            //     height: 55vh;
+            // }
         }
 
         .landing__header {
@@ -175,7 +176,7 @@ main {
     
             .title {
                 @include element_center();
-                top: 35%;
+                top: 40%;
                 width: 100%;
                 max-width: 760px;
                 max-height: 420px;
@@ -185,17 +186,19 @@ main {
                     width: 80%;
                 }
 
-                @include responsive(tp-screens) {
-                    top: 50%;
-                }
+                // @include responsive(tp-screens) {
+                //     top: 35%;
+                // }
                 
                 .title__text {
                     position: relative;
                     @include dynaPuff_font(bold);
+                    @include stitchTitle();
                     font-size: clamp(60px, 12vw, 120px);
                     border-radius: 50%;
-                    @include stitchTitle();
-                    outline-offset: -15px;
+                    // -webkit-border-radius: 50%;
+                    // -moz-border-radius: 50%;
+                    // outline-offset: -15px;
                     aspect-ratio: 2/1;
                     @include boxShadow(20px, $deepPink_rgba);
     
@@ -219,10 +222,19 @@ main {
                     @include responsive(tablet-screens) {
                         // left: 50%;
                         // transform: translateX(-50%);
-                        outline-width: 2px;
-                        outline-offset: -20px;
+                        // outline-width: 2px;
+                        // outline-offset: -20px;
                     }
-    
+                    
+                    &::before {
+                        content: '';
+                        display: block;
+                        @include element_center();
+                        width: 94%;
+                        height: 90%;
+                        border: 0.15vw dashed rgba(255, 255, 255, 0.5);
+                        border-radius: 50%;
+                    }
                     div {
                         @include element_center();
                         line-height: 0.95em;
@@ -1009,6 +1021,7 @@ main {
                             border-bottom-left-radius: 30px;
                             border-bottom-right-radius: 30px;
                             background: #fff;
+                            will-change: transform;
                             @include boxShadowInset(30px, $deepBlue);
                             
                             &.design, &.signal { height: 160px; }
@@ -1391,6 +1404,7 @@ main {
 
                         p {
                             display: inline-block;
+                            position: relative;
                             // width: 100%;
                             padding: 15px 30px;
                             border-radius: 50px;

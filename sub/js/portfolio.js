@@ -63,7 +63,6 @@ function prepareImg() {
     }
 }
 
-
 function originalImg() {
     const img = document.querySelectorAll('.origin');
     const currentURL = window.location.href;

@@ -301,7 +301,11 @@ main {
                 position: absolute;
                 right: 10%;
                 bottom: 0;
-                height: 55%;
+                // width: 20%;
+                height: 60%;
+                // background: url('../image/phone_body.svg') no-repeat;
+                // background-size: contain;
+                    // background-position: center;
                 
                 @include responsive(tablet-screens) {
                     right: 15%;
@@ -311,55 +315,69 @@ main {
                 @include responsive(pc-screens) {
                     right: 17.5%;
                 }
-
+                
                 img {
                     width: 100%;
                     height: 100%;
                 }
-
+                
                 .phone__body {
                     position: relative;
-                }
-                
-                .phone__screen--wrap {
-                    position: absolute;
                     width: 100%;
                     height: 100%;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
+                    // width: 155px;
+                    // height: 335px;
+                    // height: 100%;
                     
-                    .phone__screen {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: 100%;
-                        padding: 6%;
+                }
 
-                        div {
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 10px;
-                            overflow: hidden;
-
-                            @include responsive(tablet-screens) {
-                                border-radius: 20px;
-                            }
-
+                .phone__screen {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 88%;
+                    height: 94%;
+                    /* padding: 4%; */
+                    // border-radius: 10px;
+                    // overflow: hidden;
+                    transform: translate(-50%, -50%);
+                    
+                    // div {
+                        //     width: 100%;
+                        //     height: 100%;
+                        //     border-radius: 10px;
+                        //     overflow: hidden;
+                        
+                        //     @include responsive(tablet-screens) {
+                            //         border-radius: 20px;
+                            //     }
+                            
+                            
+                            // }
                             img {
                                 @include imageCover();
+                                width:100%;
+                                border-radius: 2vmin;
                                 object-position: top;
+                                overflow: hidden;
                                 cursor: pointer;
-
-                                &.scroll {
-                                    animation: autoScroll 15s ease-out 2s;
-                                    animation-delay: 17s;
-                                }
-                            }
+                                
+                        &.scroll {
+                            animation: autoScroll 15s ease-out 2s;
+                            animation-delay: 17s;
                         }
                     }
                 }
+                // .phone__screen--wrap {
+                //     position: absolute;
+                //     width: 100%;
+                //     height: 100%;
+                //     top: 0;
+                //     // left: 50%;
+                //     // transform: translateX(-50%);
+                    
+                   
+                // }
 
                 .phone__notch {
                     position: absolute;
@@ -497,7 +515,7 @@ main {
                 // box-shadow: inset 0px 10px 20px $pink_rgba;
 
 
-                @include responsive(tablet-screens) {
+                @include responsive(tp-screens) {
                     width: 80%;
                     padding: 30px;
                     margin-bottom: 0;

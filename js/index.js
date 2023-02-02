@@ -1,15 +1,17 @@
 $(function($) {
 
     $(window).on('load scroll', function() {
-        $('.career__bottom').height($('.monitor__table').outerHeight(true));
-        $('.design__circle__wrap').height($('.design__circle').height());
-        $('section.license').css('margin-top', $('.walked.training').height());
-        $('.skill__comment').css('top', $('.main__design').outerHeight(true));
+        // let cloudLine = $('.landing__footer__cloud.back').height();
+        // $('.landing__wrap').css('height', `calc(50vh - ${cloudLine}px)`);
+        // $('.career__bottom').height($('.monitor__table').outerHeight(true));
+        // $('.design__circle__wrap').height($('.design__circle').height());
+        // $('section.license').css('margin-top', $('.walked.training').height());
+        // $('.skill__comment').css('top', $('.main__design').outerHeight(true));
         
         // $('.skill__main').css('height', $('.skill__main').height() - 50);
-        if($(this).width() > 1024) {
-            $('.skill__comment').css('top', 'unset');
-        }
+        // if($(this).width() > 1024) {
+        //     $('.skill__comment').css('top', 'unset');
+        // }
 
     });
 

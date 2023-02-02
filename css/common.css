@@ -73,7 +73,7 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px);
   background-size: 30px 30px;
   background-blend-mode: overlay;
   background-color: #fa9aba;
@@ -94,6 +94,9 @@ body > div > a {
 
 header {
   position: relative;
+}
+header h1 {
+  display: none;
 }
 
 section > h2,
@@ -139,4 +142,4 @@ h5 {
 
 h6 {
   font-size: 18px;
-}/*# sourceMappingURL=common.css.map */
+}
