@@ -416,7 +416,7 @@
     box-shadow: 3px 4px 0px #000;
 
     @media (min-width: 375px) {
-       width: 45%;
+        width: 45%;
     }
 }
 
@@ -511,6 +511,51 @@
             box-shadow: inset 0px 10px 20px $color_rgba;
     
             .head { color: $deepColor; }
+        }
+    }
+}
+
+// [portfolio] 모바일용 아이폰 (.phone 내 선언)
+@mixin devicePhone() {
+
+    .phone__wrap {
+        display: inline-block;
+        position: relative;
+        // width: clamp(50px, 15vw, 150px);
+
+        .phone__body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .phone__inner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 88%;
+            height: 94%;
+            border-radius: 1.5vmin;
+
+            .inner {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                border-radius: inherit;
+                overflow: hidden;
+
+                .inner__notch {
+                    @include element_center_X();
+                    top: -1px;
+                    width: 50%;
+                    z-index: 1;
+                }
+        
+                .inner__content {
+                    @include imageCover();
+                    object-position: top;
+                }
+            }
         }
     }
 }

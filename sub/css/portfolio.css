@@ -889,51 +889,51 @@ main section .device .monitor .monitor__stand {
 }
 main section .device .phone {
   position: absolute;
-  bottom: 0;
   right: clamp(15%, 30vw, 20%);
+  bottom: 0;
 }
-main section .device .phone__wrap {
+main section .device .phone .phone__wrap {
   display: inline-block;
   position: relative;
-  width: clamp(50px, 15vw, 150px);
 }
-main section .device .phone__body {
+main section .device .phone .phone__wrap .phone__body {
   width: 100%;
   height: 100%;
 }
-main section .device .phone__inner {
+main section .device .phone .phone__wrap .phone__inner {
   position: absolute;
   left: 50%;
-  top: 49%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 88%;
-  height: 92%;
-  background: white;
+  height: 94%;
   border-radius: 1.5vmin;
 }
-main section .device .inner {
+main section .device .phone .phone__wrap .phone__inner .inner {
   position: relative;
   height: 100%;
   width: 100%;
   border-radius: inherit;
   overflow: hidden;
 }
-main section .device .inner__notch {
+main section .device .phone .phone__wrap .phone__inner .inner .inner__notch {
   position: absolute;
-  left: 0;
-  top: -1px;
-  width: 50%;
   left: 50%;
   transform: translateX(-50%);
+  top: -1px;
+  width: 50%;
   z-index: 1;
 }
-main section .device .inner__content {
+main section .device .phone .phone__wrap .phone__inner .inner .inner__content {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+main section .device .phone .phone__wrap {
+  width: clamp(50px, 15vw, 150px);
 }
 main section .desk {
   position: relative;
@@ -964,7 +964,7 @@ main section .desk {
 main section .desk .desk__info {
   width: 100%;
   height: 100%;
-  padding: 20px 0 30px;
+  padding: 2vw 0 6vw;
 }
 @media screen and (min-width: 768px) {
   main section .desk .desk__info {
@@ -1087,6 +1087,102 @@ main section .desk .desk__table .head {
   padding-right: 15px;
   font-family: "PretendardJP-medium";
   white-space: nowrap;
+}
+main section #slide1-8 .trainer {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  -moz-column-gap: 2vmin;
+       column-gap: 2vmin;
+  margin-bottom: -15px;
+  z-index: 1;
+}
+main section #slide1-8 .trainer .phone {
+  position: unset;
+}
+main section #slide1-8 .trainer .phone .phone__wrap {
+  display: inline-block;
+  position: relative;
+}
+main section #slide1-8 .trainer .phone .phone__wrap .phone__body {
+  width: 100%;
+  height: 100%;
+}
+main section #slide1-8 .trainer .phone .phone__wrap .phone__inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 88%;
+  height: 94%;
+  border-radius: 1.5vmin;
+}
+main section #slide1-8 .trainer .phone .phone__wrap .phone__inner .inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+main section #slide1-8 .trainer .phone .phone__wrap .phone__inner .inner .inner__notch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1px;
+  width: 50%;
+  z-index: 1;
+}
+main section #slide1-8 .trainer .phone .phone__wrap .phone__inner .inner .inner__content {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+main section #slide1-8 .trainer .phone .phone__wrap .phone__inner .inner .inner__notch.horizontal {
+  top: 50%;
+  right: 0;
+  left: unset;
+  transform: translateY(-50%);
+  width: 5%;
+}
+main section #slide1-8 .trainer .phone.app .phone__wrap {
+  width: clamp(70px, 20vw, 200px);
+}
+main section #slide1-8 .trainer .phone.vr .phone__wrap {
+  width: clamp(140px, 20vw, 480px);
+}
+main section #slide1-8 .trainer .watch {
+  width: clamp(50px, 20vw, 150px);
+}
+main section #slide1-8 .trainer .watch .watch__wrap {
+  position: relative;
+}
+main section #slide1-8 .trainer .watch .watch__wrap .watch__body {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section #slide1-8 .trainer .watch .watch__wrap .watch__inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  top: 49%;
+  left: 48%;
+  width: 75%;
+  height: clamp(40px, 50%, 220px);
+  border-radius: 1.5vmin;
+  background: white;
+}
+main section #slide1-8 .trainer .watch .watch__wrap .watch__inner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main section .mini-category {
   display: flex;
