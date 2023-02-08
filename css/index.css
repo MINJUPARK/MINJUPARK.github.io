@@ -62,6 +62,16 @@
   font-family: "PretendardJP-Black";
   src: local("PretendardJP-Black"), url("/font/PretendardJP-Black.woff2") format("woff2"), url("/font/PretendardJP-Black.woff") format("woff"), url("/font/PretendardJP-Black.ttf") format("truetype");
 }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
 .container {
   position: relative;
   width: 100%;
@@ -475,16 +485,6 @@ header .menu-container #overlay .overlay__menu ul li .bubble:before {
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
   transform: rotate(180deg);
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    left: 20%;
-  }
-  100% {
-    opacity: 1;
-    left: 0;
-  }
 }
 
 main .help {
