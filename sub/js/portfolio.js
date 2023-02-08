@@ -1,9 +1,9 @@
 $(function() {
 
-    const menuContainer = ["rgba(237, 103, 148, 0.5)", "rgba(83, 144, 246, 0.5)", "rgba(168, 103, 247, 0.5)"];
-    const overlayMenuA = ["4px 4px 0px #ed6794", "4px 4px 0px #5390f6", "4px 4px 0px #a867f7"];
-    const bubble_color = ["#ed6794", "#5390f6", "#a867f7"];
-    const bubble_shadow = ["0px 3px 0px 4px #ed6794", "0px 3px 0px 4px #5390f6", "0px 3px 0px 4px #a867f7"];
+    const menuContainer = ['rgba(237, 103, 148, 0.5)', 'rgba(83, 144, 246, 0.5)', 'rgba(168, 103, 247, 0.5)'];
+    const overlayMenuA = ['4px 4px 0px #ed6794', '4px 4px 0px #5390f6', '4px 4px 0px #a867f7'];
+    const bubble_color = ['#ed6794', '#5390f6', '#a867f7'];
+    const bubble_shadow = ['0px 3px 0px 4px #ed6794', '0px 3px 0px 4px #5390f6', '0px 3px 0px 4px #a867f7'];
 
     $('#fullpage').fullpage({
         dragAndMove: true,
@@ -13,35 +13,71 @@ $(function() {
         sectionsColor: ['#fa9aba', '#9abefa', '#c59afa'],
         slidesNavigation: true,
         controlArrows: false,
-        scrollOverflow:true,
+        // scrollOverflow:true,
         loopTop: true,
         loopBottom: true,
         scrollingSpeed: 1000,
+        // normalScrollElements: '.modal',
 
         onLeave: function(anchorLink, index) {
-            $(".menu-container").css("background-color", menuContainer[index-1]);
-            $(".overlay__menu a").css("text-shadow", overlayMenuA[index-1]);
-            $(".bubble").css({"color" : bubble_color[index-1], "box-shadow" : bubble_shadow[index-1]});
+            $('.menu-container').css('background-color', menuContainer[index-1]);
+            $('.overlay__menu a').css('text-shadow', overlayMenuA[index-1]);
+            $('.bubble').css({'color' : bubble_color[index-1], 'box-shadow' : bubble_shadow[index-1]});
         },
 
         afterSlideLoad: function(section, origin, destination, direction, trigger) {
-            $(`.monitor__screen img, .phone__screen img`).removeClass('scroll');
+            $('.monitor__screen img, .phone__screen img').removeClass('scroll');
 
             if(!destination || destination == 0) {
-                $(".help__comment").fadeOut(function() {
+                $('.help__comment').fadeOut(function() {
                     $(this).text("카테고리 변경은 상/하, 작업물 상세는 좌/우로 이동하여 확인할 수 있습니다. (휠, 드래그, 방향키 지원)").fadeIn(300);
                 });
             } else {
                 if(section == 'web') {
-                    $(`.slide.fp-slide.fp-table.active .monitor__screen img, .slide.fp-slide.fp-table.active .phone__screen img`).addClass('scroll');
+                    $('.slide.fp-slide.fp-table.active .monitor__screen img, .slide.fp-slide.fp-table.active .phone__screen img').addClass('scroll');
                 }
                 if(section == 'design') {
-                    $(".help__comment").text("이미지 클릭 시 상세 보기로 이동합니다.").fadeIn(300);
+                    $('.help__comment').text("이미지 클릭 시 상세 보기로 이동합니다.").fadeIn(300);
                 } else {
-                    $(".help__comment").text("모니터나 스마트폰 화면 클릭 시 상세 페이지로 이동합니다.").fadeIn(300);
+                    $('.help__comment').text("모니터나 스마트폰 화면 클릭 시 상세 페이지로 이동합니다.").fadeIn(300);
                 }
             }
         }
+    });
+
+    $(".modal__link").on("click", function (e) {
+        e.preventDefault();
+        $.fn.fullpage.setMouseWheelScrolling(false);
+        $.fn.fullpage.setAllowScrolling(false);
+        $.fn.fullpage.setKeyboardScrolling(false);
+        
+        let src = $(this).attr('href');
+        let title = $(this).data('title');
+        $('header, .fp-slidesNav.bottom, #fp-nav').css('z-index', '-1');
+        $('.modal').css('bottom', '0');
+        $('.modal').addClass('show');
+        $('embed').attr('src', `${src}#view=fitH`);
+
+        if(title) {
+            $('.modal__header').prepend(`<h3>${title}</h3>`);
+        }
+        
+        if($(this).hasClass('guide')) {
+            $('.modal__header').addClass('guide');
+        }
+    });
+
+    $('.modal__close').on('click', function() {
+        $.fn.fullpage.setMouseWheelScrolling(true);
+        $.fn.fullpage.setAllowScrolling(true);
+        $.fn.fullpage.setKeyboardScrolling(true);
+
+        $('header').css('z-index', '99');
+        $('.fp-slidesNav.bottom, #fp-nav').css('z-index', '1');
+        $('.modal').css('bottom', '-300%');
+        $('.modal').removeClass('show');
+        $('.modal__header').removeClass("guide");
+        $('.modal__header h3').remove();
     });
 });
 
@@ -73,8 +109,7 @@ function originalImg() {
         img[p].onclick = function() {
             if(this.dataset.url) {
                 setURL = currentURL.substring(0, currentURL.indexOf('portfolio')) + this.dataset.url;
-            }
-            else {
+            } else {
                 setURL = this.src;
             }
             window.open(setURL);

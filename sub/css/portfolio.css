@@ -62,6 +62,16 @@
   font-family: "PretendardJP-Black";
   src: local("PretendardJP-Black"), url("/font/PretendardJP-Black.woff2") format("woff2"), url("/font/PretendardJP-Black.woff") format("woff"), url("/font/PretendardJP-Black.ttf") format("truetype");
 }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
 .container {
   position: relative;
   width: 100%;
@@ -154,32 +164,6 @@ h6 {
   font-size: 18px;
 }
 
-@-webkit-keyframes textDrop {
-  0% {
-    transform: translateY(-200px) scaleY(0.9);
-    opacity: 0;
-  }
-  5% {
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(0px) scaleY(1);
-    opacity: 1;
-  }
-  65% {
-    transform: translateY(-10px) scaleY(0.9);
-    opacity: 1;
-  }
-  75% {
-    transform: translateY(-20px) scaleY(0.9);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0px) scaleY(1);
-    opacity: 1;
-  }
-}
-
 @keyframes textDrop {
   0% {
     transform: translateY(-200px) scaleY(0.9);
@@ -203,14 +187,6 @@ h6 {
   100% {
     transform: translateY(0px) scaleY(1);
     opacity: 1;
-  }
-}
-@-webkit-keyframes autoScroll {
-  50% {
-    object-position: 100% 100%;
-  }
-  100% {
-    object-position: 0 0;
   }
 }
 @keyframes autoScroll {
@@ -386,24 +362,19 @@ header .menu-container #overlay .overlay__menu ul li:last-child {
   margin-bottom: 0;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight {
-  -webkit-animation: fadeInRight 0.5s ease forwards;
-          animation: fadeInRight 0.5s ease forwards;
+  animation: fadeInRight 0.5s ease forwards;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(1) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(2) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(3) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(4) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 header .menu-container #overlay .overlay__menu ul li a {
   position: relative;
@@ -450,26 +421,6 @@ header .menu-container #overlay .overlay__menu ul li .bubble:before {
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
   transform: rotate(180deg);
-}
-@-webkit-keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    left: 20%;
-  }
-  100% {
-    opacity: 1;
-    left: 0;
-  }
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    left: 20%;
-  }
-  100% {
-    opacity: 1;
-    left: 0;
-  }
 }
 header #pcNav {
   justify-content: space-between;
@@ -648,43 +599,35 @@ main section .title .title__subject {
 }
 main section .title .title__subject .web, main section .title .title__subject .s1 {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.1s;
-          animation: textDrop 0.4s linear forwards 0.1s;
+  animation: textDrop 0.4s linear forwards 0.1s;
 }
 main section .title .title__subject .n, main section .title .title__subject .s3 {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.3s;
-          animation: textDrop 0.4s linear forwards 0.3s;
+  animation: textDrop 0.4s linear forwards 0.3s;
 }
 main section .title .title__subject .mobile {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.5s;
-          animation: textDrop 0.4s linear forwards 0.5s;
+  animation: textDrop 0.4s linear forwards 0.5s;
 }
 main section .title .title__subject .s2 {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.2s;
-          animation: textDrop 0.4s linear forwards 0.2s;
+  animation: textDrop 0.4s linear forwards 0.2s;
 }
 main section .title .title__subject .s4 {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.4s;
-          animation: textDrop 0.4s linear forwards 0.4s;
+  animation: textDrop 0.4s linear forwards 0.4s;
 }
 main section .title .title__subject .s5 {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.5s;
-          animation: textDrop 0.4s linear forwards 0.5s;
+  animation: textDrop 0.4s linear forwards 0.5s;
 }
 main section .title .title__subject .s6 {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.6s;
-          animation: textDrop 0.4s linear forwards 0.6s;
+  animation: textDrop 0.4s linear forwards 0.6s;
 }
 main section .title .title__subject .s7 {
   opacity: 0;
-  -webkit-animation: textDrop 0.4s linear forwards 0.7s;
-          animation: textDrop 0.4s linear forwards 0.7s;
+  animation: textDrop 0.4s linear forwards 0.7s;
 }
 @media screen and (min-width: 768px) {
   main section .title .title__subject {
@@ -881,8 +824,7 @@ main section .device .monitor .monitor__bezel .monitor__screen img {
   cursor: pointer;
 }
 main section .device .monitor .monitor__bezel .monitor__screen img.scroll {
-  -webkit-animation: autoScroll 15s ease-out 2s;
-          animation: autoScroll 15s ease-out 2s;
+  animation: autoScroll 15s ease-out 2s;
 }
 main section .device .monitor .monitor__stand {
   height: clamp(35px, 10vw, 65px);
@@ -903,7 +845,7 @@ main section .device .phone .phone__wrap .phone__body {
 main section .device .phone .phone__wrap .phone__inner {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 49%;
   transform: translate(-50%, -50%);
   width: 88%;
   height: 94%;
@@ -931,6 +873,9 @@ main section .device .phone .phone__wrap .phone__inner .inner .inner__content {
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+main section .device .phone .phone__wrap .phone__inner .inner .inner__content.scroll {
+  animation: autoScroll 15s ease-out 17s;
 }
 main section .device .phone .phone__wrap {
   width: clamp(50px, 15vw, 150px);
@@ -1112,7 +1057,7 @@ main section #slide1-8 .trainer .phone .phone__wrap .phone__body {
 main section #slide1-8 .trainer .phone .phone__wrap .phone__inner {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 49%;
   transform: translate(-50%, -50%);
   width: 88%;
   height: 94%;
@@ -1140,6 +1085,9 @@ main section #slide1-8 .trainer .phone .phone__wrap .phone__inner .inner .inner_
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+main section #slide1-8 .trainer .phone .phone__wrap .phone__inner .inner .inner__content.scroll {
+  animation: autoScroll 15s ease-out 17s;
 }
 main section #slide1-8 .trainer .phone .phone__wrap .phone__inner .inner .inner__notch.horizontal {
   top: 50%;
@@ -1346,4 +1294,85 @@ main section .artwork .artwork__item .artwork__item__text p {
   main section .logo3d .logo3d__item:last-child {
     width: 40%;
   }
+}
+main .modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: -300%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 27, 28, 0.7);
+  transition: 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transform: translateY(100%);
+  opacity: 0;
+  touch-action: none;
+  z-index: 1000000000;
+}
+main .modal.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+main .modal .modal__header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+main .modal .modal__header h3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: calc(1em + 0.1vw);
+  line-height: 2em;
+  text-align: inherit;
+  color: #fff;
+  font-family: "PretendardJP-light";
+}
+main .modal .modal__header.guide {
+  position: fixed;
+  top: 0;
+  right: 16px;
+  z-index: 1;
+}
+main .modal .modal__header.guide .close__icon {
+  stroke: #000 !important;
+}
+main .modal .modal__header .modal__close {
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  border: 0;
+}
+main .modal .modal__header .modal__close .close__icon {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: inherit;
+  height: inherit;
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.3s;
+  opacity: 0.7;
+  cursor: pointer;
+}
+main .modal .modal__header .modal__close .close__icon:hover {
+  opacity: 1;
+}
+main .modal .modal__wrap {
+  position: relative;
+  flex-grow: 1;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+main .modal .modal__wrap embed {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

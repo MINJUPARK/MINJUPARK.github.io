@@ -3,6 +3,7 @@
 @import '../../scss/common.scss';
 @import '../../scss/mixin.scss';
 
+
 @keyframes textDrop {
     0%   { transform: translateY(-200px) scaleY(0.9); opacity: 0; }
     5%   { opacity: 0.5; }
@@ -656,6 +657,75 @@ main {
                     &:first-child { width: 60%; }
                     &:last-child  { width: 40%; }
                 }
+            }
+        }
+    }
+
+    .modal {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: -300%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(25, 27, 28, 0.7);
+        transition: .5s cubic-bezier(.51,.92,.24,1.15);
+        transform: translateY(100%);
+        opacity: 0;
+        touch-action: none; 
+        z-index: 1000000000;
+
+        &.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal__header {
+            @include flex_end_X();
+            align-items: center;
+    
+            h3 {
+                @include element_center_X();
+                @include textSet(1em, 0.1vw, inherit, #fff);
+                @include PretendardJP_font(light);
+            }
+    
+            &.guide {
+                position: fixed;
+                top: 0;
+                right: 16px;
+                z-index: 1;
+                
+                .close__icon {
+                    stroke: #000 !important;
+                }
+            }
+    
+            .modal__close {
+                width: 70px;
+                height: 70px;
+                background: transparent;
+                border: 0;
+    
+                .close__icon {
+                    @include menuIcon();
+                }
+            }
+        }
+    
+        .modal__wrap {
+            position: relative;
+            flex-grow: 1;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    
+            embed {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
             }
         }
     }

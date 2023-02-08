@@ -7,25 +7,25 @@
     }
 
     @else if $break == mt-screens {
-        @media screen and(min-width:$break-mt) {
+        @media screen and (min-width:$break-mt) {
             @content;
         }
     }
 
     @else if $break == tablet-screens {
-        @media screen and(min-width:$break-tablet) {
+        @media screen and (min-width:$break-tablet) {
             @content;
         }
     }
 
     @else if $break == tp-screens {
-        @media screen and(min-width:$break-tp) {
+        @media screen and (min-width:$break-tp) {
             @content;
         }
     }
 
     @else if $break == pc-screens {
-        @media screen and(min-width:$break-pc) {
+        @media screen and (min-width:$break-pc) {
             @content;
         }
     }
@@ -164,6 +164,28 @@
     background-blend-mode: overlay;
 }
 
+// [공통] 메뉴 아이콘 (.menu__icon 내 선언)
+@mixin menuIcon() {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: inherit; 
+    height: inherit;
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s;
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
 // [공통] 메뉴
 @mixin navigationMenu() {
     position: fixed;
@@ -269,24 +291,7 @@
             z-index: 99;
 
             .menu__icon {
-                position: relative;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                width: inherit; 
-                height: inherit;
-                fill: none;
-                stroke: #FFFFFF;
-                stroke-width: 6;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                transition: all 0.3s;
-                opacity: 0.7;
-                cursor: pointer;
-            
-                &:hover {
-                    opacity: 1;
-                }
+                @include menuIcon();
             }
         }
         
@@ -382,17 +387,6 @@
                     }
                 }
             }
-        }
-    }
-    
-    @keyframes fadeInRight {
-        0% {
-            opacity: 0;
-            left: 20%;
-        }
-        100% {
-            opacity: 1;
-            left: 0;
         }
     }
 }
@@ -531,7 +525,7 @@
         .phone__inner {
             position: absolute;
             left: 50%;
-            top: 50%;
+            top: 49%;
             transform: translate(-50%, -50%);
             width: 88%;
             height: 94%;
@@ -554,6 +548,10 @@
                 .inner__content {
                     @include imageCover();
                     object-position: top;
+
+                    &.scroll {
+                        animation: autoScroll 15s ease-out 17s;
+                    }
                 }
             }
         }

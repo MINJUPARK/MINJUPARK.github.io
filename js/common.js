@@ -172,4 +172,13 @@ window.onload = function() {
     });
 
     // 메뉴 부드러운 이동
+    // $(".pcNav__list a").click(function (e) {
+    //     e.preventDefault();
+    //     var scrollPosition =  $($(this).attr("href")).offset().top;
+    //     $("html, body").stop().animate({
+    //           scrollTop: scrollPosition
+    //     }, 700);
+    //   });
+
+    
 }

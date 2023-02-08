@@ -154,18 +154,6 @@ h6 {
   font-size: 18px;
 }
 
-@-webkit-keyframes star {
-  0% {
-    transform: scale(0);
-  }
-  25% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes star {
   0% {
     transform: scale(0);
@@ -177,28 +165,12 @@ h6 {
     opacity: 0;
   }
 }
-@-webkit-keyframes backCloud {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10%);
-  }
-}
 @keyframes backCloud {
   0% {
     transform: translateY(0);
   }
   100% {
     transform: translateY(-10%);
-  }
-}
-@-webkit-keyframes frontCloud {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(10%);
   }
 }
 @keyframes frontCloud {
@@ -209,28 +181,12 @@ h6 {
     transform: translateY(10%);
   }
 }
-@-webkit-keyframes downUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-40px);
-  }
-}
 @keyframes downUp {
   0% {
     transform: translateY(0);
   }
   100% {
     transform: translateY(-40px);
-  }
-}
-@-webkit-keyframes Updown {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-30px);
   }
 }
 @keyframes Updown {
@@ -241,14 +197,6 @@ h6 {
     transform: translateY(-30px);
   }
 }
-@-webkit-keyframes downUpS {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
-}
 @keyframes downUpS {
   0% {
     transform: translateY(0);
@@ -257,28 +205,12 @@ h6 {
     transform: translateY(-20px);
   }
 }
-@-webkit-keyframes UpdownS {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-40px);
-  }
-}
 @keyframes UpdownS {
   0% {
     transform: translateY(0px);
   }
   100% {
     transform: translateY(-40px);
-  }
-}
-@-webkit-keyframes introduceBackground {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 0;
   }
 }
 @keyframes introduceBackground {
@@ -318,8 +250,7 @@ h6 {
   background: white;
   mask: var(--mask);
   -webkit-mask: var(--mask);
-  -webkit-animation: star 1s linear forwards;
-          animation: star 1s linear forwards;
+  animation: star 1s linear forwards;
 }
 
 header {
@@ -485,24 +416,19 @@ header .menu-container #overlay .overlay__menu ul li:last-child {
   margin-bottom: 0;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight {
-  -webkit-animation: fadeInRight 0.5s ease forwards;
-          animation: fadeInRight 0.5s ease forwards;
+  animation: fadeInRight 0.5s ease forwards;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(1) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(2) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(3) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 header .menu-container #overlay .overlay__menu ul li.fadeInRight:nth-of-type(4) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 header .menu-container #overlay .overlay__menu ul li a {
   position: relative;
@@ -549,16 +475,6 @@ header .menu-container #overlay .overlay__menu ul li .bubble:before {
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
   transform: rotate(180deg);
-}
-@-webkit-keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    left: 20%;
-  }
-  100% {
-    opacity: 1;
-    left: 0;
-  }
 }
 @keyframes fadeInRight {
   0% {
@@ -625,10 +541,8 @@ main section.landing .landing__header .cloudPK .cloudPK__body, main section.land
 }
 main section.landing .landing__header .cloudPK .cloudPK__body {
   width: 100%;
-  -webkit-animation: cloud 2s infinite alternate;
-          animation: cloud 2s infinite alternate;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: cloud 2s infinite alternate;
+  animation-delay: 0.5s;
 }
 main section.landing .landing__header .cloudPK .cloudPK__flower, main section.landing .landing__header .cloudPK .cloudPK__moon {
   z-index: -1;
@@ -637,15 +551,13 @@ main section.landing .landing__header .cloudPK .cloudPK__flower {
   top: clamp(60px, 10vw, 130px);
   left: clamp(10px, 5vw, 60px);
   height: clamp(70px, 10vw, 100px);
-  -webkit-animation: downUp 2s infinite alternate;
-          animation: downUp 2s infinite alternate;
+  animation: downUp 2s infinite alternate;
 }
 main section.landing .landing__header .cloudPK .cloudPK__moon {
   top: clamp(50px, 10vw, 140px);
   left: clamp(40px, 15vw, 160px);
   height: clamp(70px, 10vw, 100px);
-  -webkit-animation: Updown 1.5s infinite alternate;
-          animation: Updown 1.5s infinite alternate;
+  animation: Updown 1.5s infinite alternate;
 }
 main section.landing .landing__header .title {
   position: absolute;
@@ -816,10 +728,8 @@ main section.landing .landing__header .cloudBL .cloudBL__star, main section.land
 }
 main section.landing .landing__header .cloudBL .cloudBL__body {
   position: relative;
-  -webkit-animation: cloud 2s infinite alternate;
-          animation: cloud 2s infinite alternate;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: cloud 2s infinite alternate;
+  animation-delay: 0.5s;
 }
 main section.landing .landing__header .cloudBL .cloudBL__body img {
   width: clamp(120px, 22vw, 260px);
@@ -841,15 +751,13 @@ main section.landing .landing__header .cloudBL .cloudBL__star {
   height: clamp(70px, 10vw, 100px);
   top: clamp(50px, 10vw, 140px);
   left: clamp(20px, 5vw, 60px);
-  -webkit-animation: downUpS 2s infinite alternate;
-          animation: downUpS 2s infinite alternate;
+  animation: downUpS 2s infinite alternate;
 }
 main section.landing .landing__header .cloudBL .cloudBL__heart {
   height: clamp(70px, 10vw, 100px);
   top: clamp(60px, 10vw, 140px);
   left: clamp(70px, 15vw, 160px);
-  -webkit-animation: UpdownS 1.5s infinite alternate;
-          animation: UpdownS 1.5s infinite alternate;
+  animation: UpdownS 1.5s infinite alternate;
 }
 main section.landing .landing__footer {
   position: absolute;
@@ -865,12 +773,10 @@ main section.landing .landing__footer .landing__footer__wrap .landing__footer__c
   width: 100%;
 }
 main section.landing .landing__footer .landing__footer__wrap .landing__footer__cloud.back {
-  -webkit-animation: backCloud 2s infinite alternate;
-          animation: backCloud 2s infinite alternate;
+  animation: backCloud 2s infinite alternate;
 }
 main section.landing .landing__footer .landing__footer__wrap .landing__footer__cloud.front {
-  -webkit-animation: frontCloud 2s infinite alternate;
-          animation: frontCloud 2s infinite alternate;
+  animation: frontCloud 2s infinite alternate;
 }
 main section.landing .landing__footer .landing__footer__wrap .rabbit {
   display: inline-block;
@@ -942,8 +848,7 @@ main section.introduce {
   width: 100%;
   background-image: url("../image/about_pattern.png");
   background-repeat: repeat;
-  -webkit-animation: introduceBackground 500s linear infinite;
-          animation: introduceBackground 500s linear infinite;
+  animation: introduceBackground 500s linear infinite;
 }
 main section.introduce::before {
   content: "";
@@ -1985,7 +1890,6 @@ main section.skill .skill__wrap .skill__main .main__design .design__bubble {
   row-gap: 20px;
   text-align: center;
   FLEX-DIRECTION: COLUMN;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   /* display: block; */

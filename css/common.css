@@ -58,6 +58,16 @@
   font-family: "PretendardJP-Black";
   src: local("PretendardJP-Black"), url("/font/PretendardJP-Black.woff2") format("woff2"), url("/font/PretendardJP-Black.woff") format("woff"), url("/font/PretendardJP-Black.ttf") format("truetype");
 }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
 .container {
   position: relative;
   width: 100%;
