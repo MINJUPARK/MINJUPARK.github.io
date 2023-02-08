@@ -50,7 +50,7 @@ $(function() {
         $.fn.fullpage.setMouseWheelScrolling(false);
         $.fn.fullpage.setAllowScrolling(false);
         $.fn.fullpage.setKeyboardScrolling(false);
-        
+
         let src = $(this).attr('href');
         let title = $(this).data('title');
         $('header, .fp-slidesNav.bottom, #fp-nav').css('z-index', '-1');
@@ -71,9 +71,8 @@ $(function() {
         $.fn.fullpage.setMouseWheelScrolling(true);
         $.fn.fullpage.setAllowScrolling(true);
         $.fn.fullpage.setKeyboardScrolling(true);
-
-        $('header').css('z-index', '99');
-        $('.fp-slidesNav.bottom, #fp-nav').css('z-index', '1');
+        
+        $('header, .fp-slidesNav.bottom, #fp-nav').css('z-index', '1');
         $('.modal').css('bottom', '-300%');
         $('.modal').removeClass('show');
         $('.modal__header').removeClass("guide");
