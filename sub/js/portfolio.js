@@ -45,49 +45,47 @@ $(function() {
         }
     });
 
-    $(".modal__link").on("click", function (e) {
-        e.preventDefault();
-        $.fn.fullpage.setMouseWheelScrolling(false);
-        $.fn.fullpage.setAllowScrolling(false);
-        $.fn.fullpage.setKeyboardScrolling(false);
+    // $(".modal__link").on("click", function (e) {
+    //     e.preventDefault();
+    //     $.fn.fullpage.setMouseWheelScrolling(false);
+    //     $.fn.fullpage.setAllowScrolling(false);
+    //     $.fn.fullpage.setKeyboardScrolling(false);
 
-        let src = $(this).attr('href');
-        let title = $(this).data('title');
-        $('header, .fp-slidesNav.bottom, #fp-nav').css('z-index', '-1');
-        $('.modal').css('bottom', '0');
-        $('.modal').addClass('show');
-        $('embed').attr('src', `${src}#view=fitH`);
-
-        if(title) {
-            $('.modal__header').prepend(`<h3>${title}</h3>`);
-        }
+    //     let src = $(this).attr('href');
+    //     $('header, .fp-slidesNav.bottom, #fp-nav').css('z-index', '-1');
+    //     $('.modal').css('bottom', '0');
+    //     $('.modal').addClass('show');
+    //     $('iframe').attr('src', `${src}`);
+    
+    //     let title = $(this).data('title');
+    //     if(title) {
+    //         $('.modal__header').prepend(`<h3>${title}</h3>`);
+    //     }
         
-        if($(this).hasClass('guide')) {
-            $('.modal__header').addClass('guide');
-        }
-    });
+    //     if($(this).hasClass('guide')) {
+    //         $('.modal__header').addClass('guide');
+    //     }
+    // });
 
-    $('.modal__close').on('click', function() {
-        $.fn.fullpage.setMouseWheelScrolling(true);
-        $.fn.fullpage.setAllowScrolling(true);
-        $.fn.fullpage.setKeyboardScrolling(true);
+    // $('.modal__close').on('click', function() {
+    //     $.fn.fullpage.setMouseWheelScrolling(true);
+    //     $.fn.fullpage.setAllowScrolling(true);
+    //     $.fn.fullpage.setKeyboardScrolling(true);
         
-        $('header, .fp-slidesNav.bottom, #fp-nav').css('z-index', '1');
-        $('.modal').css('bottom', '-300%');
-        $('.modal').removeClass('show');
-        $('.modal__header').removeClass("guide");
-        $('.modal__header h3').remove();
-    });
+    //     $('header, .fp-slidesNav.bottom, #fp-nav').css('z-index', '1');
+    //     $('.modal').css('bottom', '-300%');
+    //     $('.modal').removeClass('show');
+    //     $('.modal__header').removeClass("guide");
+    //     $('.modal__header h3').remove();
+    // });
 });
 
 function mobilePopUp(url) {
     const width = 390;
     const height = 844;
-    
     const x = (window.screen.width / 2) - (width / 2);
     const y = (window.screen.height / 2) - (height / 2);
-    
-    var popup = `width=${width}, height=${height}, left=${x}, top=${y}, scrollbars=yes, status=yes, resizable=yes, titlebar=yes`;
+    let popup = `width=${width}, height=${height}, left=${x}, top=${y}, scrollbars=yes, status=yes, resizable=yes, titlebar=yes`;
     
     window.open(url, 'mobile web', popup);
 }
@@ -114,4 +112,52 @@ function originalImg() {
             window.open(setURL);
         }
     }
+}
+
+function pdfViewer(location, fileName) {
+    var adobeDCView = new AdobeDC.View({clientId: "cceb4e6c5cde415ca6e1017401671109", divId: "adobe-dc-view", locale: "ko-KR" });
+    adobeDCView.previewFile({
+        content:  { location: { url: location } },
+        metaData: { fileName: `${fileName}.pdf` }
+    });
+}
+
+window.onload = function() {
+
+    const modalBtn = document.querySelectorAll('.modal__link');
+    const closeBtn = document.getElementById('modal__close');
+    const modal = document.querySelector('.modal');
+    const modalHeader = document.querySelector('.modal__header');
+    const modalIframe = document.querySelector('.modal__iframe');
+
+    modalBtn.forEach((target) => 
+        target.addEventListener('click', function(e) {
+            e.preventDefault();
+            $.fn.fullpage.setMouseWheelScrolling(false);
+            $.fn.fullpage.setAllowScrolling(false);
+            $.fn.fullpage.setKeyboardScrolling(false);
+            modal.classList.add('show');
+            document.querySelector('header, .fp-slidesNav.bottom').style.zIndex = -1;
+            document.getElementById('fp-nav').style.zIndex = -1;
+            
+            if(target.classList.contains('guide')) {
+                modalHeader.classList.add('guide');
+                modalIframe.style.display = 'block';
+                modalIframe.src = target.href;
+            } else {
+                document.addEventListener('adobe_dc_view_sdk.ready', pdfViewer(target.href, target.dataset.title));
+            }
+        }
+    ));
+
+    closeBtn.addEventListener('click', function() {
+        $.fn.fullpage.setMouseWheelScrolling(true);
+        $.fn.fullpage.setAllowScrolling(true);
+        $.fn.fullpage.setKeyboardScrolling(true);
+        modal.classList.remove('show');
+        modalHeader.classList.remove('guide');
+        modalIframe.style.display = 'none';
+        document.querySelector('header, .fp-slidesNav.bottom').style.zIndex = 1;
+        document.getElementById('fp-nav').style.zIndex = 1;
+    });
 }
