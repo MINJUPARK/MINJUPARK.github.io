@@ -81,6 +81,10 @@
   padding-right: calc(20px + env(safe-area-inset-right));
 }
 
+.hidden {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -93,11 +97,6 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px);
-  background-size: 30px 30px;
-  background-blend-mode: overlay;
-  background-color: #fa9aba;
-  transition: background-color 1s ease;
   font-size: 16px;
   font-family: "Pretendard JP Variable", "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   letter-spacing: -0.02em;
@@ -231,6 +230,14 @@ h6 {
     background-position: -10000px 0;
   }
 }
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px);
+  background-size: 30px 30px;
+  background-blend-mode: overlay;
+  background-color: #fa9aba;
+  transition: background-color 1s ease;
+}
+
 .bg-pink {
   background-color: #fa9aba;
 }
@@ -330,7 +337,7 @@ header #pcNav {
     bottom: 24px;
     left: 50%;
     margin-left: -6px;
-    border-top: 6px solid #fff;
+    border-top: 12px solid #fff;
     border-right: 6px solid transparent;
     border-left: 6px solid transparent;
     transform: rotate(180deg);
@@ -492,7 +499,7 @@ main .help {
   height: 18px;
   margin-left: 5px;
   vertical-align: middle;
-  cursor: help;
+  cursor: url("../image/cursor_more.png") 16 14, help;
   filter: invert(53%) sepia(15%) saturate(17%) hue-rotate(339deg) brightness(91%) contrast(95%);
 }
 @media screen and (min-width: 1440px) {
@@ -1475,7 +1482,7 @@ main section.license .license__content .license__folder .folder__group .folder .
   padding: 4px 12px;
   white-space: nowrap;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: url("../image/cursor_more.png") 16 14, pointer;
 }
 main section.license .license__content .license__folder .folder__group .folder .folder__file ul li:hover {
   background: rgba(154, 190, 250, 0.5);

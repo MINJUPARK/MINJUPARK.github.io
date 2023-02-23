@@ -4,8 +4,8 @@ $(function($) {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
-    setScreenSize();
-    window.addEventListener('resize', setScreenSize);
+    
+    window.addEventListener('load resize', setScreenSize);
 
     $(window).on('load scroll', function() {
         // let cloudLine = $('.landing__footer__cloud.back').height();

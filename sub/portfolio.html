@@ -17,35 +17,40 @@
         <script type="text/javascript" src="../js/common.js"></script>
         <script type="text/javascript" src="./js/fullpage.js"></script>
         <script type="text/javascript" src="./js/portfolio.js"></script>
-        <title>포트폴리오 | I'm Deblisher</title>          
+        <title>포트폴리오 | I'm Deblisher</title>
     </head>
 <body>
     <!-- 사용기술, 기술스택 -->
     <header>
         <div class="container">
-            <div id="pcNav">
+            <div class="portfolio__menu">
                 <div class="help">
-                    <img src="./image/info.svg" alt="페이지 이용방법 안내">
-                    <p class="help__comment">카테고리 변경은 상/하, 작업물 상세는 좌/우로 이동하여 확인할 수 있습니다. (휠, 드래그, 방향키 지원)</p>
+                    <img src="./image/info.svg" alt="페이지 이용방법 안내" class="help__icon">
+                    <div class="help__text">
+                        <b class="help__title">페이지 이용방법 안내</b>
+                        <p class="help__description">카테고리 변경은 상/하, 작업물 상세는 좌/우로 이동하여 <br>확인할 수 있습니다. (휠, 드래그, 방향키 지원)</p>
+                    </div>
                 </div>
-                <ul class="overlay__menu">
-                    <li>
-                        <a href="../index.html">Home</a>
-                        <span class="bubble">홈</span>
-                    </li>
-                    <li>
-                        <a href="../index.html#about">About</a>
-                        <span class="bubble">프로필 · 경력 · 스킬</span>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                        <span class="bubble">작업물</span>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                        <span class="bubble">우측 하단 챗봇</span>
-                    </li>
-                </ul>
+                <div id="pcNav">
+                    <ul class="overlay__menu">
+                        <li>
+                            <a href="../index.html">Home</a>
+                            <span class="bubble">홈</span>
+                        </li>
+                        <li>
+                            <a href="../index.html#about">About</a>
+                            <span class="bubble">프로필 · 경력 · 스킬</span>
+                        </li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                            <span class="bubble">작업물</span>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                            <span class="bubble">우측 하단 챗봇</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="mobileNav" class="menu-container">
@@ -85,59 +90,59 @@
             <h2>web & mobile</h2>
             <div class="contentLead">
                 <div class="slide" id="slide1-1">
-
-                    
-                    
                     <div class="container">
-                        <div class="title">
-                            <div class="title__num"><span>1</span></div>
-                            <h2 class="title__subject">
-                                <div class="web">web</div>
-                                <div class="n">&nbsp;&&nbsp;</div>
-                                <div class="mobile">mobile</div>
-                            </h2>
-                            <p class="title__text">
-                                <span>웹 퍼블리싱 및 웹 디자인 작업물을 담은 페이지로</span><br>
-                                <span>페이지 모두 기획, 디자인 단계를 거쳐 제작되었습니다.</span>
-                            </p>
-                        </div>
-                        <div class="category">
-                            <a href="#web/2" class="category__item">
-                                <img src="./image/museum.png" alt="museum 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>museum</h3>
-                                        <span>리움미술관</span>
+                        <div class="section__cover">
+                            <div class="title">
+                                <div class="title__num"><span>1</span></div>
+                                <h2 class="title__subject">
+                                    web & mobile
+                                    <!-- <div class="web">web</div>
+                                    <div class="n">&nbsp;&&nbsp;</div>
+                                    <div class="mobile">mobile</div> -->
+                                </h2>
+                                <p class="title__text">
+                                    <span>웹 퍼블리싱 및 웹 디자인 작업물을 담은 페이지로</span><br>
+                                    <span>페이지 모두 기획, 디자인 단계를 거쳐 제작되었습니다.</span>
+                                </p>
+                            </div>
+                            <div class="category">
+                                <a href="#web/2" class="category__item">
+                                    <img src="./image/museum.png" alt="museum 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>museum</h3>
+                                            <span>리움미술관</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#web/3" class="category__item">
-                                <img src="./image/shopping.png" alt="shopping 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>shopping</h3>
-                                        <span>쌤소나이트 · 캐논 · 아디다스</span>
+                                </a>
+                                <a href="#web/3" class="category__item">
+                                    <img src="./image/shopping.png" alt="shopping 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>shopping</h3>
+                                            <span>쌤소나이트 · 캐논 · 아디다스</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#web/5" class="category__item">
-                                <img src="./image/company.png" alt="company 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>company</h3>
-                                        <span>동서식품 맥심</span>
+                                </a>
+                                <a href="#web/5" class="category__item">
+                                    <img src="./image/company.png" alt="company 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>company</h3>
+                                            <span>동서식품 맥심</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#web/7" class="category__item">
-                                <img src="./image/wearable.png" alt="wearable 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>wearable</h3>
-                                        <span>아디다스 트레이너</span>
+                                </a>
+                                <a href="#web/7" class="category__item">
+                                    <img src="./image/wearable.png" alt="wearable 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>wearable</h3>
+                                            <span>아디다스 트레이너</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -148,7 +153,7 @@
                                 <div class="monitor">
                                     <div class="monitor__bezel">
                                         <div class="monitor__screen">
-                                            <a href="https://MINJUPARK.github.io/" target="_blank"><img src="./image/web/portfolio_pc.png" alt="I'm Deblisher pc버전 페이지로 이동"></a>
+                                            <a href="../index.html" target="_blank"><img src="./image/web/portfolio_pc.png" alt="I'm Deblisher pc버전 페이지로 이동"></a>
                                         </div>
                                     </div>
                                     <img src="./image/stand.svg" alt="" class="monitor__stand">
@@ -159,7 +164,7 @@
                                         <div class="phone__inner">
                                             <div class="inner">
                                                 <img src="./image/phone_notch.svg" alt="" class="inner__notch">
-                                                <img src="./image/web/portfolio_mobile.png" alt="I'm Deblisher mobile버전 페이지로 이동" class="inner__content scroll" onClick="mobilePopUp('https://MINJUPARK.github.io/')">
+                                                <img src="./image/web/portfolio_mobile.png" alt="I'm Deblisher mobile버전 페이지로 이동" class="inner__content mobile scroll" data-url="../index.html">
                                             </div>
                                         </div>
                                     </div>
@@ -206,7 +211,7 @@
                             <div class="monitor">
                                 <div class="monitor__bezel">
                                     <div class="monitor__screen">
-                                        <a href="https://minjupark.cafe24.com/sub/works/leeum" target="_blank"><img src="./image/web/leeum_pc.png" alt="리움미술관 pc버전 페이지로 이동"></a>
+                                        <a href="./works/leeum/index.html" target="_blank"><img src="./image/web/leeum_pc.png" alt="리움미술관 pc버전 페이지로 이동"></a>
                                     </div>
                                 </div>
                                 <img src="./image/stand.svg" alt="" class="monitor__stand">
@@ -217,7 +222,7 @@
                                     <div class="phone__inner">
                                         <div class="inner">
                                             <img src="./image/phone_notch.svg" alt="" class="inner__notch">
-                                            <img src="./image/web/leeum_mobile.png" alt="리움미술관 mobile버전 페이지로 이동" class="inner__content scroll" onClick="mobilePopUp('https://minaworld.github.io/')">
+                                            <img src="./image/web/leeum_mobile.png" alt="리움미술관 mobile버전 페이지로 이동" class="inner__content mobile scroll" data-url="./works/leeum/index.html">
                                         </div>
                                     </div>
                                 </div>
@@ -227,11 +232,11 @@
                             <div class="desk__info">
                                 <div class="desk__info__title">
                                     <h3>리움미술관</h3>
-                                    <p>팀 프로젝트의 리더(PL)로 참여한 리뉴얼 사이트로<br>기존 페이지의 대부분을 개선하고, MI(CI)를 재정의 하는 등<br>완성도 높은 웹사이트를 제작하였습니다.</p>
+                                    <p>팀 프로젝트의 리더(PL)로 참여한 리뉴얼 사이트로 <br>기존 페이지의 대부분을 개선하고, MI(CI)를 재정의 하는 등 <br>완성도 높은 웹사이트를 제작하였습니다.</p>
                                 </div>
                                 <div class="desk__info__link">
-                                    <a href="./pdf/Leeum_webRenewal.pdf" class="modal__link" data-title="리움미술관 웹리뉴얼 기획서"><img src="../image/document.svg" alt="리움미술관 기획서 페이지로 이동"><span>기획서</span></a>
-                                    <a href="./leeum_guide.html" class="modal__link guide"><img src="../image/design.svg" alt="리움미술관 가이드 페이지로 이동"><span>가이드</span></a>
+                                    <a href="./pdf/leeum_webRenewal.pdf" class="modal__link" data-title="리움미술관 웹리뉴얼 기획서"><img src="../image/document.svg" alt="리움미술관 기획서 페이지로 이동"><span>기획서</span></a>
+                                    <a href="./guide/web_leeum.html" class="modal__link guide"><img src="../image/design.svg" alt="리움미술관 가이드 페이지로 이동"><span>가이드</span></a>
                                     <a href="https://github.com/MINJUPARK/Leeum" target="_blank"><img src="../image/github.svg" alt="리움미술관 소스코드 페이지로 이동"><span>소스코드</span></a>
                                 </div>
                             </div>
@@ -274,11 +279,11 @@
                             <div class="desk__info">
                                 <div class="desk__info__title">
                                     <h3>쌤소나이트 코리아</h3>
-                                    <p>처음으로 퍼블리싱한 리뉴얼 사이트로<br>BI, 해리티지 어필 중점으로 한 레이아웃을 설계하여<br>소비자가 해당 브랜드를 더욱 신뢰하고 이용할 수 있도록 하였습니다.</p>
+                                    <p>처음으로 퍼블리싱한 리뉴얼 사이트로 <br>BI, 해리티지 어필 중점으로 한 레이아웃을 설계하여 <br>소비자가 해당 브랜드를 더욱 신뢰하고 이용할 수 있도록 하였습니다.</p>
                                 </div>
                                 <div class="desk__info__link">
-                                    <a href="./pdf/Samsonite_webRenewal.pdf" class="modal__link" data-title="쌤소나이트 코리아 웹리뉴얼 기획서"><img src="../image/document.svg" alt="쌤소나이트 코리아 기획서 페이지로 이동"><span>기획서</span></a>
-                                    <a href="./samsonite_guide.html" class="modal__link guide"><img src="../image/design.svg" alt="쌤소나이트 코리아 가이드 페이지로 이동"><span>가이드</span></a>
+                                    <a href="./pdf/samsonite_webRenewal.pdf" class="modal__link" data-title="쌤소나이트 코리아 웹리뉴얼 기획서"><img src="../image/document.svg" alt="쌤소나이트 코리아 기획서 페이지로 이동"><span>기획서</span></a>
+                                    <a href="./guide/samsonite.html" class="modal__link guide"><img src="../image/design.svg" alt="쌤소나이트 코리아 가이드 페이지로 이동"><span>가이드</span></a>
                                     <a href="https://github.com/MINJUPARK/samsonite" target="_blank"><img src="../image/github.svg" alt="쌤소나이트 코리아 소스코드 페이지로 이동"><span>소스코드</span></a>
                                 </div>
                             </div>
@@ -335,8 +340,8 @@
                                     <p>내용 준비중 입니다.<br>내용 준비중 입니다.<br>내용 준비중 입니다.</p>
                                 </div>
                                 <div class="desk__info__link">
-                                    <a href="./pdf/web/viewer.html?file=Cannon_webRenewal.pdf" class="modal__link" data-title="캐논 코리아 웹리뉴얼 기획서"><img src="../image/document.svg" alt="캐논 코리아 기획서 페이지로 이동"><span>기획서</span></a>
-                                    <a href="#"><img src="../image/design.svg" alt="캐논 코리아 가이드 페이지로 이동"><span>가이드</span></a>
+                                    <a href="./pdf/cannon_webRenewal.pdf" class="modal__link" data-title="캐논 코리아 웹리뉴얼 기획서"><img src="../image/document.svg" alt="캐논 코리아 기획서 페이지로 이동"><span>기획서</span></a>
+                                    <a href="./guide/cannon.html" class="modal__link guide"><img src="../image/design.svg" alt="캐논 코리아 가이드 페이지로 이동"><span>가이드</span></a>
                                 </div>
                             </div>
                             <div class="desk__table">
@@ -466,13 +471,19 @@
                 <div class="slide" id="slide1-8">
                     <div class="container">
                         <div class="trainer">
-                            <div class="phone app">
-                                <div class="phone__wrap">
+                            <div class="phone">
+                                <div class="phone__wrap app">
                                     <img src="./image/phone_body.svg" alt="" class="phone__body">
                                     <div class="phone__inner">
                                         <div class="inner">
                                             <img src="./image/phone_notch.svg" alt="" class="inner__notch">
-                                            <img src="./image/web/adidastrainer_app.png" alt="아디다스 트레이너 phone app" class="inner__content origin" onclick="originalImg()">
+                                            <ul class="appSlide V">
+                                                <li><img src="./image/web/adidastrainer_app_1.png" alt="아디다스 트레이너 phone app" class="inner__content"></li>
+                                                <li><img src="./image/web/adidastrainer_app_2.png" alt="아디다스 트레이너 phone app" class="inner__content"></li>
+                                                <li><img src="./image/web/adidastrainer_app_3.png" alt="아디다스 트레이너 phone app" class="inner__content"></li>
+                                                <li><img src="./image/web/adidastrainer_app_4.png" alt="아디다스 트레이너 phone app" class="inner__content"></li>
+                                                <li><img src="./image/web/adidastrainer_app_5.png" alt="아디다스 트레이너 phone app" class="inner__content"></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -481,17 +492,26 @@
                                 <div class="watch__wrap">
                                     <img src="./image/watch.png" alt="" class="watch__body">
                                     <div class="watch__inner">
-                                        <img src="./image/web/adidastrainer_watch_1.png" alt="아디다스 트레이너 watch app" class="inner__content">
+                                        <ul class="appSlide III">
+                                            <li><img src="./image/web/adidastrainer_watch_1.png" alt="아디다스 트레이너 watch app (Course)" class="inner__content"></li>
+                                            <li><img src="./image/web/adidastrainer_watch_2.png" alt="아디다스 트레이너 watch app (Activity)" class="inner__content"></li>
+                                            <li><img src="./image/web/adidastrainer_watch_3.png" alt="아디다스 트레이너 watch app (Statistics)" class="inner__content"></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="phone vr">
-                                <div class="phone__wrap">
+                            <div class="phone">
+                                <div class="phone__wrap vr">
                                     <img src="./image/phone_body_horizontal.svg" alt="" class="phone__body">
-                                    <div class="phone__inner">
+                                    <div class="phone__inner horizon">
                                         <div class="inner">
                                             <img src="./image/phone_notch_horizontal.svg" alt="" class="inner__notch horizontal">
-                                            <img src="./image/web/adidastrainer_vr.png" alt="아디다스 트레이너 vr" class="inner__content origin" onclick="originalImg()">
+                                            <ul class="appSlide IV">
+                                                <li><img src="./image/web/adidastrainer_vr_1.png" alt="아디다스 트레이너 vr (설명)" class="inner__content"></li>
+                                                <li><img src="./image/web/adidastrainer_vr_2.png" alt="아디다스 트레이너 vr (설명)" class="inner__content"></li>
+                                                <li><img src="./image/web/adidastrainer_vr_3.png" alt="아디다스 트레이너 vr (설명)" class="inner__content"></li>
+                                                <li><img src="./image/web/adidastrainer_vr_4.png" alt="아디다스 트레이너 vr (설명)" class="inner__content"></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -537,63 +557,68 @@
             <div class="contentLead">
                 <div class="slide" id="slide2-1">
                     <div class="container">
-                        <div class="title">
-                            <div class="title__num"><span>2</span></div>
-                            <h2 class="title__subject">
-                                <div class="s1">p</div>
-                                <div class="s2">r</div>
-                                <div class="s3">o</div>
-                                <div class="s4">g</div>
-                                <div class="s5">r</div>
-                                <div class="s6">a</div>
-                                <div class="s7">m</div>
-                            </h2>
-                            <p class="title__text">
-                                <span>프론트/백엔드 언어로 제작한 작업물을 담은 페이지로</span><br>
-                                <span>개발자로서의 역량과, 이해관계자와 더 나은 커뮤니케이션을 위해</span><br>
-                                <span>공부한 기록들 입니다.</span>
-                            </p>
-                        </div>
-                        <div class="category flex-end">
-                            <a href="#program/1" class="category__item">
-                                <img src="./image/react.png" alt="react 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>react</h3>
-                                        <span>TO-DO LIST</span>
+                        <div class="section__cover">
+                            <div class="title">
+                                <div class="title__num"><span>2</span></div>
+                                <h2 class="title__subject">
+                                    program
+                                    <!-- <div class="s1">p</div>
+                                    <div class="s2">r</div>
+                                    <div class="s3">o</div>
+                                    <div class="s4">g</div>
+                                    <div class="s5">r</div>
+                                    <div class="s6">a</div>
+                                    <div class="s7">m</div> -->
+                                </h2>
+                                <p class="title__text">
+                                    <span>프론트/백엔드 언어로 제작한 작업물을 담은 페이지로</span><br>
+                                    <span>개발자로서의 역량과, 이해관계자와 더 나은 커뮤니케이션을 위해</span><br>
+                                    <span>공부한 기록들 입니다.</span>
+                                </p>
+                            </div>
+                            <div class="category flex-end">
+                                <a href="#program/1" class="category__item">
+                                    <img src="./image/react.png" alt="react 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>react</h3>
+                                            <span>TO-DO LIST</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#program/2" class="category__item">
-                                <div class="speach-bubble">
-                                    <div>with. bootstrap</div>
-                                </div>
-                                <img src="./image/nodejs.png" alt="node.js 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>node.js</h3>
-                                        <span>TO-DO CRUD</span>
+                                </a>
+                                <a href="#program/2" class="category__item">
+                                    <div class="nodejs">
+                                        <div class="speach-bubble">
+                                            <div>with. bootstrap</div>
+                                        </div>
+                                        <img src="./image/nodejs.png" alt="node.js 작업물 영역으로 이동" class="category__icon">
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#program/3" class="category__item">
-                                <img src="./image/java.png" alt="java 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>java</h3>
-                                        <span>사탕뽑기 자판기</span>
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>node.js</h3>
+                                            <span>TO-DO CRUD</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#program/4" class="category__item">
-                                <img src="./image/cpp.png" alt="c++ 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>c++</h3>
-                                        <span>상벌점 관리 프로그램</span>
+                                </a>
+                                <!-- <a href="#program/3" class="category__item">
+                                    <img src="./image/java.png" alt="java 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>java</h3>
+                                            <span>사탕뽑기 자판기</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a> -->
+                                <a href="#program/3" class="category__item">
+                                    <img src="./image/cpp.png" alt="c++ 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>c++</h3>
+                                            <span>상벌점 관리 프로그램</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -603,7 +628,7 @@
                             <div class="monitor">
                                 <div class="monitor__bezel">
                                     <div class="monitor__screen">
-                                        <a href="https://minjupark.cafe24.com/sub/works/todolist" target="_blank"><img src="./image/program/react_pc.png" alt="react pc버전 페이지로 이동"></a>
+                                        <a href="./works/todolist/index.html" target="_blank"><img src="./image/program/react_pc.png" alt="react pc버전 페이지로 이동"></a>
                                     </div>
                                 </div>
                                 <img src="./image/stand.svg" alt="" class="monitor__stand">
@@ -614,7 +639,7 @@
                                     <div class="phone__inner">
                                         <div class="inner">
                                             <img src="./image/phone_notch.svg" alt="" class="inner__notch">
-                                            <img src="./image/program/react_mobile.png" alt="react mobile버전 페이지로 이동" class="inner__content" onClick="mobilePopUp('http://minju.dothome.co.kr/todolist/index.html')">
+                                            <img src="./image/program/react_mobile.png" alt="react mobile버전 페이지로 이동" class="inner__content mobile" data-url="./works/todolist/index.html" >
                                         </div>
                                     </div>
                                 </div>
@@ -624,7 +649,7 @@
                             <div class="desk__info">
                                 <div class="desk__info__title">
                                     <h3>TO-DO LIST</h3>
-                                    <p>간단한 목표를 메모하고 관리할 수 있는 페이지로<br>등록, 수정, 삭제, 남아있는 항목, 목표달성 시 효과 등을 구현하였습니다.</p>
+                                    <p>간단한 목표를 메모하고 관리할 수 있는 페이지로 <br>등록, 수정, 삭제, 남아있는 항목, 목표달성 시 효과 등을 구현하였습니다.</p>
                                 </div>
                                 <div class="desk__info__link">
                                     <a href="https://github.com/MINJUPARK/todoapp" target="_blank"><img src="../image/github.svg" alt="소스코드 페이지로 이동"><span>소스코드</span></a>
@@ -659,7 +684,7 @@
                             <div class="monitor">
                                 <div class="monitor__bezel">
                                     <div class="monitor__screen">
-                                        <img src="./image/program/nodejs_pc.png" alt="node.js pc버전 페이지로 이동" class="origin" data-url="works/program/nodejs.png" onclick="originalImg()"></a>
+                                        <a href="https://port-0-nodejs-3a9t2bldxbz36n.sel3.cloudtype.app/" target="_blank"><img src="./image/program/nodejs_pc.png" alt="node.js pc버전 페이지로 이동"></a>
                                     </div>
                                 </div>
                                 <img src="./image/stand.svg" alt="" class="monitor__stand">
@@ -670,7 +695,7 @@
                                     <div class="phone__inner">
                                         <div class="inner">
                                             <img src="./image/phone_notch.svg" alt="" class="inner__notch">
-                                            <img src="./image/program/nodejs_mobile.png" alt="node.js mobile버전 페이지로 이동" class="inner__content" onClick="mobilePopUp('#')">
+                                            <img src="./image/program/nodejs_mobile.png" alt="node.js mobile버전 페이지로 이동" data-url="https://port-0-nodejs-3a9t2bldxbz36n.sel3.cloudtype.app/" class="inner__content mobile">
                                         </div>
                                     </div>
                                 </div>
@@ -680,7 +705,7 @@
                             <div class="desk__info">
                                 <div class="desk__info__title">
                                     <h3>TO-DO CRUD</h3>
-                                    <p>일정을 데이터베이스에 저장하고 관리할 수 있는 페이지로<br>Node.js Express(HTTP Methods) + MongoDB를 사용해<br>웹 서버 구축 및 DB 연동을 진행하였습니다.</p>
+                                    <p>일정을 데이터베이스에 저장하고 관리할 수 있는 페이지로 <br>Node.js Express(HTTP Methods) + MongoDB를 사용해 <br>웹 서버 구축 및 DB 연동을 진행하였습니다.</p>
                                 </div>
                                 <div class="desk__info__link">
                                     <a href="https://github.com/MINJUPARK/nodejs" target="_blank"><img src="../image/github.svg" alt="소스코드 페이지로 이동"><span>소스코드</span></a>
@@ -709,7 +734,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide" id="slide2-4">
+                <!-- <div class="slide" id="slide2-4">
                     <div class="container">
                         <div class="device">
                             <div class="monitor">
@@ -753,7 +778,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="slide" id="slide2-5">
                     <div class="container">
                         <div class="device">
@@ -806,85 +831,88 @@
             <div class="contentLead">
                 <div class="slide" id="slide3-1">
                     <div class="container">
-                        <div class="title">
-                            <div class="title__num"><span>3</span></div>
-                            <h2 class="title__subject">
-                                <div class="s1">d</div>
-                                <div class="s2">e</div>
-                                <div class="s3">s</div>
-                                <div class="s4">i</div>
-                                <div class="s5">g</div>
-                                <div class="s6">n</div>
-                            </h2>
-                            <p class="title__text">
-                                <span>편집, 제품 등 시각디자인 작업물을 담은 페이지로</span><br>
-                                <span>분야의 한계를 두지 않는 다양한 디자인 작업을 진행하였습니다.</span>
-                            </p>
-                        </div>
-                        <div class="category">
-                            <a href="#design/1" class="category__item des">
-                                <img src="./image/promotion.png" alt="promotion 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>promotion</h3>
-                                        <span>이벤트 페이지 · 배너</span>
+                        <div class="section__cover">
+                            <div class="title">
+                                <div class="title__num"><span>3</span></div>
+                                <h2 class="title__subject">
+                                    design
+                                    <!-- <div class="s1">d</div>
+                                    <div class="s2">e</div>
+                                    <div class="s3">s</div>
+                                    <div class="s4">i</div>
+                                    <div class="s5">g</div>
+                                    <div class="s6">n</div> -->
+                                </h2>
+                                <p class="title__text">
+                                    <span>편집, 제품 등 시각디자인 작업물을 담은 페이지로</span><br>
+                                    <span>분야의 한계를 두지 않는 다양한 디자인 작업을 진행하였습니다.</span>
+                                </p>
+                            </div>
+                            <div class="category">
+                                <a href="#design/1" class="category__item des">
+                                    <img src="./image/promotion.png" alt="promotion 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>promotion</h3>
+                                            <span>이벤트 페이지 · 배너</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#design/2" class="category__item des">
-                                <img src="./image/editorial.png" alt="editorial 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>editorial</h3>
-                                        <span>인포그래픽 · 리플렛</span>
+                                </a>
+                                <a href="#design/2" class="category__item des">
+                                    <img src="./image/editorial.png" alt="editorial 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>editorial</h3>
+                                            <span>인포그래픽 · 리플렛</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#design/3" class="category__item des">
-                                <img src="./image/poster.png" alt="poster 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>poster</h3>
-                                        <span>박람회 · 플리마켓 · 공연</span>
+                                </a>
+                                <a href="#design/3" class="category__item des">
+                                    <img src="./image/poster.png" alt="poster 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>poster</h3>
+                                            <span>박람회 · 플리마켓 · 공연</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#design/6" class="category__item des">
-                                <img src="./image/character.png" alt="character 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>character</h3>
-                                        <span>애니메이션 · 게임</span>
+                                </a>
+                                <a href="#design/6" class="category__item des">
+                                    <img src="./image/character.png" alt="character 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>character</h3>
+                                            <span>애니메이션 · 게임</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#design/4" class="category__item des">
-                                <img src="./image/logo.png" alt="logo 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>logo</h3>
-                                        <span>개인 브랜딩</span>
+                                </a>
+                                <a href="#design/4" class="category__item des">
+                                    <img src="./image/logo.png" alt="logo 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>logo</h3>
+                                            <span>개인 브랜딩</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#design/4" class="category__item des">
-                                <img src="./image/company.png" alt="company 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>3d</h3>
-                                        <span>동서식품 맥심</span>
+                                </a>
+                                <a href="#design/4" class="category__item des">
+                                    <img src="./image/company.png" alt="company 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>3d</h3>
+                                            <span>동서식품 맥심</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a href="#design/5" class="category__item des">
-                                <img src="./image/product.png" alt="product 작업물 영역으로 이동" class="category__icon">
-                                <div class="category__bg">
-                                    <div>
-                                        <h3>product</h3>
-                                        <span>문구(팬시) · 그립톡 · 카드</span>
+                                </a>
+                                <a href="#design/5" class="category__item des">
+                                    <img src="./image/product.png" alt="product 작업물 영역으로 이동" class="category__icon">
+                                    <div class="category__bg">
+                                        <div>
+                                            <h3>product</h3>
+                                            <span>문구(팬시) · 그립톡 · 카드</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -899,7 +927,7 @@
                         <div class="artwork">
                             <div class="artwork__item w-60">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio web">
+                                    <a href="./guide/promotion_beksul.html" class="ratio web modal__link guide">
                                         <img src="./image/design/promotion_event.png" alt="이벤트 프로모션 페이지 상세보기로 이동">
                                     </a>
                                 </div>
@@ -910,7 +938,7 @@
                             </div>
                             <div class="artwork__item w-40">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio poster">
+                                    <a href="./guide/promotion_victoriassecret.html" class="ratio poster modal__link guide">
                                         <img src="./image/design/promotion_banner.png" alt="제품 배너 상세보기로 이동">
                                     </a>
                                 </div>
@@ -933,7 +961,7 @@
                         <div class="artwork">
                             <div class="artwork__item w-50">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio poster">
+                                    <a href="./guide/editorial_doaner.html" class="ratio poster modal__link guide">
                                         <img src="./image/design/editorial_infographic.png" alt="직업 소개 인포그래픽 상세보기로 이동">
                                     </a>
                                 </div>
@@ -944,7 +972,7 @@
                             </div>
                             <div class="artwork__item w-50">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio poster">
+                                    <a href="./guide/editorial_insurance.html" class="ratio poster modal__link guide">
                                         <img src="./image/design/editorial_leaflet.png" alt="공공기관 리플렛 상세보기로 이동">
                                     </a>
                                 </div>
@@ -967,7 +995,7 @@
                         <div class="artwork">
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
+                                    <a href="./guide/poster_dessert.html" class="ratio s-height poster modal__link guide">
                                         <img src="./image/design/poster_fair.png" alt="박람회 포스터 상세보기로 이동">
                                     </a>
                                 </div>
@@ -978,8 +1006,8 @@
                             </div>
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
-                                        <img src="./image/design/poster_flea.png" alt="플리마켓 포스터 상세보기로 이동">
+                                    <a href="./guide/poster_raccoon.html" class="ratio s-height poster modal__link guide">
+                                        <img src="./image/design/poster_raccoon.png" alt="플리마켓 포스터 상세보기로 이동">
                                     </a>
                                 </div>
                                 <div class="artwork__item__text">
@@ -989,8 +1017,8 @@
                             </div>
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
-                                        <img src="./image/design/poster_perform.png" alt="공연 포스터 상세보기로 이동">
+                                    <a href="./guide/poster_ballet.html" class="ratio s-height poster modal__link guide">
+                                        <img src="./image/design/poster_ballet.png" alt="공연 포스터 상세보기로 이동">
                                     </a>
                                 </div>
                                 <div class="artwork__item__text">
@@ -1014,8 +1042,8 @@
                                 <div class="artwork">
                                     <div class="artwork__item">
                                         <div class="artwork__item__pic">
-                                            <a href="#" class="ratio m-height poster">
-                                                <img src="./image/design/logo3d_logo.png" alt="한글 이름을 활용한 로고 및 패턴 상세보기로 이동" class="prepare" onerror="prepareImg();">
+                                            <a href="./guide/logo_hangul.html" class="ratio m-height poster modal__link guide">
+                                                <img src="./image/design/logo_hangul.png" alt="한글 이름을 활용한 로고 및 패턴 상세보기로 이동" class="prepare" onerror="prepareImg();">
                                             </a>
                                         </div>
                                         <div class="artwork__item__text">
@@ -1035,8 +1063,8 @@
                                 <div class="artwork">
                                     <div class="artwork__item">
                                         <div class="artwork__item__pic">
-                                            <a href="#" class="ratio m-height poster">
-                                                <img src="./image/design/logo3d_3d.png" alt="커피머신 제품 기획 상세보기로 이동">
+                                            <a href="./guide/3d_coffee.html" class="ratio m-height poster modal__link guide">
+                                                <img src="./image/design/3d_coffee.png" alt="커피머신 제품 기획 상세보기로 이동">
                                             </a>
                                         </div>
                                         <div class="artwork__item__text">
@@ -1060,7 +1088,7 @@
                         <div class="artwork">
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
+                                    <a href="./guide/product_stationery.html" class="ratio s-height poster">
                                         <img src="./image/design/product_stationery.png" alt="문구(팬시) 상세보기로 이동">
                                     </a>
                                 </div>
@@ -1071,7 +1099,7 @@
                             </div>
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
+                                    <a href="./guide/product_griptok.html" class="ratio s-height poster">
                                         <img src="./image/design/product_griptok.png" alt="그립톡 상세보기로 이동">
                                     </a>
                                 </div>
@@ -1082,8 +1110,8 @@
                             </div>
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
-                                        <img src="./image/design/product_card.png" alt="시티패스 카드 상세보기로 이동">
+                                    <a href="./guide/product_citypass.html" class="ratio s-height poster">
+                                        <img src="./image/design/product_citypass.png" alt="시티패스 카드 상세보기로 이동">
                                     </a>
                                 </div>
                                 <div class="artwork__item__text">
@@ -1105,7 +1133,7 @@
                         <div class="artwork">
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
+                                    <a href="./guide/character_mowgli.html" class="ratio s-height poster">
                                         <img src="./image/design/character_mowgli.png" alt="정글북 모글리 상세보기로 이동">
                                     </a>
                                 </div>
@@ -1116,7 +1144,7 @@
                             </div>
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
+                                    <a href="./guide/character_oz.html" class="ratio s-height poster">
                                         <img src="./image/design/character_oz.png" alt="오즈의마법사 상세보기로 이동">
                                     </a>
                                 </div>
@@ -1127,8 +1155,8 @@
                             </div>
                             <div class="artwork__item w-30c">
                                 <div class="artwork__item__pic">
-                                    <a href="#" class="ratio s-height poster">
-                                        <img src="./image/design/character_raccoon.png" alt="동물의숲 너굴 상세보기로 이동">
+                                    <a href="./guide/character_tomnook.html" class="ratio s-height poster">
+                                        <img src="./image/design/character_tomnook.png" alt="동물의숲 너굴 상세보기로 이동">
                                     </a>
                                 </div>
                                 <div class="artwork__item__text">
@@ -1141,22 +1169,20 @@
                 </div>
             </div>
         </section>
-        <article>
-            <div class="modal">
-                <div class="modal__header">
-                    <button id="modal__close">
-                        <svg class="close__icon" viewBox="0 0 100 100">
-                            <path id="top-line" d="M35,35 L65,65"></path>
-                            <path id="bottom-line" d="M35,65 L65,35"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="modal__wrap">
-                    <iframe type="application/pdf" src="" class="modal__iframe"></iframe>
-                    <div id="adobe-dc-view"></div>
-                </div>
-            </div>
-        </article>
     </main>
+    <article class="modal">
+        <div class="modal__header">
+            <button id="modal__close">
+                <svg class="close__icon" viewBox="0 0 100 100">
+                    <path id="top-line" d="M35,35 L65,65"></path>
+                    <path id="bottom-line" d="M35,65 L65,35"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="modal__wrap">
+            <iframe type="application/pdf" src="" class="modal__iframe"></iframe>
+            <div id="adobe-dc-view"></div>
+        </div>
+    </article>
 </body>
 </html>

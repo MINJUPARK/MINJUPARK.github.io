@@ -41,6 +41,10 @@
     font-family: 'PretendardJP-'+$weight;
 }
 
+@mixin cormorantGaramond_font() {
+    font-family: 'Cormorant Garamond', serif;
+}
+
 // 요소 정렬
 @mixin flex_start_X() {
     display: flex;
@@ -246,7 +250,7 @@
                         bottom: 24px;
                         left: 50%;
                         margin-left: -6px;
-                        border-top: 6px solid #fff;
+                        border-top: 12px solid #fff;
                         border-right: 6px solid transparent;
                         border-left: 6px solid transparent;
                         transform: rotate(180deg);
@@ -526,9 +530,9 @@
             position: absolute;
             left: 50%;
             top: 49%;
-            transform: translate(-50%, -50%);
             width: 88%;
             height: 94%;
+            transform: translate(-50%, -50%);
             border-radius: 1.5vmin;
 
             .inner {
@@ -550,7 +554,8 @@
                     object-position: top;
 
                     &.scroll {
-                        animation: autoScroll 15s ease-out 17s;
+                        animation: autoScroll 15s ease-out;
+                        animation-delay: 17s;
                     }
                 }
             }

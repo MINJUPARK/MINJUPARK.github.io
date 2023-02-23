@@ -5,10 +5,10 @@
  *
  * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
  */
-body > div {
+body > div:not(.modal) {
     background: transparent !important;
 }
-body > div > a {
+body > div:not(.modal) > a {
     color: transparent !important;
 }
 

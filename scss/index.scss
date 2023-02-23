@@ -45,6 +45,12 @@
     to   { background-position: -10000px 0; }
 }
 
+body {
+    @include gridBackground();
+    background-color: $pink;
+    transition: background-color 1s ease;
+}
+
 .bg-pink { background-color: $pink; }
 .bg-blue { background-color: $blue; }
 .bg-pruple { background-color: $purple; }
@@ -80,7 +86,7 @@ main {
         height: 18px;
         margin-left: 5px;
         vertical-align: middle;
-        cursor: help;
+        cursor: url('../image/cursor_more.png') 16 14, help;
         filter: $bk2_filter;
     }
 
@@ -1043,14 +1049,14 @@ main {
                                     width: 100%;
                                     padding: 0 30px;
                                 }
-
+                                
                                 li {
                                     @include flex_center_Y();
                                     column-gap: 20px;
                                     padding: 4px 12px;
                                     white-space: nowrap;
                                     border-radius: 5px;
-                                    cursor: pointer;
+                                    cursor: url('../image/cursor_more.png') 16 14, pointer;
         
                                     &:hover {
                                         background: $blue_rgba;

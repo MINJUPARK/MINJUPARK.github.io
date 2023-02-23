@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap");
 :root {
   --vh: 1vh;
 }
@@ -77,6 +78,10 @@
   padding-right: calc(20px + env(safe-area-inset-right));
 }
 
+.hidden {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -89,11 +94,6 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px), linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, rgba(255, 255, 255, 0) 1px);
-  background-size: 30px 30px;
-  background-blend-mode: overlay;
-  background-color: #fa9aba;
-  transition: background-color 1s ease;
   font-size: 16px;
   font-family: "Pretendard JP Variable", "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   letter-spacing: -0.02em;
@@ -134,6 +134,10 @@ a:not(body > div > a) {
 
 a, span {
   display: inline-block;
+}
+
+iframe {
+  border: 0;
 }
 
 h1 {

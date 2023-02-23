@@ -1,4 +1,6 @@
+
 window.onload = function() {
+    // [common] menu svg
     const topLine = document.getElementById("top-line");
     const middleLine = document.getElementById("middle-line");
     const bottomLine = document.getElementById("bottom-line");
@@ -7,7 +9,7 @@ window.onload = function() {
     const arrowAppearDurationInFrames = segmentDuration;
     const arrowDisappearDurationInFrames = segmentDuration;
     const menuAppearDurationInFrames = segmentDuration;
-    let state = "menu";
+    let state = 'menu';
     let topLeftX, topRightX, bottomLeftX, bottomRightX;
     let topLineY, middleLineY, bottomLineY;
     let topLeftY, topRightY, bottomLeftY, bottomRightY;
@@ -16,7 +18,6 @@ window.onload = function() {
     let arrowDisappearComplete = false;
     let menuAppearComplete = false;
     let currentFrame = 1;
-
 
     // 메뉴 닫기
     function closeMenuAnimation() {
@@ -122,37 +123,36 @@ window.onload = function() {
         }
     }
 
+    // [common] menu effect
     const menu = document.querySelector('#togglebtn');
     const menuItems = document.querySelector('#overlay');
     const menuItemsli = document.querySelectorAll('#overlay li');
     const menuContainer = document.querySelector('.menu-container');
 
-    function toggleMenu(e) {
+    menu.addEventListener('click', function(e) {
         e.preventDefault();
         menuItems.classList.toggle('open');
         menuContainer.classList.toggle('full-menu');
         
-        if ( state === "menu" ) {
+        if (state === 'menu') {
             openMenuAnimation();
-            state = "arrow";
-            arrowDisappearComplete = false;
-            menuAppearComplete = false;
+            state = 'arrow';
             for(let i = 0; i < menuItemsli.length; i++) {
-                menuItemsli[i].classList.add("fadeInRight");
+                menuItemsli[i].classList.add('fadeInRight');
             }
-        } else if ( state === "arrow" ) {
+        } else if (state === 'arrow') {
             closeMenuAnimation();
-            state = "menu";
-            menuDisappearComplete = false;
-            arrowAppearComplete = false;
+            state = 'menu';
             for(let i = 0; i < menuItemsli.length; i++) {
-                menuItemsli[i].classList.remove("fadeInRight");
+                menuItemsli[i].classList.remove('fadeInRight');
             }
         }
-    }
+        menuDisappearComplete = false;
+        arrowAppearComplete = false;
+    });
 
-    menu.addEventListener('click', toggleMenu, false);
-
+    
+    // [common] menu description
     $('.overlay__menu a').on({
         mouseenter: function() {
             $(this).next().css('opacity', '1');
@@ -170,7 +170,6 @@ window.onload = function() {
             $(this).next().removeClass('on');
         }
     });
-
     // 메뉴 부드러운 이동
     // $(".pcNav__list a").click(function (e) {
     //     e.preventDefault();
@@ -179,6 +178,5 @@ window.onload = function() {
     //           scrollTop: scrollPosition
     //     }, 700);
     //   });
-
-    
 }
+
