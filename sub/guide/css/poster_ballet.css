@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap");
+:root {
+  --vh: 1vh;
+}
+
+@font-face {
+  font-family: "DynaPuff-Regular";
+  font-weight: 400;
+  src: local("DynaPuff-Regular"), url("/font/DynaPuff-Regular.woff2") format("woff2"), url("/font/DynaPuff-Regular.woff") format("woff"), url("/font/DynaPuff-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DynaPuff-Medium";
+  font-weight: 500;
+  src: local("DynaPuff-Medium"), url("/font/DynaPuff-Medium.woff2") format("woff2"), url("/font/DynaPuff-Medium.woff") format("woff"), url("/font/DynaPuff-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DynaPuff-Semibold";
+  font-weight: 600;
+  src: local("DynaPuff-Semibold"), url("/font/DynaPuff-Semibold.woff2") format("woff2"), url("/font/DynaPuff-Semibold.woff") format("woff"), url("/font/DynaPuff-Semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DynaPuff-Bold";
+  font-weight: 700;
+  src: local("DynaPuff-Bold"), url("/font/DynaPuff-Bold.woff2") format("woff2"), url("/font/DynaPuff-Bold.woff") format("woff"), url("/font/DynaPuff-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-Thin";
+  src: local("PretendardJP-Thin"), url("/font/PretendardJP-Thin.woff2") format("woff2"), url("/font/PretendardJP-Thin.woff") format("woff"), url("/font/PretendardJP-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-ExtraLight";
+  src: url("/font/PretendardJP-ExtraLight.woff2") format("woff2"), url("/font/PretendardJP-ExtraLight.woff") format("woff"), url("/font/PretendardJP-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-Light";
+  src: url("/font/PretendardJP-Light.woff2") format("woff2"), url("/font/PretendardJP-Light.woff") format("woff"), url("/font/PretendardJP-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-Regular";
+  src: local("PretendardJP-Regular"), url("/font/PretendardJP-Regular.woff2") format("woff2"), url("/font/PretendardJP-Regular.woff") format("woff"), url("/font/PretendardJP-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-Medium";
+  src: local("PretendardJP-Medium"), url("/font/PretendardJP-Medium.woff2") format("woff2"), url("/font/PretendardJP-Medium.woff") format("woff"), url("/font/PretendardJP-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-SemiBold";
+  src: local("PretendardJP-SemiBold"), url("/font/PretendardJP-SemiBold.woff2") format("woff2"), url("/font/PretendardJP-SemiBold.woff") format("woff"), url("/font/PretendardJP-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-Bold";
+  src: local("PretendardJP-Bold"), url("/font/PretendardJP-Bold.woff2") format("woff2"), url("/font/PretendardJP-Bold.woff") format("woff"), url("/font/PretendardJP-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-ExtraBold";
+  src: local("PretendardJP-ExtraBold"), url("/font/PretendardJP-ExtraBold.woff2") format("woff2"), url("/font/PretendardJP-ExtraBold.woff") format("woff"), url("/font/PretendardJP-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PretendardJP-Black";
+  src: local("PretendardJP-Black"), url("/font/PretendardJP-Black.woff2") format("woff2"), url("/font/PretendardJP-Black.woff") format("woff"), url("/font/PretendardJP-Black.ttf") format("truetype");
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: calc(20px + env(safe-area-inset-left));
+  padding-right: calc(20px + env(safe-area-inset-right));
+}
+
+.hidden {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100) !important;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Pretendard JP Variable", "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+body > div > a {
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+header {
+  position: relative;
+}
+header h1 {
+  display: none;
+}
+
+section > h2,
+section > .fp-tableCell > h2 {
+  font-size: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:not(body > div > a) {
+  cursor: pointer;
+}
+
+a, span {
+  display: inline-block;
+}
+
+iframe {
+  border: 0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 26px;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../image/design/poster_ballet_landing.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+header::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+header .title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+header .title h2 {
+  font-family: "PretendardJP-regular";
+  font-size: calc(3em + 1vw);
+}
+header .title p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: calc(1.25em + 1vw);
+}
+header .logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-align: center;
+}
+header .logo h1 {
+  display: block;
+}
+header .logo h1 img {
+  width: 40px;
+  height: 40px;
+}
+header .logo span {
+  opacity: 0;
+}
+
+main section.overview .overview__wrap {
+  margin: 120px 0 80px;
+}
+@media screen and (min-width: 768px) {
+  main section.overview .overview__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+main section.overview .overview__wrap .overview__artwork {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  main section.overview .overview__wrap .overview__artwork {
+    width: 41.6666666667%;
+  }
+}
+main section.overview .overview__wrap .overview__artwork img {
+  width: 100%;
+  height: 100%;
+}
+main section.overview .overview__wrap .overview__description {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  main section.overview .overview__wrap .overview__description {
+    width: 50%;
+  }
+}
+main section.overview .overview__wrap .overview__description .overview__title {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2.25em;
+}
+@media screen and (min-width: 768px) {
+  main section.overview .overview__wrap .overview__description .overview__title {
+    margin-top: 0;
+    text-align: left;
+  }
+}
+main section.overview .overview__wrap .overview__description .overview__table {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: table;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  background: #f4f4f4;
+}
+@media screen and (min-width: 768px) {
+  main section.overview .overview__wrap .overview__description .overview__table {
+    position: static;
+    left: 0;
+    right: 0;
+    width: auto;
+    margin: 0;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    padding: 20px 40px;
+    border-radius: 5px;
+  }
+}
+main section.overview .overview__wrap .overview__description .overview__table .body {
+  display: table-row-group;
+}
+main section.overview .overview__wrap .overview__description .overview__table .row {
+  display: table-row;
+}
+main section.overview .overview__wrap .overview__description .overview__table .row:last-child .cell {
+  padding-bottom: 0;
+}
+main section.overview .overview__wrap .overview__description .overview__table .cell {
+  display: table-cell;
+  font-size: calc(0.95em + 0.1vw);
+  line-height: 1.9em;
+  text-align: center;
+  color: #000;
+  padding-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  main section.overview .overview__wrap .overview__description .overview__table .cell {
+    text-align: left;
+  }
+}
+main section.overview .overview__wrap .overview__description .overview__table .cell::last-child {
+  padding-bottom: 0;
+}
+main section.overview .overview__wrap .overview__description .overview__table .head {
+  width: 25%;
+  font-family: "PretendardJP-semibold";
+}
+main section.overview .overview__wrap .overview__description .overview__comment {
+  font-size: calc(1em + 0.1vw);
+  line-height: 2em;
+  text-align: justify;
+  color: #000;
+}
+main section.overview .overview__wrap .overview__description .overview__comment br {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  main section.overview .overview__wrap .overview__description .overview__comment br {
+    display: block;
+  }
+}
+main section.point .point__wrap {
+  display: table;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  aspect-ratio: 1/1;
+}
+@media screen and (min-width: 768px) {
+  main section.point .point__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: unset;
+  }
+}
+main section.point .point__wrap .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+main section.point .point__wrap .circle.line {
+  border: 2px solid #ff8618;
+  color: #ff8618;
+}
+main section.point .point__wrap .circle.plane {
+  background-color: #ff8618;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  main section.point .point__wrap .circle {
+    display: table-cell;
+    aspect-ratio: 1/1;
+  }
+}
+main section.point .point__wrap .circle p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: calc(1.2em + 0.1vw);
+  line-height: 2.4em;
+  text-align: center;
+  color: inherit;
+}
