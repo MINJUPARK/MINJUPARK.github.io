@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap");
 :root {
   --vh: 1vh;
 }
@@ -114,6 +115,7 @@ header h1 {
   display: none;
 }
 
+article > h2,
 section > h2,
 section > .fp-tableCell > h2 {
   font-size: 0;
@@ -133,6 +135,10 @@ a:not(body > div > a) {
 
 a, span {
   display: inline-block;
+}
+
+iframe {
+  border: 0;
 }
 
 h1 {

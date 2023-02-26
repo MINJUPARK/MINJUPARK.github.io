@@ -1,0 +1,23 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+@include guideCommon();
+
+header {
+    background-image: url('../../image/design/poster_dessert_landing.png');
+}
+
+.circle {
+
+    &.line { 
+        border: 2px solid #ec1c27;
+        color: #ec1c27;
+    }
+    
+    &.plane {
+        background-color: #ec1c27;
+        color: #fff;
+    }
+}

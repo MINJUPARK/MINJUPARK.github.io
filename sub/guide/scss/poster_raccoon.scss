@@ -1,0 +1,43 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+@include guideCommon();
+
+header {
+    background-image: url('../../image/design/poster_raccoon_landing.png');
+}
+
+.circle {
+
+    &.line { 
+        border: 2px solid #aca5d6;
+        color: #aca5d6;
+    }
+    
+    &.plane {
+        background-color: #aca5d6;
+        color: #fff;
+    }
+}
+
+.series__item {
+
+    .series-2 {
+
+        @include responsive(tablet-screens) {
+            margin-top: 300px;
+        }
+    }
+}
+
+.mockup__wrap {
+
+    img {
+        margin: 5vw 0;
+
+        &.mockup-2 { margin-left: -10vw; }
+        &.mockup-3 { margin-left: 10vw; }
+    }
+}

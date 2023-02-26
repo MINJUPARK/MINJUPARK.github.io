@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap");
 :root {
   --vh: 1vh;
 }
@@ -91,6 +92,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100) !important;
@@ -118,6 +123,7 @@ header h1 {
   display: none;
 }
 
+article > h2,
 section > h2,
 section > .fp-tableCell > h2 {
   font-size: 0;
@@ -137,6 +143,10 @@ a:not(body > div > a) {
 
 a, span {
   display: inline-block;
+}
+
+iframe {
+  border: 0;
 }
 
 h1 {
@@ -2383,14 +2393,22 @@ footer .footer__wrap .footer__btn a:hover {
   transform: scale(1.2);
 }
 footer .footer__wrap .footer__copy {
-  padding: 15px 0;
+  position: relative;
+  height: 100px;
+}
+footer .footer__wrap .footer__copy .copy__info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   font-size: calc(0.8em + 0.1vw);
   line-height: 1.6em;
   text-align: left;
   color: rgba(0, 0, 0, 0.5);
 }
 @media screen and (min-width: 544px) {
-  footer .footer__wrap .footer__copy {
+  footer .footer__wrap .footer__copy .copy__info {
     text-align: center;
   }
 }

@@ -1762,22 +1762,21 @@ main {
             width: 100%;
             margin-top: 220px;
         }
-          
-          .swiper-slide {
+            
+        .swiper-slide {
             background-position: center;
             background-size: cover;
             max-width: 680px;
             width: 90%;
-            // height: 500px;
             overflow: hidden;
             border-radius: 8px;
             opacity: 0.5;
             transition: all .3s;
-          }
-          
-          .swiper-slide.swiper-slide-active {
-            opacity: 1;
-          }
+        }
+        
+        .swiper-slide.swiper-slide-active {
+        opacity: 1;
+        }
     }
 }
 
@@ -1830,13 +1829,6 @@ footer {
             }
         }
 
-        .footer__copy {
-            padding: 15px 0;
-            @include textSet(0.8em, 0.1vw, left, rgba(0, 0, 0, 0.5));
-
-            @include responsive(mt-screens) {
-                text-align: center;
-            }
-        }
+        @include footerCopyright();
     }
 }

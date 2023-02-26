@@ -1,14 +1,9 @@
 
 window.onload = function() {
+    
+    
+
     // [common] menu svg
-    const topLine = document.getElementById("top-line");
-    const middleLine = document.getElementById("middle-line");
-    const bottomLine = document.getElementById("bottom-line");
-    const segmentDuration = 15;
-    const menuDisappearDurationInFrames = segmentDuration;
-    const arrowAppearDurationInFrames = segmentDuration;
-    const arrowDisappearDurationInFrames = segmentDuration;
-    const menuAppearDurationInFrames = segmentDuration;
     let state = 'menu';
     let topLeftX, topRightX, bottomLeftX, bottomRightX;
     let topLineY, middleLineY, bottomLineY;
@@ -18,6 +13,44 @@ window.onload = function() {
     let arrowDisappearComplete = false;
     let menuAppearComplete = false;
     let currentFrame = 1;
+    
+    const topLine = document.getElementById("top-line");
+    const middleLine = document.getElementById("middle-line");
+    const bottomLine = document.getElementById("bottom-line");
+    const segmentDuration = 15;
+    const menuDisappearDurationInFrames = segmentDuration;
+    const arrowAppearDurationInFrames = segmentDuration;
+    const arrowDisappearDurationInFrames = segmentDuration;
+    const menuAppearDurationInFrames = segmentDuration;
+    
+    // [common] menu effect
+    const menu = document.querySelector('#togglebtn');
+    const menuItems = document.querySelector('#overlay');
+    const menuItemsli = document.querySelectorAll('#overlay li');
+    const menuContainer = document.querySelector('.menu-container');
+
+    menu.addEventListener('click', function(e) {
+        e.preventDefault();
+        menuItems.classList.toggle('open');
+        menuContainer.classList.toggle('full-menu');
+        
+        if (state === 'menu') {
+            openMenuAnimation();
+            state = 'arrow';
+            for(let i = 0; i < menuItemsli.length; i++) {
+                menuItemsli[i].classList.add('fadeInRight');
+            }
+        } else if (state === 'arrow') {
+            closeMenuAnimation();
+            state = 'menu';
+            for(let i = 0; i < menuItemsli.length; i++) {
+                menuItemsli[i].classList.remove('fadeInRight');
+            }
+        }
+        menuDisappearComplete = false;
+        arrowAppearComplete = false;
+    });
+
 
     // 메뉴 닫기
     function closeMenuAnimation() {
@@ -43,9 +76,9 @@ window.onload = function() {
         if ( currentFrame <= menuAppearDurationInFrames ) {
             window.requestAnimationFrame( () => {
                 topLineY = AJS.easeOutBack( 50, 37, menuDisappearDurationInFrames, currentFrame );
-                topLine.setAttribute( "d", "M30,"+topLineY + " L70," + topLineY );
+                topLine.setAttribute( "d", "M30," + topLineY + " L70," + topLineY );
                 bottomLineY = AJS.easeOutBack( 50, 63, menuDisappearDurationInFrames, currentFrame );
-                bottomLine.setAttribute( "d", "M30,"+bottomLineY + " L70," + bottomLineY );
+                bottomLine.setAttribute( "d", "M30," + bottomLineY + " L70," + bottomLineY );
                 menuAppearAnimation();
             });
         } else {
@@ -61,7 +94,7 @@ window.onload = function() {
         if ( currentFrame <= menuDisappearDurationInFrames ) {
             window.requestAnimationFrame( () => { 
                 topLineY = AJS.easeInBack( 37, 50, menuDisappearDurationInFrames, currentFrame );
-                topLine.setAttribute( "d", "M30," + topLineY+  " L70," + topLineY );
+                topLine.setAttribute( "d", "M30," + topLineY +  " L70," + topLineY );
                 bottomLineY = AJS.easeInBack( 63, 50, menuDisappearDurationInFrames, currentFrame );
                 bottomLine.setAttribute( "d", "M30," + bottomLineY + " L70," + bottomLineY );
                 menuDisappearAnimation();
@@ -122,35 +155,6 @@ window.onload = function() {
             closeMenuAnimation();
         }
     }
-
-    // [common] menu effect
-    const menu = document.querySelector('#togglebtn');
-    const menuItems = document.querySelector('#overlay');
-    const menuItemsli = document.querySelectorAll('#overlay li');
-    const menuContainer = document.querySelector('.menu-container');
-
-    menu.addEventListener('click', function(e) {
-        e.preventDefault();
-        menuItems.classList.toggle('open');
-        menuContainer.classList.toggle('full-menu');
-        
-        if (state === 'menu') {
-            openMenuAnimation();
-            state = 'arrow';
-            for(let i = 0; i < menuItemsli.length; i++) {
-                menuItemsli[i].classList.add('fadeInRight');
-            }
-        } else if (state === 'arrow') {
-            closeMenuAnimation();
-            state = 'menu';
-            for(let i = 0; i < menuItemsli.length; i++) {
-                menuItemsli[i].classList.remove('fadeInRight');
-            }
-        }
-        menuDisappearComplete = false;
-        arrowAppearComplete = false;
-    });
-
     
     // [common] menu description
     $('.overlay__menu a').on({

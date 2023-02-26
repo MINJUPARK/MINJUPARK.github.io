@@ -7,10 +7,11 @@
         <meta name="author" content="박민주">
         <meta name="description" content="박민주의 포트폴리오 홈페이지 입니다.">
         <link rel="shortcut icon" type="image/svg+xml" href="../../image/favicon.ico">
-        <link rel="stylesheet" type="text/css" href="./css/guide.css">
         <link rel="stylesheet" type="text/css" href="./css/poster_ballet.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript" src="../../js/channel.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script type="text/javascript" src="./js/guide.js"></script>
         <title>공연 포스터 | I'm Deblisher</title>
     </head>
 <body>
@@ -19,16 +20,19 @@
             <h2>공연 포스터</h2>
             <p>performance poster</p>
         </div>
-        <div class="container">
-            <!-- <div class="logo">
+        <!-- <div class="container">
+            <div class="logo">
                 <h1><a href="../../index.html"><img src="../../image/favicon.svg" alt="포트폴리오 홈으로 이동"></a></h1>
                 <span>홈으로 이동</span>
-            </div>  -->
-            
+            </div>
+        </div> -->
+        <div class="scroll">
+            <div class="scroll__mouse"></div>
+            <span class="scroll__text">scroll down</span>
         </div>
     </header>
     <main>
-        <section class="overview">
+        <section class="overview" data-aos="zoom-in-up" data-aos-duration="1000">
             <h2>overview</h2>
             <div class="container">
                 <div class="overview__wrap">
@@ -68,29 +72,46 @@
                         </p>
                     </div>
                 </div>
-                
             </div>
         </section>
         <section class="point">
             <h2>design point</h2>
             <div class="container">
-                <h3>Design Point</h3>
+                <div class="chapter" data-aos="fade-right">
+                    <span>01</span>
+                    <h3>Design Point</h3>
+                </div>
                 <div class="point__wrap">
-                    <div class="circle line">
+                    <div class="circle line" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                         <p>무용수의 바디라인에 따라<br>자연스럽게 흐르는 타이포</p>
                     </div>
-                    <div class="circle plane">
-                        <p>발레리나의 섬세한 동작을<br>강조하는 폴리곤 아트기법</p>
+                    <div class="circle plane" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="750">
+                        <p>무용수의 섬세한 동작을<br>강조하는 폴리곤 아트기법</p>
                     </div>
-                    <div class="circle line">
+                    <div class="circle line" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
                         <p>공연 안내에 필요한 정보는<br>외곽에 균형감있게 배치</p>
                     </div>
                 </div>
             </div>
         </section>
+        <article class="mockup">
+            <h2>mockup</h2>
+            <div class="container">
+                <div class="chapter" data-aos="fade-right" data-aos-delay="500">
+                    <span>02</span>
+                    <h3>Design Mockup</h3>
+                </div>
+            </div>
+            <img src="../image/design/poster_ballet_mockup.png" alt="공연 포스터 목업" data-aos="fade-up" data-aos-delay="1000">
+        </article>
     </main>
     <footer>
-
+        <div class="footer__copy">
+            <div class="container copy__info">
+                <p>&copy; 2023 I'm Deblisher (박민주) All rights reserved.</p>
+                <p>본 사이트는 비상업적인 목적으로 제작된 개인 포트폴리오 페이지 입니다.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

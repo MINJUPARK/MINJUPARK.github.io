@@ -92,6 +92,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100) !important;
@@ -119,6 +123,7 @@ header h1 {
   display: none;
 }
 
+article > h2,
 section > h2,
 section > .fp-tableCell > h2 {
   font-size: 0;
