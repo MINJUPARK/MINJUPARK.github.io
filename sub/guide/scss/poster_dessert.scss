@@ -5,6 +5,8 @@
 
 @include guideCommon();
 
+$mainColor: #ec1c27;
+
 header {
     background-image: url('../../image/design/poster_dessert_landing.png');
 }
@@ -12,12 +14,12 @@ header {
 .circle {
 
     &.line { 
-        border: 2px solid #ec1c27;
-        color: #ec1c27;
+        border: 2px solid $mainColor;
+        color: $mainColor;
     }
     
     &.plane {
-        background-color: #ec1c27;
+        background-color: $mainColor;
         color: #fff;
     }
 }

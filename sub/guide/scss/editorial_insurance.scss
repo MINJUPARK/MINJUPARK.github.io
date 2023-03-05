@@ -1,0 +1,151 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+@include guideCommon();
+
+$mainColor: #219aa8;
+
+header {
+    background-image: url('../../image/design/editorial_insurance_landing.png');
+}
+
+.circle {
+
+    &.line { 
+        border: 2px solid $mainColor;
+        color: $mainColor;
+    }
+    
+    &.plane {
+        background-color: $mainColor;
+        color: #fff;
+    }
+}
+
+.series__item {
+
+    .series-2 {
+
+        @include responsive(tablet-screens) {
+            margin-top: 300px;
+        }
+    }
+}
+
+.mockup__wrap {
+
+    img {
+        margin: 5vw 0;
+
+        &.mockup-2 { margin-left: -10vw; }
+        &.mockup-3 { margin-left: 10vw; }
+    }
+}
+.compare__wrap {
+
+    .compare__item {
+        @include flex_between_center();
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 8vw 0;
+    
+        @include responsive(tablet-screens) {
+            flex-wrap: nowrap;
+            column-gap: 5vw;
+            margin: 4vw 0;
+        }
+
+        // &:nth-child(even) {
+        //     flex-direction: row-reverse;
+        // }
+        
+        .compare__pic__wrap {
+            width: 100%;
+    
+            .compare__pic {
+                @include flex_between_center();
+                width: inherit;
+                margin-bottom: 15px;
+                
+                @include responsive(tablet-screens) {
+                    margin-bottom: 0;
+                }
+    
+                img {
+                    width: calc(100%/2 - 40px);
+                }
+            }
+        
+            .compare__arrow {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                display: inline-block;
+        
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                }
+        
+                &::before {
+                    top: 27%;
+                    left: 0;
+                    width: 50%;
+                    height: 35%;
+                    border: none;
+                    background-color: #555;
+                }
+            
+                &::after {
+                    top: 0;
+                    left: 50%;
+                    border-style: solid;
+                    border-width: 18px 18px;
+                    border-color: transparent;
+                    border-left-color: #555;
+                }
+            }
+        }
+        
+        .compare__txt {
+            width: 100%;
+
+            li {
+                padding-left: 10px;
+                margin: 4vw 0;
+                border-left: 3px solid $mainColor;
+                
+                .compare__common {
+                    
+                    span {
+                        padding: 0 10px;
+                        margin-right: 10px;
+                        margin-bottom: 5px;
+                        @include PretendardJP_font(semibold);
+                        font-size: calc(0.8em + 0.1vw);
+                        vertical-align: middle;
+                        border-radius: 30px;
+                        background: #fce16d;
+
+                        @media screen and (min-width:330px) {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                strong {
+                    display: inline-block;
+                    margin-bottom: 10px;
+                    font-size: calc(1em + 0.1vw);
+                }
+    
+                p {
+                    @include textSet(0.9em, 0.1vw, justify, inherit);
+                }
+            }
+        }
+    }
+}
+

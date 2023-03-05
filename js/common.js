@@ -1,7 +1,5 @@
 
 window.onload = function() {
-    
-    
 
     // [common] menu svg
     let state = 'menu';

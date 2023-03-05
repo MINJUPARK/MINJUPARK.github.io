@@ -62,13 +62,13 @@ header {
     .portfolio__menu {
         display: none;
 
-        @include responsive(tablet-screens) {
-            display: block;
+        @include responsive(mt-screens) {
             @include flex_between();
-    
+            
             .help {
                 @include flex_between_center();
                 column-gap: 10px;
+                margin: 20px 0;
         
                 .help__icon {
                     width: 24px;
@@ -283,7 +283,7 @@ main {
                                 // @include boxShadow(20px, $deepPurple);
                                 // @include background($deepPurple_rgba);
                                 line-height: inherit;
-                                letter-spacing: 0.04em;
+                                letter-spacing: 0.02em;
                                 border-radius: 40px;
     
                                 @include responsive(tablet-screens) {

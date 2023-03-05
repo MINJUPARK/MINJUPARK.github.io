@@ -92,13 +92,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html, body {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100) !important;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill-available;
 }
 
 body {
@@ -461,9 +459,8 @@ header .menu-container #overlay .overlay__menu ul li .bubble:before {
 header .portfolio__menu {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 544px) {
   header .portfolio__menu {
-    display: block;
     display: flex;
     justify-content: space-between;
   }
@@ -473,6 +470,7 @@ header .portfolio__menu {
     align-items: center;
     -moz-column-gap: 10px;
          column-gap: 10px;
+    margin: 20px 0;
   }
   header .portfolio__menu .help .help__icon {
     width: 24px;
@@ -487,12 +485,12 @@ header .portfolio__menu {
     display: none;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 1104px) {
+@media screen and (min-width: 544px) and (min-width: 1104px) {
   header .portfolio__menu .help .help__text .help__title {
     display: block;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 544px) and (min-width: 768px) {
   header .portfolio__menu .help .help__text .help__description br {
     display: none;
   }
@@ -822,7 +820,7 @@ main section .section__cover .category .category__item .category__bg div h3 {
   text-align: inherit;
   color: inherit;
   line-height: inherit;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   border-radius: 40px;
 }
 @media screen and (min-width: 768px) {

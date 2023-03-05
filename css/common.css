@@ -88,13 +88,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html, body {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100) !important;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill-available;
 }
 
 body {

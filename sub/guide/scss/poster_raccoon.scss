@@ -5,6 +5,8 @@
 
 @include guideCommon();
 
+$mainColor: #aca5d6;
+
 header {
     background-image: url('../../image/design/poster_raccoon_landing.png');
 }
@@ -12,12 +14,12 @@ header {
 .circle {
 
     &.line { 
-        border: 2px solid #aca5d6;
-        color: #aca5d6;
+        border: 2px solid $mainColor;
+        color: $mainColor;
     }
     
     &.plane {
-        background-color: #aca5d6;
+        background-color: $mainColor;
         color: #fff;
     }
 }
