@@ -214,7 +214,7 @@ main {
                     }
     
                     @include responsive(tablet-screens) {
-                        width: calc(100% / 4 - 3%);
+                        width: calc(100% / 4);
                     }
     
                     .nodejs {
@@ -783,14 +783,15 @@ main {
 
         .logo3d {
             @include responsive(tp-screens) {
-                display: flex;
+                @include flex_between();
                 column-gap: 40px;
             }
 
             .logo3d__item {
                 @include responsive(tp-screens) {
-                    &:first-child { width: 60%; }
-                    &:last-child  { width: 40%; }
+                    flex: 1;
+                    // &:first-child { width: 60%; }
+                    // &:last-child  { width: 40%; }
                 }
             }
         }

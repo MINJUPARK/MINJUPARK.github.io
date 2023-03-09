@@ -793,14 +793,81 @@ footer .footer__copy .copy__info {
 }
 
 header {
-  background-image: url("../../image/design/poster_dessert_landing.png");
+  background-image: url("../../image/design/3d_coffee_landing.png");
+  background-position: bottom;
 }
 
 .circle.line {
-  border: 2px solid #ec1c27;
-  color: #ec1c27;
+  border: 2px solid #563422;
+  color: #563422;
 }
 .circle.plane {
-  background-color: #ec1c27;
+  background-color: #563422;
   color: #fff;
+}
+
+.about__title strong {
+  color: #563422;
+}
+
+.about__explain strong {
+  background: #563422;
+}
+
+.concept__size {
+  text-align: center;
+}
+.concept__size img {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1104px) {
+  .concept__modeling {
+    width: 1200px;
+  }
+}
+.concept__modeling .modeling {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+}
+.concept__modeling .modeling:first-child {
+  margin-top: 0;
+}
+.concept__modeling .modeling:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1104px) {
+  .concept__modeling .modeling {
+    position: static;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .concept__modeling .modeling.left {
+    width: 720px;
+    height: 720px;
+  }
+  .concept__modeling .modeling.right {
+    width: 800px;
+    height: 800px;
+    margin-left: auto;
+  }
+}
+.concept__modeling .modeling img {
+  width: 100%;
+}
+@media screen and (min-width: 1104px) {
+  .concept__modeling .modeling img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }

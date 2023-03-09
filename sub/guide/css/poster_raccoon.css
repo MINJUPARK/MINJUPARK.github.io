@@ -328,7 +328,7 @@ main .circle__wrap {
 }
 @media screen and (min-width: 1104px) {
   main .circle__wrap {
-    width: 80.5555555556%;
+    width: 83.3333333333%;
   }
 }
 main .circle__wrap .circle {
@@ -554,14 +554,221 @@ main section.series .series__wrap .series__item p::before {
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
 }
-main article.mockup img {
-  width: 100%;
+main section.about .about__wrap {
+  margin-top: 60px;
 }
-main article.mockup img:last-child {
+main section.about .about__wrap .about__title, main section.about .about__wrap .about__subtitle {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  main section.about .about__wrap .about__title br, main section.about .about__wrap .about__subtitle br {
+    display: none;
+  }
+}
+main section.about .about__wrap .about__title {
+  font-size: calc(1.5em + 0.5vw);
+  line-height: calc(1.5em + 0.5vw);
+}
+main section.about .about__wrap .about__title strong {
+  font-family: "PretendardJP-semibold";
+}
+main section.about .about__wrap .about__subtitle {
+  font-size: calc(1.25em + 0.5vw);
+  line-height: calc(1.5em + 0.5vw);
+}
+main section.about .about__wrap .about__explain {
+  margin: 40px 0 60px;
+  font-size: calc(1em + 0.1vw);
+  line-height: 2em;
+  text-align: justify;
+  color: rgb(64, 64, 64);
+}
+@media screen and (min-width: 768px) {
+  main section.about .about__wrap .about__explain {
+    text-align: center;
+  }
+}
+main section.about .about__wrap .about__explain strong {
+  font-family: "PretendardJP-regular";
+  font-size: calc(0.8em + 0.1vw);
+  padding: 5px 15px;
+  color: #fff;
+  border-radius: 30px;
+}
+main section.about .about__wrap .about__explain br {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  main section.about .about__wrap .about__explain br {
+    display: block;
+  }
+}
+main section.concept {
   margin-bottom: 0;
 }
-main article.mockup .mockup__wrap {
-  overflow-x: hidden;
+main section.concept .concept__item {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0;
+}
+main section.concept .concept__item:last-child {
+  margin: 0;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__item {
+    flex-direction: row;
+  }
+  main section.concept .concept__item:not(:first-child):not(:last-child) {
+    margin: 180px 0;
+  }
+  main section.concept .concept__item:nth-child(odd) {
+    width: calc(100% - 40px);
+    margin-left: auto;
+  }
+  main section.concept .concept__item:nth-child(even) {
+    justify-content: flex-end;
+  }
+}
+main section.concept .concept__title {
+  padding: 5px;
+  text-align: center;
+  border-radius: 50px;
+  background: #f1f1f1;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__title {
+    width: 160px;
+    padding: 0;
+    text-align: left;
+    border-radius: 0;
+    background: transparent;
+  }
+}
+main section.concept .concept__contents .concept__inner {
+  margin: 40px 0;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__contents .concept__inner:first-child {
+    margin-top: 0;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__info {
+  margin: 20px 0;
+  text-align: center;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__contents .concept__inner .concept__info {
+    margin: 3px 0 0 0;
+    text-align: left;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__info .concept__type {
+  font-family: "PretendardJP-medium";
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__contents .concept__inner .concept__info .concept__type {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__info .concept__description {
+  display: inline-block;
+  font-size: calc(0.9em + 0.1vw);
+  line-height: 1.8em;
+  text-align: center;
+  color: rgb(64, 64, 64);
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__contents .concept__inner .concept__info .concept__description {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__info .concept__description b {
+  font-family: "PretendardJP-regular";
+}
+@media screen and (min-width: 768px) {
+  main section.concept .concept__contents .concept__inner .concept__info .concept__description br {
+    display: none;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__color {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 20px;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__contents .concept__inner .concept__color {
+    justify-content: flex-start;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__color .color__item {
+  flex: 1 1 40%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px #e4e4e4;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  main section.concept .concept__contents .concept__inner .concept__color .color__item {
+    width: 160px;
+    flex: none;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__color .color__item .color__box {
+  width: 100%;
+  height: 130px;
+}
+main section.concept .concept__contents .concept__inner .concept__color .color__item .color__code {
+  padding: 20px;
+}
+main section.concept .concept__contents .concept__inner .concept__color .color__item .color__code b {
+  display: block;
+}
+main section.concept .concept__contents .concept__inner .concept__color .color__item .color__code b:before {
+  content: "#";
+}
+main section.concept .concept__contents .concept__inner .concept__color .color__item .color__code small {
+  color: rgb(128, 128, 128);
+}
+main section.concept .concept__contents .concept__inner .concept__style .style__icon {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+main section.concept .concept__contents .concept__inner .concept__style .style__icon::after {
+  content: "";
+  flex: auto;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__contents .concept__inner .concept__style .style__icon {
+    justify-content: flex-start;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+    width: 680px;
+  }
+}
+main section.concept .concept__contents .concept__inner .concept__style .style__icon img {
+  width: 80px;
+  height: 80px;
+}
+main section.concept .concept__contents .concept__inner .concept__full {
+  max-width: 100%;
+  width: 1240px;
+}
+main article.mockup .mockup__wrap img {
+  display: block;
+  width: 100%;
+}
+main article.mockup .mockup__wrap img:first-child {
+  margin: 0;
 }
 
 footer .footer__copy {

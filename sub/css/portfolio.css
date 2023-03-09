@@ -751,7 +751,7 @@ main section .section__cover .category .category__item:hover {
 }
 @media screen and (min-width: 768px) {
   main section .section__cover .category .category__item {
-    width: 22%;
+    width: 25%;
   }
 }
 main section .section__cover .category .category__item .nodejs {
@@ -1413,16 +1413,14 @@ main section .artwork .artwork__item .artwork__item__text p {
 @media screen and (min-width: 1104px) {
   main section .logo3d {
     display: flex;
+    justify-content: space-between;
     -moz-column-gap: 40px;
          column-gap: 40px;
   }
 }
 @media screen and (min-width: 1104px) {
-  main section .logo3d .logo3d__item:first-child {
-    width: 60%;
-  }
-  main section .logo3d .logo3d__item:last-child {
-    width: 40%;
+  main section .logo3d .logo3d__item {
+    flex: 1;
   }
 }
 

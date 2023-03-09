@@ -1,0 +1,125 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+@include guideCommon();
+
+$mainColor: #563422;
+
+header {
+    background: {
+        image: url('../../image/design/3d_coffee_landing.png');
+        position: bottom;
+    }
+}
+
+.circle {
+
+    &.line { 
+        border: 2px solid $mainColor;
+        color: $mainColor;
+    }
+    
+    &.plane {
+        background-color: $mainColor;
+        color: #fff;
+    }
+}
+
+.about__title strong {
+    color: $mainColor;
+}
+
+.about__explain strong {
+    background: $mainColor;
+}
+
+.concept__size {
+    text-align: center;
+
+    img {
+        max-width: 720px;
+        width: 100%;
+        margin: 0 auto;
+    }
+} 
+
+.concept__modeling {
+    
+    @include responsive(tp-screens) {
+        width: 1200px;
+    }
+    
+    .modeling {
+        @include out_container();
+        margin: {
+            top: 10vw;
+            bottom: 10vw;
+        }
+    
+        &:first-child { margin-top: 0; }
+        &:last-child  { margin-bottom: 0; }
+    
+        @include responsive(tp-screens) {
+            position: static;
+            width: auto;
+            margin: {
+                left: 0;
+                right: 0;
+            }
+    
+            &.left { width:720px; height:720px; }
+            &.right { width:800px; height:800px; margin-left: auto; }
+        }
+    
+        img {
+            width: 100%;
+    
+            @include responsive(tp-screens) {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+
+// .about__journey {
+//     @include flex_between_center();
+//     flex-wrap: wrap;
+
+//     @include responsive(tablet-screens) {
+//         flex-wrap: nowrap;
+
+//     }
+
+//     li {
+//         // flex: 1 1 0;
+//         // text-align: center;
+//         &:not(.line) {
+//             flex: calc(100%/4) 1 0;
+//         }
+
+//         &.line {
+//             display: block;
+//             flex: 1;
+//             border-bottom: 2px dotted $mainColor;
+//             margin: 0 10px;
+//         }
+//     }
+//     img {
+//         display: block;
+//         margin: 20px auto;
+//         height: 65px;
+//     }
+
+//     span {
+//         padding: 5px 10px;
+//         @include PretendardJP_font(semibold);
+//         font-size: calc(0.8em + 0.1vw);
+//         color: $mainColor;
+//         background: #f3eadb;
+//         border-radius: 50px;
+//     }
+// }

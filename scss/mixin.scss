@@ -791,7 +791,7 @@
             }
 
             @include responsive(tp-screens) {
-                width: calc(1160/1440*100%);
+                width: calc(1200/1440*100%);
             }
             
             .circle {
@@ -1024,20 +1024,251 @@
                     }
                 }
             }
-        }
-    
-        article.mockup {
-    
-            img {
-                width: 100%;
 
-                &:last-child {
-                    margin-bottom: 0;
+            &.about {
+
+                .about__wrap {
+                    margin-top: 60px;
+                
+                    .about__title, .about__subtitle {
+                        text-align: center;
+
+                        br {
+                            @include responsive(tablet-screens) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .about__title {
+                        font-size: calc($h4 + 0.5vw);
+                        line-height: calc($h4 + 0.5vw);
+                
+                        strong {
+                            @include PretendardJP_font(semibold);
+                        }
+                    }
+                
+                    .about__subtitle {
+                        font-size: calc($h5 + 0.5vw);
+                        line-height: calc($h4 + 0.5vw);
+                    }
+
+                    .about__explain {
+                        margin: 40px 0 60px;
+                        @include textSet(1em, 0.1vw, justify, $bk1);
+
+                        @include responsive(tablet-screens) {
+                            text-align: center;
+                        }
+                
+                        strong {
+                            @include PretendardJP_font(regular);
+                            font-size: calc(0.8em + 0.1vw);
+                            padding: 5px 15px;
+                            color: #fff;
+                            border-radius: 30px;
+                        }
+                
+                        br {
+                            @include noneBlock(tablet);
+                        }
+                    }
                 }
             }
 
+            &.concept {
+                margin-bottom: 0;
+            
+                .concept__item {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 60px 0;
+            
+                    &:last-child {
+                        margin: 0;
+                    }
+            
+                    @include responsive(tp-screens) {
+                        flex-direction: row;
+            
+                        &:not(:first-child):not(:last-child) {
+                            margin: 180px 0;
+                        }
+                        
+                        &:nth-child(odd) {
+                            width: calc(100% - 40px);
+                            margin-left: auto;
+                        }
+            
+                        &:nth-child(even) {
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            
+                .concept__title {
+                    padding: 5px;
+                    text-align: center;
+                    border-radius: 50px;
+                    background: #f1f1f1;
+            
+                    @include responsive(tp-screens) {
+                        width: 160px;
+                        padding: 0;
+                        text-align: left;
+                        border-radius: 0;
+                        background: transparent;
+                    }
+                }
+            
+                .concept__contents {
+            
+                    .concept__inner {
+                        margin: 40px 0;
+                        
+                        @include responsive(tp-screens) {
+                            &:first-child { margin-top: 0; }
+                        }
+                        
+                        .concept__info {
+                            margin: 20px 0;
+                            text-align: center;
+            
+                            @include responsive(tp-screens) {
+                                margin: 3px 0 0 0;
+                                text-align: left;                    
+                            }
+            
+                            .concept__type {
+                                @include PretendardJP_font(medium);
+                                margin-bottom: 20px;
+            
+                                @include responsive(tp-screens) {
+                                    display: inline-block;
+                                    margin: {
+                                        right: 20px;
+                                        bottom: 0;
+                                    }
+                                }
+                            }
+                
+                            .concept__description {
+                                display: inline-block;
+                                @include textSet(0.9em, 0.1vw, center, $bk1);
+            
+                                @include responsive(tp-screens) {
+                                    margin-bottom: 20px;
+                                    text-align: left;
+                                }
+            
+                                b {
+                                    @include PretendardJP_font(regular);     
+                                }
+            
+                                br {
+                                    @include responsive(tablet-screens) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .concept__color {
+                            @include flex_center_X();
+                            flex-wrap: wrap;
+                            column-gap: 20px;
+                            row-gap: 20px;
+            
+                            @include responsive(tp-screens) {
+                                justify-content: flex-start;
+                            }
+            
+                            .color__item {
+                                flex: 1 1 40%;
+                                border-radius: 10px;
+                                box-shadow: 0 5px 15px #e4e4e4;
+                                overflow: hidden;
+                                
+                                @include responsive(tablet-screens) {
+                                    width: 160px;
+                                    flex: none;
+                                }
+            
+                                .color__box {
+                                    width: 100%;
+                                    height: 130px;
+                                }
+                
+                                .color__code {
+                                    padding: 20px;
+                                    
+                                    b {
+                                        display: block;
+                
+                                        &:before {
+                                            content: '\0023';
+                                        }
+                                    }
+            
+                                    small {
+                                        color: $bk2;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .concept__style {
+            
+                            .style__icon {
+                                @include flex_between();
+                                column-gap: 20px;
+                                row-gap: 20px;
+                                flex-wrap: wrap;
+            
+                                &::after {
+                                    content: '';
+                                    flex: auto;
+                                }
+                                
+                                @include responsive(tp-screens) {
+                                    justify-content: flex-start;
+                                    column-gap: 40px;
+                                    width: 680px;
+                                }
+            
+                                img {
+                                    width: 80px;
+                                    height: 80px;
+                                }
+                            }
+                        }
+            
+                        .concept__full {
+                            max-width: 100%;
+                            width: 1240px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        article.mockup {
+
             .mockup__wrap {
-                overflow-x: hidden;
+
+                img {
+                    display: block;
+                    width: 100%;
+
+                    &:first-child {
+                        margin: 0;
+                    }
+
+                    // &:last-child {
+                    //     margin-bottom: 0;
+                    // }
+                }
             }
         }
     }

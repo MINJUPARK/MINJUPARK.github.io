@@ -143,6 +143,10 @@ header {
     
                 p {
                     @include textSet(0.9em, 0.1vw, justify, inherit);
+
+                    br {
+                        @include noneBlock(tablet);
+                    }
                 }
             }
         }
