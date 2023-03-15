@@ -3,46 +3,14 @@
 @import '../../../scss/mixin.scss';
 @import '../../../scss/common.scss';
 
-@include guideCommon();
-
 $mainColor: #219aa8;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
 
 header {
     background-image: url('../../image/design/editorial_insurance_landing.png');
 }
 
-.circle {
-
-    &.line { 
-        border: 2px solid $mainColor;
-        color: $mainColor;
-    }
-    
-    &.plane {
-        background-color: $mainColor;
-        color: #fff;
-    }
-}
-
-.series__item {
-
-    .series-2 {
-
-        @include responsive(tablet-screens) {
-            margin-top: 300px;
-        }
-    }
-}
-
-.mockup__wrap {
-
-    img {
-        margin: 5vw 0;
-
-        &.mockup-2 { margin-left: -10vw; }
-        &.mockup-3 { margin-left: 10vw; }
-    }
-}
 .compare__wrap {
 
     .compare__item {
@@ -56,10 +24,6 @@ header {
             column-gap: 5vw;
             margin: 4vw 0;
         }
-
-        // &:nth-child(even) {
-        //     flex-direction: row-reverse;
-        // }
         
         .compare__pic__wrap {
             width: 100%;
@@ -74,16 +38,16 @@ header {
                 }
     
                 img {
-                    width: calc(100%/2 - 40px);
+                    width: calc(100% / 2 - 40px);
                 }
             }
         
             .compare__arrow {
+                display: inline-block;
+                position: relative;
                 width: 40px;
                 height: 40px;
-                position: relative;
-                display: inline-block;
-        
+
                 &::before, &::after {
                     content: '';
                     position: absolute;
@@ -121,8 +85,10 @@ header {
                     
                     span {
                         padding: 0 10px;
-                        margin-right: 10px;
-                        margin-bottom: 5px;
+                        margin: {
+                            right: 10px;
+                            bottom: 5px;
+                        }
                         @include PretendardJP_font(semibold);
                         font-size: calc(0.8em + 0.1vw);
                         vertical-align: middle;
@@ -145,7 +111,7 @@ header {
                     @include textSet(0.9em, 0.1vw, justify, inherit);
 
                     br {
-                        @include noneBlock(tablet);
+                        @include noneBlock(tp);
                     }
                 }
             }

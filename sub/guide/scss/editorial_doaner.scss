@@ -3,25 +3,12 @@
 @import '../../../scss/mixin.scss';
 @import '../../../scss/common.scss';
 
-@include guideCommon();
-
 $mainColor: #784c30;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
 
 header {
     background-image: url('../../image/design/editorial_doaner_landing.png');
-}
-
-.circle {
-
-    &.line { 
-        border: 2px solid $mainColor;
-        color: $mainColor;
-    }
-    
-    &.plane {
-        background-color: $mainColor;
-        color: #fff;
-    }
 }
 
 .about__title strong {

@@ -3,27 +3,14 @@
 @import '../../../scss/mixin.scss';
 @import '../../../scss/common.scss';
 
-@include guideCommon();
-
 $mainColor: #563422;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
 
 header {
     background: {
         image: url('../../image/design/3d_coffee_landing.png');
         position: bottom;
-    }
-}
-
-.circle {
-
-    &.line { 
-        border: 2px solid $mainColor;
-        color: $mainColor;
-    }
-    
-    &.plane {
-        background-color: $mainColor;
-        color: #fff;
     }
 }
 
@@ -47,10 +34,6 @@ header {
 
 .concept__modeling {
     
-    @include responsive(tp-screens) {
-        width: 1200px;
-    }
-    
     .modeling {
         @include out_container();
         margin: {
@@ -62,21 +45,37 @@ header {
         &:last-child  { margin-bottom: 0; }
     
         @include responsive(tp-screens) {
-            position: static;
+            left: unset;
+            right: unset;
             width: auto;
             margin: {
                 left: 0;
                 right: 0;
             }
-    
-            &.left { width:720px; height:720px; }
-            &.right { width:800px; height:800px; margin-left: auto; }
+            
+            &::after {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+            }
+
+            &.left {
+                width: calc(720/1440*100%);
+            }
+
+            &.right { 
+                width: calc(800/1440*100%);
+                margin-left: auto; 
+            }
         }
     
         img {
             width: 100%;
     
             @include responsive(tp-screens) {
+                position: absolute;
+                top: 0;
+                left: 0;
                 height: 100%;
                 object-fit: cover;
             }

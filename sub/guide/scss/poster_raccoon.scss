@@ -3,43 +3,20 @@
 @import '../../../scss/mixin.scss';
 @import '../../../scss/common.scss';
 
-@include guideCommon();
-
 $mainColor: #aca5d6;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
 
 header {
     background-image: url('../../image/design/poster_raccoon_landing.png');
 }
+main section.series .series__wrap {
+    align-items: flex-start;
 
-.circle {
-
-    &.line { 
-        border: 2px solid $mainColor;
-        color: $mainColor;
-    }
-    
-    &.plane {
-        background-color: $mainColor;
-        color: #fff;
-    }
-}
-
-.series__item {
-
-    .series-2 {
+    .series__item:last-child img {
 
         @include responsive(tablet-screens) {
             margin-top: 300px;
         }
-    }
-}
-
-.mockup__wrap {
-
-    img {
-        margin: 5vw 0;
-
-        &.mockup-2 { margin-left: -10vw; }
-        &.mockup-3 { margin-left: 10vw; }
     }
 }

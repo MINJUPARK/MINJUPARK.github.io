@@ -3,23 +3,10 @@
 @import '../../../scss/mixin.scss';
 @import '../../../scss/common.scss';
 
-@include guideCommon();
-
 $mainColor: #ec1c27;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
 
 header {
     background-image: url('../../image/design/poster_dessert_landing.png');
-}
-
-.circle {
-
-    &.line { 
-        border: 2px solid $mainColor;
-        color: $mainColor;
-    }
-    
-    &.plane {
-        background-color: $mainColor;
-        color: #fff;
-    }
 }

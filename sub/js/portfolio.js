@@ -123,6 +123,14 @@ function originalImg() {
 
 window.addEventListener('load', function() {
 
+    const origin = document.querySelectorAll('.origin');
+
+    origin.forEach((target) => 
+        target.addEventListener('click', function(e) {
+            originalImg();
+        })
+    );
+
     const modalBtn = document.querySelectorAll('.modal__link');
     const closeBtn = document.getElementById('modal__close');
     const modal = document.querySelector('.modal');

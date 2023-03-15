@@ -180,10 +180,14 @@ main {
                 flex-wrap: wrap;
                 row-gap: 25px;
                 width: 100%;
-                margin-top: 60px;
+                margin: 60px auto 0;
     
                 @include responsive(tablet-screens) {
-                    column-gap: 20px;
+                    column-gap: 40px;
+                }
+
+                @include responsive(tp-screens) {
+                    width: 80%;
                 }
     
                 &.flex-end {
@@ -202,10 +206,9 @@ main {
                     transition: all .3s;
     
                     &.des {
-                        width: calc(100% / 3);
                         
                         @include responsive(tablet-screens) {
-                            width: calc(100% / 4 - 3%);
+                            width: calc(100% / 4);
                         }
                     }
     
@@ -268,12 +271,11 @@ main {
                         border-radius: 50%;
     
                         @include responsive(tablet-screens) {
-                            width: 80%;
                             height: 120px;
                             // @include background($deepPurple_rgba);
                         }
     
-                        div {
+                        .category__txt {
                             @include element_center();
     
                             h3 {

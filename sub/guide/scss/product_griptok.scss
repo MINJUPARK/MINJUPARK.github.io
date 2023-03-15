@@ -1,0 +1,57 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+$mainColor: #2554a4;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
+
+header {
+    background-image: url('../../image/design/product_griptok_landing.png');
+}
+
+main {
+
+    section.series .series__wrap {
+        justify-content: center;
+
+        .series__item {
+            
+            @include responsive(tablet-screens) {
+                width: 50%;
+            }
+
+            img {
+                margin-bottom: 0;
+                box-shadow: none;
+                filter: drop-shadow(10px 10px 2px $guideShadow);
+            }
+
+            p {
+                margin-top: 30px;
+                text-align: center;
+
+                small {
+                    @include PretendardJP_font(regular);
+                    color: $bk1;
+                }
+            }
+
+            .series__animal {
+                @include flex_center_X();
+                flex-wrap: wrap;
+                column-gap: 20px;
+                row-gap: 20px;
+
+                li {
+                    width: calc(100% / 2 - 20px);
+                    
+                    @include responsive(tp-screens) {
+                        width: calc(100% / 3 - 20px);
+                    }
+                }
+            }
+        }
+    }
+}

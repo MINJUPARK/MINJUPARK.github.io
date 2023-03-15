@@ -715,12 +715,17 @@ main section .section__cover .category {
   flex-wrap: wrap;
   row-gap: 25px;
   width: 100%;
-  margin-top: 60px;
+  margin: 60px auto 0;
 }
 @media screen and (min-width: 768px) {
   main section .section__cover .category {
-    -moz-column-gap: 20px;
-         column-gap: 20px;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
+}
+@media screen and (min-width: 1104px) {
+  main section .section__cover .category {
+    width: 80%;
   }
 }
 main section .section__cover .category.flex-end {
@@ -738,12 +743,9 @@ main section .section__cover .category .category__item {
   text-align: center;
   transition: all 0.3s;
 }
-main section .section__cover .category .category__item.des {
-  width: 33.3333333333%;
-}
 @media screen and (min-width: 768px) {
   main section .section__cover .category .category__item.des {
-    width: 22%;
+    width: 25%;
   }
 }
 main section .section__cover .category .category__item:hover {
@@ -803,17 +805,16 @@ main section .section__cover .category .category__item .category__bg {
 }
 @media screen and (min-width: 768px) {
   main section .section__cover .category .category__item .category__bg {
-    width: 80%;
     height: 120px;
   }
 }
-main section .section__cover .category .category__item .category__bg div {
+main section .section__cover .category .category__item .category__bg .category__txt {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-main section .section__cover .category .category__item .category__bg div h3 {
+main section .section__cover .category .category__item .category__bg .category__txt h3 {
   font-family: "DynaPuff-regular";
   font-size: calc(1.13em + 0.1vw);
   line-height: 2.26em;
@@ -824,7 +825,7 @@ main section .section__cover .category .category__item .category__bg div h3 {
   border-radius: 40px;
 }
 @media screen and (min-width: 768px) {
-  main section .section__cover .category .category__item .category__bg div h3 {
+  main section .section__cover .category .category__item .category__bg .category__txt h3 {
     font-size: 1.75em;
     letter-spacing: 0.02em;
     border-radius: 0;
@@ -832,11 +833,11 @@ main section .section__cover .category .category__item .category__bg div h3 {
     box-shadow: none;
   }
 }
-main section .section__cover .category .category__item .category__bg div span {
+main section .section__cover .category .category__item .category__bg .category__txt span {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  main section .section__cover .category .category__item .category__bg div span {
+  main section .section__cover .category .category__item .category__bg .category__txt span {
     display: block;
     margin-top: 8px;
     font-size: 0.9em;

@@ -294,8 +294,7 @@ main .chapter {
 }
 main .chapter span {
   font-family: "PretendardJP-bold";
-  font-size: calc(3em + 0.5vw);
-  color: #eee;
+  font-size: calc(3.5em + 0.5vw);
 }
 main .chapter h3 {
   position: absolute;
@@ -389,6 +388,7 @@ main section.overview .overview__wrap.noflex {
     width: 100%;
   }
   main section.overview .overview__wrap.noflex .overview__description {
+    width: 100%;
     margin: 60px auto 0;
   }
   main section.overview .overview__wrap.noflex .overview__description .overview__title, main section.overview .overview__wrap.noflex .overview__description .overview__comment {
@@ -404,6 +404,14 @@ main section.overview .overview__wrap.noflex {
   }
   main section.overview .overview__wrap.noflex .overview__description .overview__comment br {
     display: block;
+  }
+  main section.overview .overview__wrap.noflex .overview__description .overivew__summary {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1104px) {
+  main section.overview .overview__wrap.noflex .overview__description {
+    width: 50%;
   }
 }
 main section.overview .overview__wrap .overview__artwork {
@@ -444,6 +452,46 @@ main section.overview .overview__wrap .overview__description .overview__title {
     display: none;
   }
 }
+main section.overview .overview__wrap .overview__description .overivew__summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 544px) {
+  main section.overview .overview__wrap .overview__description .overivew__summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1104px) {
+  main section.overview .overview__wrap .overview__description .overivew__summary {
+    width: 88.8888888889%;
+  }
+}
+main section.overview .overview__wrap .overview__description .overivew__summary li {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+main section.overview .overview__wrap .overview__description .overivew__summary li h4 {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+main section.overview .overview__wrap .overview__description .overivew__summary li p {
+  font-size: 0.95em;
+}
+main section.overview .overview__wrap .overview__description .overivew__summary li .overview__tools {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+main section.overview .overview__wrap .overview__description .overivew__summary li .overview__tools img {
+  height: 30px;
+  transform: rotate(90deg);
+}
 main section.overview .overview__wrap .overview__description .overview__table {
   position: relative;
   left: 50%;
@@ -467,7 +515,7 @@ main section.overview .overview__wrap .overview__description .overview__table {
     margin: 0;
     width: 100%;
     padding: 20px 40px;
-    margin: 40px auto;
+    margin: 0;
   }
 }
 main section.overview .overview__wrap .overview__description .overview__table .body {
@@ -505,17 +553,19 @@ main section.overview .overview__wrap .overview__description .overview__comment 
   line-height: 2em;
   text-align: justify;
   color: #000;
+  margin: 30px 0 60px;
 }
 main section.overview .overview__wrap .overview__description .overview__comment br {
   display: none;
 }
-@media screen and (min-width: 1104px) {
+@media screen and (min-width: 1440px) {
   main section.overview .overview__wrap .overview__description .overview__comment br {
     display: block;
   }
 }
 main section.series .series__wrap {
   display: flex;
+  align-items: center;
   flex-direction: column;
   -moz-column-gap: 40px;
        column-gap: 40px;
@@ -630,18 +680,40 @@ main section.concept .concept__item:last-child {
   }
 }
 main section.concept .concept__title {
-  padding: 5px;
-  text-align: center;
-  border-radius: 50px;
-  background: #f1f1f1;
+  position: relative;
+}
+main section.concept .concept__title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #aeaeae;
+  z-index: -1;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__title::before {
+    display: none;
+  }
 }
 @media screen and (min-width: 1104px) {
   main section.concept .concept__title {
-    width: 160px;
+    width: 11.1111111111%;
     padding: 0;
-    text-align: left;
     border-radius: 0;
     background: transparent;
+  }
+}
+main section.concept .concept__title h4 {
+  display: inline-block;
+  padding-right: 20px;
+  font-size: calc(1.25em + 0.5vw);
+  background-color: #fff;
+}
+@media screen and (min-width: 1104px) {
+  main section.concept .concept__contents.modeling {
+    width: calc(100% - 160px);
   }
 }
 main section.concept .concept__contents .concept__inner {
@@ -654,36 +726,28 @@ main section.concept .concept__contents .concept__inner {
 }
 main section.concept .concept__contents .concept__inner .concept__info {
   margin: 20px 0;
-  text-align: center;
 }
 @media screen and (min-width: 1104px) {
   main section.concept .concept__contents .concept__inner .concept__info {
     margin: 3px 0 0 0;
-    text-align: left;
   }
 }
 main section.concept .concept__contents .concept__inner .concept__info .concept__type {
-  font-family: "PretendardJP-medium";
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
   margin-bottom: 20px;
-}
-@media screen and (min-width: 1104px) {
-  main section.concept .concept__contents .concept__inner .concept__info .concept__type {
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 0;
-  }
+  font-family: "PretendardJP-medium";
+  font-size: calc(1.1em + 0.5vw);
 }
 main section.concept .concept__contents .concept__inner .concept__info .concept__description {
   display: inline-block;
-  font-size: calc(0.9em + 0.1vw);
-  line-height: 1.8em;
-  text-align: center;
-  color: rgb(64, 64, 64);
+  font-size: calc(0.95em + 0.1vw);
+  line-height: 1.9em;
 }
 @media screen and (min-width: 1104px) {
   main section.concept .concept__contents .concept__inner .concept__info .concept__description {
     margin-bottom: 20px;
-    text-align: left;
   }
 }
 main section.concept .concept__contents .concept__inner .concept__info .concept__description b {
@@ -716,7 +780,7 @@ main section.concept .concept__contents .concept__inner .concept__color .color__
 @media screen and (min-width: 768px) {
   main section.concept .concept__contents .concept__inner .concept__color .color__item {
     width: 160px;
-    flex: none;
+    flex: 1;
   }
 }
 main section.concept .concept__contents .concept__inner .concept__color .color__item .color__box {
@@ -770,6 +834,16 @@ main article.mockup .mockup__wrap img {
 main article.mockup .mockup__wrap img:first-child {
   margin: 0;
 }
+main article.mockup .mockup__wrap img.multiple {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+main article.mockup .mockup__wrap img.leftSpace {
+  margin-left: 10vw;
+}
+main article.mockup .mockup__wrap img.rightSpace {
+  margin-left: -10vw;
+}
 
 footer .footer__copy {
   position: relative;
@@ -792,8 +866,9 @@ footer .footer__copy .copy__info {
   }
 }
 
-header {
-  background-image: url("../../image/design/editorial_insurance_landing.png");
+.chapter span {
+  color: #219aa8;
+  opacity: 0.2;
 }
 
 .circle.line {
@@ -805,20 +880,8 @@ header {
   color: #fff;
 }
 
-@media screen and (min-width: 768px) {
-  .series__item .series-2 {
-    margin-top: 300px;
-  }
-}
-
-.mockup__wrap img {
-  margin: 5vw 0;
-}
-.mockup__wrap img.mockup-2 {
-  margin-left: -10vw;
-}
-.mockup__wrap img.mockup-3 {
-  margin-left: 10vw;
+header {
+  background-image: url("../../image/design/editorial_insurance_landing.png");
 }
 
 .compare__wrap .compare__item {
@@ -856,10 +919,10 @@ header {
   width: calc(50% - 40px);
 }
 .compare__wrap .compare__item .compare__pic__wrap .compare__arrow {
+  display: inline-block;
+  position: relative;
   width: 40px;
   height: 40px;
-  position: relative;
-  display: inline-block;
 }
 .compare__wrap .compare__item .compare__pic__wrap .compare__arrow::before, .compare__wrap .compare__item .compare__pic__wrap .compare__arrow::after {
   content: "";
@@ -918,7 +981,7 @@ header {
 .compare__wrap .compare__item .compare__txt li p br {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1104px) {
   .compare__wrap .compare__item .compare__txt li p br {
     display: block;
   }

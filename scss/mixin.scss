@@ -761,8 +761,7 @@
     
             span {
                 @include PretendardJP_font(bold);
-                font-size: calc(3em + 0.5vw);
-                color: $guideShadow;
+                font-size: calc(3.5em + 0.5vw);
             }
             
             h3 {
@@ -863,6 +862,7 @@
                             }
                             
                             .overview__description {
+                                width: 100%;
                                 margin: 60px auto 0;
     
                                 .overview__title, .overview__comment {
@@ -876,6 +876,16 @@
                                         display: block;
                                     }
                                 }
+                                
+                                .overivew__summary {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        @include responsive(tp-screens) {
+                            .overview__description {
+                                width: 50%;
                             }
                         }
                     }
@@ -919,7 +929,50 @@
                                 }
                             }
                         }                
-            
+                        
+                        .overivew__summary {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-column-gap: 20px;
+                            grid-row-gap: 20px;
+                            width: 100%;
+                            text-align: center;
+                            
+                            @include responsive(mt-screens) {
+                                grid-template-columns: repeat(3, 1fr);
+                            }
+
+                            @include responsive(tp-screens) {
+                                width: calc(640/720*100%);
+                            }
+                    
+                            li {
+                                padding: 20px;
+                                border-radius: 5px;
+                                background-color: #f4f4f4;
+                    
+                                h4 {
+                                    font-size: $p;
+                                    margin-bottom: 15px;
+                                }
+                    
+                                p {
+                                    font-size: 0.95em;
+                                }
+
+                                .overview__tools {
+                                    @include flex_center_X();
+                                    column-gap: 5px;
+                    
+                                    img {
+                                        height: 30px;
+                                        transform: rotate(90deg);
+                                    }
+                                }
+                            }
+                        }
+
+                        // 변경 후 지우기
                         .overview__table {
                             @include out_container();
                             display: table;
@@ -935,7 +988,7 @@
                                 @include in_container();
                                 width: 100%;
                                 padding: 20px 40px;
-                                margin: 40px auto;
+                                margin: 0;
                             }
                 
                             .body {
@@ -971,9 +1024,13 @@
         
                         .overview__comment {
                             @include textSet(1em, 0.1vw, justify, #000);
-            
+                            margin: 30px 0 60px;
+
+                            // @include responsive(tablet-screens) {
+                            // }
+
                             br {
-                                @include noneBlock(tp);
+                                @include noneBlock(pc);
                             }
                         }
                     }
@@ -983,7 +1040,7 @@
             &.series {
 
                 .series__wrap {
-                    display: flex;
+                    @include flex_center_Y();
                     flex-direction: column;
                     column-gap: 40px;
             
@@ -1108,59 +1165,79 @@
                 }
             
                 .concept__title {
-                    padding: 5px;
-                    text-align: center;
-                    border-radius: 50px;
-                    background: #f1f1f1;
-            
+                    position: relative;
+                    
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        width: 100%;
+                        height: 1px;
+                        background-color: #aeaeae;
+                        z-index: -1;
+
+                        @include responsive(tp-screens) {
+                            display: none;
+                        }
+                    }
+
                     @include responsive(tp-screens) {
-                        width: 160px;
+                        width: calc(160/1440*100%);
                         padding: 0;
-                        text-align: left;
                         border-radius: 0;
                         background: transparent;
+                    }
+
+                    h4 {
+                        display: inline-block;
+                        padding-right: 20px;
+                        font-size: calc(1.25em + 0.5vw);
+                        background-color: #fff;
                     }
                 }
             
                 .concept__contents {
-            
-                    .concept__inner {
-                        margin: 40px 0;
                         
-                        @include responsive(tp-screens) {
-                            &:first-child { margin-top: 0; }
+                    @include responsive(tp-screens) {
+                        
+                        &.modeling {
+                            width: calc(100% - 160px);
                         }
+                    }
+
+                    .concept__inner {
+                        margin: 60px 0;
+
+                        &:first-child { margin-top: 0; }
                         
                         .concept__info {
                             margin: 20px 0;
-                            text-align: center;
-            
-                            @include responsive(tp-screens) {
-                                margin: 3px 0 0 0;
-                                text-align: left;                    
+
+                            &.concept__info__sub {
+                                @include flex_center_Y();
+                                column-gap: 20px;
+
+                                .concept__type {
+                                    padding: 5px 10px;
+                                    @include PretendardJP_font(medium);
+                                    font-size: 1.1em;
+                                    white-space: nowrap;
+                                    border-radius: 50px;
+                                    background: #eee;
+                                }
                             }
             
-                            .concept__type {
-                                @include PretendardJP_font(medium);
-                                margin-bottom: 20px;
-            
-                                @include responsive(tp-screens) {
-                                    display: inline-block;
-                                    margin: {
-                                        right: 20px;
-                                        bottom: 0;
-                                    }
+                            @include responsive(tp-screens) {
+                                margin: {
+                                    top: 3px;
+                                    bottom: 30px;
                                 }
                             }
                 
                             .concept__description {
-                                display: inline-block;
-                                @include textSet(0.9em, 0.1vw, center, $bk1);
-            
-                                @include responsive(tp-screens) {
-                                    margin-bottom: 20px;
-                                    text-align: left;
-                                }
+                                font-size: calc(0.95em + 0.1vw);
+                                line-height: 1.9em;
             
                                 b {
                                     @include PretendardJP_font(regular);     
@@ -1192,7 +1269,7 @@
                                 
                                 @include responsive(tablet-screens) {
                                     width: 160px;
-                                    flex: none;
+                                    flex: 1;
                                 }
             
                                 .color__box {
@@ -1265,9 +1342,20 @@
                         margin: 0;
                     }
 
-                    // &:last-child {
-                    //     margin-bottom: 0;
-                    // }
+                    &.multiple {
+                        margin: {
+                            top: 5vw;
+                            bottom: 5vw;
+                        }
+                    }
+
+                    &.leftSpace {
+                        margin-left: 10vw;
+                    }
+
+                    &.rightSpace {
+                        margin-left: -10vw;
+                    }
                 }
             }
         }
@@ -1275,5 +1363,26 @@
     
     footer {
         @include footerCopyright();
+    }
+}
+
+@mixin guideThemeColorCommon($theme, $text: #fff) {
+
+    .chapter span {
+        color: $theme;
+        opacity: 0.2;
+    }
+
+    .circle {
+
+        &.line { 
+            border: 2px solid $theme;
+            color: $theme;
+        }
+        
+        &.plane {
+            background-color: $theme;
+            color: $text;
+        }
     }
 }

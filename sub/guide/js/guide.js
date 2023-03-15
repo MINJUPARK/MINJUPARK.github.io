@@ -17,5 +17,5 @@ window.onload = function() {
         root: null,
         threshold: 0.1
     })
-    io.observe(overview);
+    io.observe(overview);    
 }
