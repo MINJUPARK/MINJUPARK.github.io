@@ -3,12 +3,13 @@
 @import '../../../scss/mixin.scss';
 @import '../../../scss/common.scss';
 
-$mainColor: #2554a4;
+$mainColor: #F2778C;
 @include guideCommon();
 @include guideThemeColorCommon($mainColor);
 
 header {
-    background-image: url('../../image/design/product_griptok_landing.png');
+    // background-image: url('../../image/design/product_griptok_landing.png');
+    background-color: $mainColor;
 }
 
 main {
@@ -28,17 +29,12 @@ main {
                 filter: drop-shadow(10px 10px 2px $guideShadow);
             }
 
-            p {
+            figcaption {
                 margin-top: 30px;
                 text-align: center;
-
-                small {
-                    @include PretendardJP_font(regular);
-                    color: $bk1;
-                }
             }
 
-            .series__animal {
+            .series__standard {
                 @include flex_center_X();
                 flex-wrap: wrap;
                 column-gap: 20px;

@@ -1,0 +1,91 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+$mainColor: #EF7801;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
+
+header {
+    background: {
+        color: $mainColor;
+        image: url('../../image/design/character_tomnook_4.png');
+        size: auto;
+        position: top;
+        repeat: repeat-x;
+        blend-mode: soft-light;
+    }
+}
+
+
+.process__wrap {
+    @include flex_center_center();
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 80px;
+    
+    @include responsive(tablet-screens) {
+        flex-direction: row;
+        column-gap: 40px;
+    }
+
+    @include responsive(pc-screens) {
+        flex-wrap: nowrap;
+    }
+
+    .process__item {
+
+        @include responsive(tablet-screens) {
+            flex-basis: calc(50% - 40px);
+        }
+
+        @include responsive(pc-screens) {
+            flex-basis: 100%;
+        }
+
+        .process__pic {
+            width: 100%;
+        }
+    
+        .process__txt {
+            text-align: center;
+            
+            .process__title {
+                margin-top: 20px;
+
+                h4 {
+                    color: $mainColor;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        margin: 10px 0 40px;
+                        border-bottom: 1px solid #ef7801;
+                    }
+                    // display: inline-block;
+                    // border: 2px solid #000;
+                    // padding: 10px;
+                    // border-radius: 50%;
+                }
+
+                strong {
+                    font-size: $h5;
+                }
+            }
+            
+            .process__description {
+                margin-top: 15px; 
+                @include textSet(0.9em, 0.1vw, inherit, inherit);
+            }
+        }
+        // .process__arrow {
+        //     @include processArrow();
+        //     transform: rotate(90deg);
+
+        //     @include responsive(tp-screens) {
+        //         transform: unset;
+        //     }
+        // }
+    }
+}

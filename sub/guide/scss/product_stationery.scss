@@ -1,0 +1,91 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+$mainColor: #F2778C;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
+
+header {
+    // background-image: url('../../image/design/product_griptok_landing.png');
+    background-color: $mainColor;
+}
+
+main {
+
+    section.series .series__wrap {
+
+        .series__item {
+            
+            img {
+                box-shadow: none;
+                margin-bottom: 0;
+            }
+
+            .series__intro {
+                @include flex_between();
+                flex-direction: column;
+                text-align: center;
+
+                @include responsive(tablet-screens) {
+                    flex-direction: row;
+                    text-align: justify;
+                }
+
+                .series__title {
+                    @include dynaPuff_font(medium);
+                    font-size: calc(2em + 0.1vw);
+                    line-height: 1.5em;
+                    
+                    span {
+                        &[data-color='f0b0be'] { color: #f0b0be; }
+                        &[data-color='9bccec'] { color: #9bccec; }
+                    }
+
+                    br {
+                        @include noneBlock(tablet);
+                    }
+                }
+
+                .series__description {
+
+                    .series__type {
+                        @include flex_center_X();
+                        
+                        li {
+                            padding: 3px 12px;
+                            margin: 0 5px;
+                            border: 1px solid $bk1;
+                            border-radius: 50px;
+                            @include textSet(0.8em, 0.1vw, initial, $bk1);
+                            
+                            &:first-child {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                    
+                    .series__comment {
+                        margin: 15px 0 20px;
+                        @include textSet(1em, 0.1vw, inherit, #000);
+                    }
+                }
+            }
+
+            .series__mockup {
+                @include out_container();
+                margin-top: 60px;
+                background: linear-gradient(45deg, rgba(155,204,236,1) 0%, rgba(240,176,190,1) 75%);
+
+                @include responsive(tablet-screens) {
+                    @include in_container();
+                }
+
+                .test {
+                    margin-top: -40px;
+                }
+            }
+        }
+    }
+}

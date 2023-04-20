@@ -585,6 +585,34 @@
     }
 }
 
+// [portfolio] 비교할 때 사욯하는 화살표
+@mixin processArrow() {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    &::before, &::after {
+        content: '';
+        @include element_center_Y();
+    }
+
+    &::before {
+        left: 0;
+        width: 50%;
+        height: 35%;
+        background-color: #555;
+    }
+
+    &::after {
+        left: 50%;
+        border-style: solid;
+        border-width: 18px 18px;
+        border-color: transparent;
+        border-left-color: #555;
+    }
+}
+
 // [portfolio - guide]
 @mixin guideCommon() {
 
@@ -849,7 +877,7 @@
             
                 .overview__wrap {
                     
-                    @include responsive(tablet-screens) {
+                    @include responsive(tp-screens) {
                         @include flex_between_center();
                     }
 
@@ -857,6 +885,7 @@
                         display: unset;
 
                         @include responsive(tablet-screens) {
+                            
                             .overview__artwork {
                                 width: 100%;
                             }
@@ -884,6 +913,7 @@
                         }
 
                         @include responsive(tp-screens) {
+
                             .overview__description {
                                 width: 50%;
                             }
@@ -893,7 +923,7 @@
                     .overview__artwork {
                         width: 100%;
                         
-                        @include responsive(tablet-screens) {
+                        @include responsive(tp-screens) {
                             width: calc(600/1440*100%);
                         }
         
@@ -907,7 +937,7 @@
                     .overview__description {
                         width: 100%;
         
-                        @include responsive(tablet-screens) {
+                        @include responsive(tp-screens) {
                             width: calc(720/1440*100%);
                         }
         
@@ -916,8 +946,9 @@
                             font-size: $h1;
                             line-height: 1.4em;
                             text-align: center;
+                            word-break: keep-all;
 
-                            @include responsive(tablet-screens) {
+                            @include responsive(tp-screens) {
                                 margin-top: 0;
                                 text-align: left;
                             }
@@ -948,9 +979,8 @@
                     
                             li {
                                 padding: 20px;
-                                border-radius: 5px;
-                                background-color: #f4f4f4;
-                    
+                                border-radius: 100px;
+                        
                                 h4 {
                                     font-size: $p;
                                     margin-bottom: 15px;
@@ -973,61 +1003,58 @@
                         }
 
                         // 변경 후 지우기
-                        .overview__table {
-                            @include out_container();
-                            display: table;
-                            padding: 20px;
-                            margin: {
-                                top: 40px;
-                                bottom: 40px;
-                            }
-                            background: #f4f4f4;
-                            border-radius: 5px;
+                        // .overview__table {
+                        //     @include out_container();
+                        //     display: table;
+                        //     padding: 20px;
+                        //     margin: {
+                        //         top: 40px;
+                        //         bottom: 40px;
+                        //     }
+                        //     background: #f4f4f4;
+                        //     border-radius: 5px;
                             
-                            @include responsive(tablet-screens) {
-                                @include in_container();
-                                width: 100%;
-                                padding: 20px 40px;
-                                margin: 0;
-                            }
+                        //     @include responsive(tablet-screens) {
+                        //         @include in_container();
+                        //         width: 100%;
+                        //         padding: 20px 40px;
+                        //         margin: 0;
+                        //     }
                 
-                            .body {
-                                display: table-row-group;
-                            } 
+                        //     .body {
+                        //         display: table-row-group;
+                        //     } 
                 
-                            .row {
-                                display: table-row;
+                        //     .row {
+                        //         display: table-row;
                 
-                                &:last-child .cell {
-                                    padding-bottom: 0;
-                                }
-                            }
+                        //         &:last-child .cell {
+                        //             padding-bottom: 0;
+                        //         }
+                        //     }
                 
-                            .cell {
-                                display: table-cell;
-                                padding-bottom: 5px;
-                                @include textSet(0.95em, 0.1vw, center, #000);
+                        //     .cell {
+                        //         display: table-cell;
+                        //         padding-bottom: 5px;
+                        //         @include textSet(0.95em, 0.1vw, center, #000);
         
-                                @include responsive(tablet-screens) {
-                                    text-align: left;
-                                }
-                            }
+                        //         @include responsive(tablet-screens) {
+                        //             text-align: left;
+                        //         }
+                        //     }
                 
-                            .head {
-                                @include PretendardJP_font(semibold);
+                        //     .head {
+                        //         @include PretendardJP_font(semibold);
                                 
-                                @include responsive(tablet-screens) {
-                                    width: 25%;
-                                }
-                            }
-                        }
+                        //         @include responsive(tablet-screens) {
+                        //             width: 25%;
+                        //         }
+                        //     }
+                        // }
         
                         .overview__comment {
-                            @include textSet(1em, 0.1vw, justify, #000);
                             margin: 30px 0 60px;
-
-                            // @include responsive(tablet-screens) {
-                            // }
+                            @include textSet(1em, 0.1vw, justify, #000);
 
                             br {
                                 @include noneBlock(pc);
@@ -1064,7 +1091,7 @@
                             box-shadow: 0 20px 30px $guideShadow;
                         }
             
-                        p {
+                        figcaption {
                             @include PretendardJP_font(semibold);
                             @include textSet(1em, 0.1vw, initial, #000);
 
@@ -1076,6 +1103,11 @@
                                 border-bottom: 6px solid #000;
                                 border-left: 4px solid transparent;
                                 border-right: 4px solid transparent;
+                            }
+
+                            small {
+                                @include PretendardJP_font(regular);
+                                color: $bk1;
                             }
                         }
                     }
@@ -1140,26 +1172,37 @@
                 .concept__item {
                     display: flex;
                     flex-direction: column;
-                    margin: 60px 0;
-            
+                    margin: {
+                        top: 60px;
+                        bottom: 60px;
+                    }
+                    
                     &:last-child {
                         margin: 0;
                     }
-            
+                    
                     @include responsive(tp-screens) {
                         flex-direction: row;
+                        width: calc(1040/1440*100%);
             
                         &:not(:first-child):not(:last-child) {
-                            margin: 180px 0;
+                            margin: {
+                                top: 180px;
+                                bottom: 180px;
+                            }
                         }
                         
                         &:nth-child(odd) {
-                            width: calc(100% - 40px);
-                            margin-left: auto;
+                            margin-left: 40px;
                         }
             
                         &:nth-child(even) {
                             justify-content: flex-end;
+                            margin-left: auto;
+                        }
+
+                        &.concept__item__full {
+                            width: calc(100% - 40px);
                         }
                     }
                 }
@@ -1167,7 +1210,7 @@
                 .concept__title {
                     position: relative;
                     
-                    &::before {
+                    &::after {
                         content: '';
                         display: block;
                         position: absolute;
@@ -1183,7 +1226,7 @@
                     }
 
                     @include responsive(tp-screens) {
-                        width: calc(160/1440*100%);
+                        width: calc(200/1440*100%);
                         padding: 0;
                         border-radius: 0;
                         background: transparent;
@@ -1202,7 +1245,7 @@
                     @include responsive(tp-screens) {
                         
                         &.modeling {
-                            width: calc(100% - 160px);
+                            width: calc(100% - 140px);
                         }
                     }
 
@@ -1236,8 +1279,9 @@
                             }
                 
                             .concept__description {
-                                font-size: calc(0.95em + 0.1vw);
-                                line-height: 1.9em;
+                                @include textSet(0.95em, 0.1vw, justify, inherit);
+                                // font-size: calc(0.95em + 0.1vw);
+                                // line-height: 1.9em;
             
                                 b {
                                     @include PretendardJP_font(regular);     
@@ -1273,8 +1317,17 @@
                                 }
             
                                 .color__box {
+                                    position: relative;
                                     width: 100%;
                                     height: 130px;
+                                    text-align: center;
+
+                                    .color__nick {
+                                        @include element_center_X();
+                                        top: 20px;
+                                        font-size: 0.9em;
+                                        color: rgba(255, 255, 255, 0.5);
+                                    }
                                 }
                 
                                 .color__code {
@@ -1328,6 +1381,88 @@
                     }
                 }
             }
+
+            &.compare {
+
+                .compare__item {
+                    @include flex_between_center();
+                    flex-wrap: wrap;
+                    width: 100%;
+                    margin: 8vw 0;
+                
+                    @include responsive(tablet-screens) {
+                        flex-wrap: nowrap;
+                        column-gap: 5vw;
+                        margin: 4vw 0;
+                    }
+                    
+                    .compare__pic__wrap {
+                        width: 100%;
+                
+                        .compare__pic {
+                            @include flex_between_center();
+                            width: inherit;
+                            margin-bottom: 15px;
+                            
+                            @include responsive(tablet-screens) {
+                                margin-bottom: 0;
+                            }
+                
+                            img {
+                                width: calc(100% / 2 - 40px);
+                            }
+                        }
+                    
+                        .compare__arrow {
+                            @include processArrow();
+                        }
+                    }
+                    
+                    .compare__txt {
+                        width: 100%;
+            
+                        li {
+                            padding-left: 10px;
+                            margin: 4vw 0;
+                            border-left: 3px solid $mainColor;
+                            
+                            .compare__common {
+                                
+                                span {
+                                    padding: 0 10px;
+                                    margin: {
+                                        right: 10px;
+                                        bottom: 5px;
+                                    }
+                                    @include PretendardJP_font(semibold);
+                                    font-size: calc(0.8em + 0.1vw);
+                                    vertical-align: middle;
+                                    border-radius: 30px;
+                                    background: #fce16d;
+            
+                                    @media screen and (min-width:330px) {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+            
+                            strong {
+                                display: inline-block;
+                                margin-bottom: 10px;
+                                font-size: calc(1em + 0.1vw);
+                            }
+                
+                            p {
+                                @include textSet(0.9em, 0.1vw, justify, inherit);
+            
+                                br {
+                                    @include noneBlock(tp);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     
         article.mockup {
@@ -1367,6 +1502,10 @@
 }
 
 @mixin guideThemeColorCommon($theme, $text: #fff) {
+
+    .overivew__summary li {
+        box-shadow: inset 0px -5px 20px rgba($theme, 0.3);
+    }
 
     .chapter span {
         color: $theme;

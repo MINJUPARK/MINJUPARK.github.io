@@ -1,0 +1,109 @@
+@charset 'utf-8';
+@import '../../../scss/style.scss';
+@import '../../../scss/mixin.scss';
+@import '../../../scss/common.scss';
+
+$mainColor: #008f6f;
+@include guideCommon();
+@include guideThemeColorCommon($mainColor);
+
+header {
+    background: {
+        color: $mainColor;
+        image: url('../../image/design/character_oz.png');
+        blend-mode: soft-light;
+    }
+}
+
+main {
+
+    section.concept .concept__item:nth-child(odd) {
+
+        @include responsive(tp-screens) {
+            width: calc(1040/1440*100%);
+            margin-left: 40px;
+        }
+    }
+
+    section.series .series__wrap .series__item img {
+        aspect-ratio: 1/2;
+        box-shadow: none;
+    }
+
+    .color__box {
+        &[data-color='009EDE'] { background: #009EDE; }
+        &[data-color='CFCCCF'] { background: #CFCCCF; }
+        &[data-color='535642'] { background: #535642; }
+        &[data-color='BF8156'] { background: #BF8156; }
+    }
+    
+}
+
+.concept__zoom {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    
+    @include responsive(mt-screens) {
+        flex-wrap: nowrap;
+        column-gap: 20px;
+    }
+
+    .zoom__ex {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px #e4e4e4;
+        background-repeat: no-repeat;
+
+        &.step__1 {
+            background: {
+                image: url('../../image/design/character_oz_woodcutter.svg');
+                size: 250%;
+                position: 0 30%;
+            }
+        }
+        
+        &.step__2 {
+            background: {
+                image: url('../../image/design/character_oz_lion.svg');
+                size: 120%;
+                position: 40% 40%;
+            }
+        }
+
+        &.look__1 {
+            background: {
+                image: url('../../image/design/character_oz_dorothy.svg');
+                size: 300%;
+                position: 50% 10%;
+            }
+        }
+
+        &.look__2 {
+            background: {
+                image: url('../../image/design/character_oz_scarecrow.svg');
+                size: 300%;
+                position: 37% 19%;
+            }
+        }
+
+        &.acc__1 {
+            background: {
+                image: url('../../image/design/character_oz_dorothy.svg');
+                size: 300%;
+                position: 65% 60%;
+            }
+        }
+
+        &.acc__2 {
+            background: {
+                image: url('../../image/design/character_oz_scarecrow.svg');
+                size: 300%;
+                position: 20% 60%;
+            }
+        }
+    }
+}
+
