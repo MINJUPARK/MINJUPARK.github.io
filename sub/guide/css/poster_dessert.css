@@ -630,7 +630,7 @@ main section.concept .concept__item:last-child {
     margin-left: auto;
   }
   main section.concept .concept__item.concept__item__full {
-    width: 100%;
+    width: calc(100% - 40px);
   }
 }
 main section.concept .concept__title {
@@ -667,7 +667,7 @@ main section.concept .concept__title h4 {
 }
 @media screen and (min-width: 1104px) {
   main section.concept .concept__contents.modeling {
-    width: calc(100% - 160px);
+    width: calc(100% - 140px);
   }
 }
 main section.concept .concept__contents .concept__inner {

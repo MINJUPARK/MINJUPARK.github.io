@@ -4,6 +4,14 @@
 @import '../../../scss/common.scss';
 
 $mainColor: #F2778C;
+$series1_1: #F0B0BE;
+$series1_2: #9BCCEC;
+$series2_1: #EB679F;
+$series2_2: #FAEEC3;
+$series3_1: #2A2B3B;
+$series3_2: #4B4C5E;
+$series4_1: #DAB96C;
+$series4_2: #ADBF76;
 @include guideCommon();
 @include guideThemeColorCommon($mainColor);
 
@@ -15,9 +23,34 @@ header {
 main {
 
     section.series .series__wrap {
-
+        display: unset;
+        
         .series__item {
-            
+
+            &:not(:first-child) {
+                margin-top: 15vw;
+            }
+
+            @include responsive(tp-screens) {
+                &.left {
+                    // left: clamp(5%, 50%, 10%);
+                    
+                    .series__intro {
+                        // width: 50%;
+                        // margin-left: auto;
+                        // text-align: left;
+                        
+                        .series__description .series__type {
+                            // justify-content: flex-start;
+                        }
+                    }
+                    
+                    // .series__mockup {
+                    //     width: calc(1200/1920*100%);
+                    // }
+                }
+            }
+
             img {
                 box-shadow: none;
                 margin-bottom: 0;
@@ -28,24 +61,31 @@ main {
                 flex-direction: column;
                 text-align: center;
 
-                @include responsive(tablet-screens) {
-                    flex-direction: row;
-                    text-align: justify;
+                @include responsive(tp-screens) {
+                    // flex-direction: row;
+                    // text-align: justify;
+                    margin-bottom: 5vw;
                 }
 
                 .series__title {
                     @include dynaPuff_font(medium);
-                    font-size: calc(2em + 0.1vw);
+                    font-size: calc(1.8em + 0.8vw);
                     line-height: 1.5em;
                     
                     span {
-                        &[data-color='f0b0be'] { color: #f0b0be; }
-                        &[data-color='9bccec'] { color: #9bccec; }
+                        &[data-color='F0B0BE'] { color: $series1_1; }
+                        &[data-color='9BCCEC'] { color: $series1_2; }
+                        &[data-color='EB679F'] { color: $series2_1; }
+                        &[data-color='FAEEC3'] { color: $series2_2; }
+                        &[data-color='2A2B3B'] { color: $series3_1; }
+                        &[data-color='4B4C5E'] { color: $series3_2; }
+                        &[data-color='DAB96C'] { color: $series4_1; }
+                        &[data-color='ADBF76'] { color: $series4_2; }
                     }
 
-                    br {
-                        @include noneBlock(tablet);
-                    }
+                    // br {
+                    //     @include noneBlock(tablet);
+                    // }
                 }
 
                 .series__description {
@@ -56,9 +96,9 @@ main {
                         li {
                             padding: 3px 12px;
                             margin: 0 5px;
-                            border: 1px solid $bk1;
+                            border: 1px solid $bk2;
                             border-radius: 50px;
-                            @include textSet(0.8em, 0.1vw, initial, $bk1);
+                            @include textSet(0.8em, 0.1vw, initial, $bk2);
                             
                             &:first-child {
                                 margin-left: 0;
@@ -68,7 +108,7 @@ main {
                     
                     .series__comment {
                         margin: 15px 0 20px;
-                        @include textSet(1em, 0.1vw, inherit, #000);
+                        @include textSet(0.9em, 0.2vw, inherit, $bk1);
                     }
                 }
             }
@@ -76,14 +116,63 @@ main {
             .series__mockup {
                 @include out_container();
                 margin-top: 60px;
-                background: linear-gradient(45deg, rgba(155,204,236,1) 0%, rgba(240,176,190,1) 75%);
+                text-align: center;
 
-                @include responsive(tablet-screens) {
-                    @include in_container();
+                // &::before {
+                //     content: '';
+                //     position: absolute;
+                //     left: 0;
+                //     top: 0;
+                //     width: 100%;
+                //     height: 100%;
+                //     background-color: rgba(255, 255, 255, 0.3);
+                // }
+
+                &[data-name='candy'] { 
+                    background: linear-gradient(45deg, $series1_2 0%, $series1_1 75%);
+
+                    img {
+                        margin-top: -40px;
+                    }
                 }
 
+                &[data-name='donut'] {
+                    background: linear-gradient(45deg, $series2_1 0%, $series2_2 75%);
+
+                    img {
+                        max-width: 960px;
+                        padding-top: 40px;
+                        margin-bottom: -60px;
+                    }
+                }
+
+                &[data-name='rosette'] { 
+                    background: linear-gradient(90deg, $series3_2 0%, $series3_1 75%); 
+                }
+
+                &[data-name='flowerpot'] { 
+                    background: linear-gradient(120deg, $series4_1 0%, $series4_2 75%); 
+                }
+
+
+                @include responsive(tp-screens) {
+                    // @include in_container();
+                    &.left {
+                        // left: 30%;
+                        // margin-left: -23.95833333333333%;
+                    }
+                }
+                
+
                 .test {
-                    margin-top: -40px;
+                    position: inherit;
+                    // margin-left: 14.78953356086%;
+                    z-index: 1;
+
+                    @include responsive(tp-screens) {
+                        max-width: 1400px;
+                        // width: 60%;
+                    }
                 }
             }
         }

@@ -954,6 +954,12 @@ header {
   background-color: #F2778C;
 }
 
+main section.series .series__wrap {
+  display: unset;
+}
+main section.series .series__wrap .series__item:not(:first-child) {
+  margin-top: 15vw;
+}
 main section.series .series__wrap .series__item img {
   box-shadow: none;
   margin-bottom: 0;
@@ -964,30 +970,39 @@ main section.series .series__wrap .series__item .series__intro {
   flex-direction: column;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1104px) {
   main section.series .series__wrap .series__item .series__intro {
-    flex-direction: row;
-    text-align: justify;
+    margin-bottom: 5vw;
   }
 }
 main section.series .series__wrap .series__item .series__intro .series__title {
   font-family: "DynaPuff-medium";
-  font-size: calc(2em + 0.1vw);
+  font-size: calc(1.8em + 0.8vw);
   line-height: 1.5em;
 }
-main section.series .series__wrap .series__item .series__intro .series__title span[data-color=f0b0be] {
-  color: #f0b0be;
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color=F0B0BE] {
+  color: #F0B0BE;
 }
-main section.series .series__wrap .series__item .series__intro .series__title span[data-color="9bccec"] {
-  color: #9bccec;
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color="9BCCEC"] {
+  color: #9BCCEC;
 }
-main section.series .series__wrap .series__item .series__intro .series__title br {
-  display: none;
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color=EB679F] {
+  color: #EB679F;
 }
-@media screen and (min-width: 768px) {
-  main section.series .series__wrap .series__item .series__intro .series__title br {
-    display: block;
-  }
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color=FAEEC3] {
+  color: #FAEEC3;
+}
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color="2A2B3B"] {
+  color: #2A2B3B;
+}
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color="4B4C5E"] {
+  color: #4B4C5E;
+}
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color=DAB96C] {
+  color: #DAB96C;
+}
+main section.series .series__wrap .series__item .series__intro .series__title span[data-color=ADBF76] {
+  color: #ADBF76;
 }
 main section.series .series__wrap .series__item .series__intro .series__description .series__type {
   display: flex;
@@ -996,22 +1011,22 @@ main section.series .series__wrap .series__item .series__intro .series__descript
 main section.series .series__wrap .series__item .series__intro .series__description .series__type li {
   padding: 3px 12px;
   margin: 0 5px;
-  border: 1px solid rgb(64, 64, 64);
+  border: 1px solid rgb(128, 128, 128);
   border-radius: 50px;
   font-size: calc(0.8em + 0.1vw);
   line-height: 1.6em;
   text-align: initial;
-  color: rgb(64, 64, 64);
+  color: rgb(128, 128, 128);
 }
 main section.series .series__wrap .series__item .series__intro .series__description .series__type li:first-child {
   margin-left: 0;
 }
 main section.series .series__wrap .series__item .series__intro .series__description .series__comment {
   margin: 15px 0 20px;
-  font-size: calc(1em + 0.1vw);
-  line-height: 2em;
+  font-size: calc(0.9em + 0.2vw);
+  line-height: 1.8em;
   text-align: inherit;
-  color: #000;
+  color: rgb(64, 64, 64);
 }
 main section.series .series__wrap .series__item .series__mockup {
   position: relative;
@@ -1021,17 +1036,34 @@ main section.series .series__wrap .series__item .series__mockup {
   margin-left: -50vw;
   margin-right: -50vw;
   margin-top: 60px;
-  background: linear-gradient(45deg, rgb(155, 204, 236) 0%, rgb(240, 176, 190) 75%);
+  text-align: center;
 }
-@media screen and (min-width: 768px) {
-  main section.series .series__wrap .series__item .series__mockup {
-    position: static;
-    left: 0;
-    right: 0;
-    width: auto;
-    margin: 0;
-  }
+main section.series .series__wrap .series__item .series__mockup[data-name=candy] {
+  background: linear-gradient(45deg, #9BCCEC 0%, #F0B0BE 75%);
+}
+main section.series .series__wrap .series__item .series__mockup[data-name=candy] img {
+  margin-top: -40px;
+}
+main section.series .series__wrap .series__item .series__mockup[data-name=donut] {
+  background: linear-gradient(45deg, #EB679F 0%, #FAEEC3 75%);
+}
+main section.series .series__wrap .series__item .series__mockup[data-name=donut] img {
+  max-width: 960px;
+  padding-top: 40px;
+  margin-bottom: -60px;
+}
+main section.series .series__wrap .series__item .series__mockup[data-name=rosette] {
+  background: linear-gradient(90deg, #4B4C5E 0%, #2A2B3B 75%);
+}
+main section.series .series__wrap .series__item .series__mockup[data-name=flowerpot] {
+  background: linear-gradient(120deg, #DAB96C 0%, #ADBF76 75%);
 }
 main section.series .series__wrap .series__item .series__mockup .test {
-  margin-top: -40px;
+  position: inherit;
+  z-index: 1;
+}
+@media screen and (min-width: 1104px) {
+  main section.series .series__wrap .series__item .series__mockup .test {
+    max-width: 1400px;
+  }
 }
